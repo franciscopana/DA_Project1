@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include "Path.h"
 
 Graph::Graph() {
     this->stations = set<Station*>();
@@ -14,6 +15,8 @@ void Graph::addStations() {
     }
     file.ignore(1000, '\n');
     string line;
+
+    int i = 0;
     while (getline(file, line)) {
         vector<string> row;
         stringstream ss(line);
@@ -23,7 +26,7 @@ void Graph::addStations() {
         }
         row[4].erase(row[4].size() - 1);
 
-        Station* station = new Station(row[0], row[1], row[2], row[3], row[4]);
+        Station* station = new Station(i++,row[0], row[1], row[2], row[3], row[4]);
         stations.insert(station);
     }
 }
@@ -57,7 +60,9 @@ void Graph::addPaths() {
             }
         }
 
-        Path* path = new Path(stationA, stationB, stoi(row[2]), row[3]);
+        Path* path = new Path(stationA->getId(), stationB->getId(), stoi(row[2]), row[3]);
         paths.insert(path);
+        stationA->addPath(path);
+        stationB->addPath(path);
     }
 }

@@ -1,18 +1,18 @@
 
 #include "Path.h"
 
-Path::Path(Station* stationA, Station* stationB, int capacity, string service) {
+Path::Path(int stationA, int stationB, int capacity, string service) {
     this->stationA = stationA;
     this->stationB = stationB;
     this->capacity = capacity;
     this->service = service;
 }
 
-Station* Path::getStationA() const {
+int Path::getStationA() const {
     return stationA;
 }
 
-Station* Path::getStationB() const {
+int Path::getStationB() const {
     return stationB;
 }
 
