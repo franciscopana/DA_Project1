@@ -17,7 +17,7 @@ public:
     void addPaths();
 
 private:
-    set<Station*> stations;
+    vector<Station*> stations;
     set<Path*> paths;
 };
 

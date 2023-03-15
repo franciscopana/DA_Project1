@@ -8,6 +8,7 @@ Station::Station(int id, string name, string district, string municipality, stri
     this->township = township;
     this->line = line;
     this->paths = vector<Path*>();
+    this->visited = false;
 }
 
 string Station::getName() const {
@@ -40,4 +41,12 @@ vector<Path*> Station::getPaths() const {
 
 void Station::addPath(Path* path) {
     paths.push_back(path);
+}
+
+bool Station::isVisited() const {
+    return visited;
+}
+
+void Station::setVisited(bool v) {
+    this->visited = v;
 }

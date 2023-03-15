@@ -19,6 +19,8 @@ public:
     string getLine() const;
     vector<Path*> getPaths() const;
     void addPath(Path* path);
+    bool isVisited() const;
+    void setVisited(bool v);
 
     bool operator<(const Station &s) const {
         return id < s.id;
@@ -32,6 +34,7 @@ private:
     string township;
     string line;
     vector<Path*> paths;
+    bool visited;
 };
 
 
