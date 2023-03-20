@@ -2,7 +2,7 @@
 #include "Path.h"
 
 Graph::Graph() {
-    this->stations = set<Station*>();
+    this->stations = vector<Station*>();
     this->paths = set<Path*>();
 }
 
@@ -10,7 +10,7 @@ void Graph::addStations() {
     ifstream file("../Data/stations.csv");
 
     if (!file.is_open()) {
-        cout << "Error opening file" << endl;
+        cout << "Error opening stations.csv" << endl;
         return;
     }
     file.ignore(1000, '\n');
@@ -27,7 +27,7 @@ void Graph::addStations() {
         row[4].erase(row[4].size() - 1);
 
         Station* station = new Station(i++,row[0], row[1], row[2], row[3], row[4]);
-        stations.insert(station);
+        stations.push_back(station);
     }
 }
 
@@ -35,7 +35,7 @@ void Graph::addPaths() {
     ifstream file("../Data/network.csv");
 
     if (!file.is_open()) {
-        cout << "Error opening file" << endl;
+        cout << "Error opening network.csv" << endl;
         return;
     }
     file.ignore(1000, '\n');
