@@ -11,12 +11,15 @@ public:
     int getStationA() const;
     int getStationB() const;
     int getCapacity() const;
+    int getFlow() const;
     string getService() const;
+    int setFlow(int flow);
 
 private:
     int stationA;
     int stationB;
     int capacity;
+    int flow;
     string service;
 };
 

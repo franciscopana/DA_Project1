@@ -50,3 +50,7 @@ bool Station::isVisited() const {
 void Station::setVisited(bool v) {
     this->visited = v;
 }
+
+void Station::print() const{
+    cout << name << " | " << district << " | " << municipality << " | " << township << " | " << line << endl;
+}

@@ -1,6 +1,7 @@
 #ifndef DA_PROJECT1_STATION_H
 #define DA_PROJECT1_STATION_H
 
+#include <iostream>
 #include <string>
 #include <list>
 #include <vector>
@@ -21,6 +22,8 @@ public:
     void addPath(Path* path);
     bool isVisited() const;
     void setVisited(bool v);
+
+    void print() const;
 
     bool operator<(const Station &s) const {
         return id < s.id;

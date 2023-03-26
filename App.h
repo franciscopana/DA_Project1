@@ -16,6 +16,8 @@ private:
     void menu();
     int getOption();
     void maxFlowBetweenTwoStations();
+
+    Station* selectStation();
 };
 
 

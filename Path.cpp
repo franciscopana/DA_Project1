@@ -20,6 +20,14 @@ int Path::getCapacity() const {
     return capacity;
 }
 
+int Path::getFlow() const {
+    return flow;
+}
+
 string Path::getService() const {
     return service;
+}
+
+int Path::setFlow(int flow) {
+    this->flow = flow;
 }
