@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(trabalho2)
+project(trabalho1_DA)
 
 set(CMAKE_CXX_STANDARD 17)
 
