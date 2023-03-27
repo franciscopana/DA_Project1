@@ -13,7 +13,7 @@ public:
     int getCapacity() const;
     int getFlow() const;
     string getService() const;
-    int setFlow(int flow);
+    void setFlow(int flow);
 
 private:
     int stationA;

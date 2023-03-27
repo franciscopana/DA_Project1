@@ -10,6 +10,7 @@
 #include <map>
 #include "Station.h"
 #include "Path.h"
+#include <algorithm>
 
 class Graph {
 public:
