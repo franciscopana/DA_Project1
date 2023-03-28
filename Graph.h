@@ -8,9 +8,9 @@
 #include <iomanip>
 #include <vector>
 #include <map>
+#include <algorithm>
 #include "Station.h"
 #include "Path.h"
-#include <algorithm>
 
 class Graph {
 public:
