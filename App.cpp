@@ -21,24 +21,13 @@ int App::getOption(){
 
 void App::maxFlowBetweenTwoStations(){
 
-    /*string stationA;
-    string stationB;
-    cin.ignore();
-
-    cout << "Station A: ";
-    getline(cin, stationA);
-    cout << "Station B: ";
-    getline(cin, stationB);
-     */
-
     cout << ">> FIRST STATION: " << endl;
     Station* stationA = selectStation();
-    cout << ">> SECOND STATION: " << endl;
+    cout << endl << ">> SECOND STATION: " << endl;
     Station* stationB = selectStation();
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
 
-
-    cout << "Max flow between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
+    cout << endl << "Max flow between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
 Station* App::selectStation() {
