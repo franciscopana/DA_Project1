@@ -151,7 +151,6 @@ bool Graph::bfs(int source, int sink) {
 int Graph::edmondsKarp(int source, int sink) {
     for(auto path: paths){
         path->setFlow(0);
-        path->setReverseFlow(0);
     }
     while(bfs(source, sink)){
         int minFlow = findMinFlowAlongPath(source, sink);
@@ -163,7 +162,6 @@ int Graph::edmondsKarp(int source, int sink) {
             for(auto path : station->getPaths()){
                 if(path->getStationA() == predStation->getId() || path->getStationB() == predStation->getId()){
                     path->setFlow(path->getFlow() + minFlow);
-                    path->setReverseFlow(path->getReverseFlow() - minFlow);
                     break;
                 }
             }

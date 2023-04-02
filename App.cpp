@@ -23,10 +23,20 @@ void App::maxFlowBetweenTwoStations(){
 
     cout << ">> FIRST STATION: " << endl;
     Station* stationA = selectStation();
+    while(stationA == nullptr){
+        cout << ">> FIRST STATION: " << endl;
+        stationA = selectStation();
+    }
+    stationA->print();
     cout << endl << ">> SECOND STATION: " << endl;
     Station* stationB = selectStation();
-    int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
+    while(stationB == nullptr){
+        cout << endl << ">> SECOND STATION: " << endl;
+        stationB = selectStation();
+    }
+    stationA->print();
 
+    int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
@@ -39,21 +49,24 @@ Station* App::selectStation() {
     string district = graph.getDistricts()[option - 1];
 
     cout << "Select the municipality: " << endl;
+    cout << "0 - Go Back" << endl;
     for (int i = 0; i < graph.getMunicipalitiesByDistrict()[district].size(); i++) {
         cout << i + 1 << " - " << graph.getMunicipalitiesByDistrict()[district][i] << endl;
     }
     option = getOption();
+    if(option == 0) return nullptr;
     string municipality = graph.getMunicipalitiesByDistrict()[district][option - 1];
 
     cout << "Select the station: " << endl;
+    cout << "0 - Go Back" << endl;
     for (int i = 0; i < graph.getStationsByMunicipality()[municipality].size(); i++) {
         int id = graph.getStationsByMunicipality()[municipality][i];
         cout << i + 1 << " - " << graph.getStations()[id]->getName() << endl;
     }
     option = getOption();
+    if(option == 0) return nullptr;
     int id = graph.getStationsByMunicipality()[municipality][option - 1];
     Station* station = graph.getStations()[id];
-    station->print();
     return station;
 }
 
