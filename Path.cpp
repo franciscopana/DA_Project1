@@ -6,6 +6,9 @@ Path::Path(int stationA, int stationB, int capacity, string service) {
     this->stationB = stationB;
     this->capacity = capacity;
     this->service = service;
+    if(service == "STANDARD") this->costPerTrain = 2;
+    else if(service == "ALFA") this->costPerTrain = 4;
+    else this->costPerTrain = -1;
 }
 
 int Path::getStationA() const {
@@ -38,4 +41,8 @@ void Path::setReverseFlow(int reverseFlow) {
 
 int Path::getReverseFlow() const {
     return reverseFlow;
+}
+
+int Path::getCostPerTrain() const {
+    return costPerTrain;
 }

@@ -16,6 +16,7 @@ public:
     void setFlow(int flow);
     void setReverseFlow(int reverseFlow);
     int getReverseFlow() const;
+    int getCostPerTrain() const;
 
 private:
     int stationA;
@@ -24,6 +25,7 @@ private:
     int flow;
     int reverseFlow;
     string service;
+    int costPerTrain;
 };
 
 
