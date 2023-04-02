@@ -37,7 +37,7 @@ void Graph::addStations() {
         Station* station = new Station(i++, name, district, municipality, township, line);
         stations.push_back(station);
 
-        if (district.empty() || municipality.empty()) continue;
+        if(district.empty() || municipality.empty()) continue;
         if(municipalitiesByDistrict.find(district) == municipalitiesByDistrict.end()){
             vector<string> municipalities;
             municipalities.push_back(municipality);

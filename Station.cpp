@@ -70,5 +70,5 @@ void Station::setDist(int d) {
 }
 
 void Station::print() const{
-    cout << name << " | " << district << " | " << municipality << " | " << township << " | " << line << endl;
+    cout << "ID: " << id << " | " << name << " | " << district << " | " << municipality << " | " << township << " | " << line << endl;
 }
