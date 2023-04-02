@@ -6,7 +6,7 @@ App::App(Graph graph) {
 
 void App::menu(){
     cout << "--------- Menu ---------" << endl;
-    cout << "1 - Find max flow between two stations" << endl;
+    cout << "1 - Find maximum number of trains that can simultaneously travel between two stations" << endl;
     cout << "2 - Stations with the max flow" << endl;
     cout << "3 - Exit" << endl;
 }
@@ -27,7 +27,7 @@ void App::maxFlowBetweenTwoStations(){
     Station* stationB = selectStation();
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
 
-    cout << endl << "Max flow between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
+    cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
 Station* App::selectStation() {
