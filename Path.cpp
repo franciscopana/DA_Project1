@@ -1,7 +1,7 @@
 
 #include "Path.h"
 
-Path::Path(int stationA, int stationB, int capacity, string service) {
+Path::Path(int stationA, int stationB, int capacity, string& service) {
     this->stationA = stationA;
     this->stationB = stationB;
     this->capacity = capacity;
@@ -33,14 +33,6 @@ string Path::getService() const {
 
 void Path::setFlow(int flow) {
     this->flow = flow;
-}
-
-void Path::setReverseFlow(int reverseFlow) {
-    this->reverseFlow = reverseFlow;
-}
-
-int Path::getReverseFlow() const {
-    return reverseFlow;
 }
 
 int Path::getCostPerTrain() const {

@@ -7,7 +7,7 @@ using namespace std;
 
 class App {
 public:
-    App(Graph graph);
+    App(Graph& graph);
     void run();
 
 private:

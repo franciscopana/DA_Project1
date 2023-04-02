@@ -1,6 +1,6 @@
 #include "Station.h"
 
-Station::Station(int id, string name, string district, string municipality, string township, string line) {
+Station::Station(int id, string& name, string& district, string& municipality, string& township, string& line) {
     this->id = id;
     this->name = name;
     this->district = district;

@@ -1,6 +1,6 @@
 #include "App.h"
 
-App::App(Graph graph) {
+App::App(Graph& graph) {
     this->graph = graph;
 }
 
@@ -34,7 +34,7 @@ void App::maxFlowBetweenTwoStations(){
         cout << endl << ">> SECOND STATION: " << endl;
         stationB = selectStation();
     }
-    stationA->print();
+    stationB->print();
 
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;

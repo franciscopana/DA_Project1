@@ -11,7 +11,7 @@ using namespace std;
 
 class Station {
 public:
-    Station(int id, string name, string district, string municipality, string township, string line);
+    Station(int id, string& name, string& district, string& municipality, string& township, string& line);
     int getId() const;
     string getName() const;
     string getDistrict() const;
@@ -28,10 +28,6 @@ public:
     void setDist(int d);
 
     void print() const;
-
-    bool operator<(const Station &s) const {
-        return id < s.id;
-    }
 
 private:
     int id;
