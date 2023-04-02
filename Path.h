@@ -14,12 +14,15 @@ public:
     int getFlow() const;
     string getService() const;
     void setFlow(int flow);
+    void setReverseFlow(int reverseFlow);
+    int getReverseFlow() const;
 
 private:
     int stationA;
     int stationB;
     int capacity;
     int flow;
+    int reverseFlow;
     string service;
 };
 

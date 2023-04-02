@@ -31,3 +31,11 @@ string Path::getService() const {
 void Path::setFlow(int flow) {
     this->flow = flow;
 }
+
+void Path::setReverseFlow(int reverseFlow) {
+    this->reverseFlow = reverseFlow;
+}
+
+int Path::getReverseFlow() const {
+    return reverseFlow;
+}

@@ -18,7 +18,8 @@ public:
     void addStations();
     void addPaths();
     int edmondsKarp(int source, int sink);
-    bool bfs(int** residualGraph, int source, int sink, int parent[], int visited[]);
+    bool bfs(int source, int sink);
+    int findMinFlowAlongPath(int source, int sink);
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
     vector<string> getDistricts() const;

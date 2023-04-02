@@ -9,6 +9,8 @@ Station::Station(int id, string name, string district, string municipality, stri
     this->line = line;
     this->paths = vector<Path*>();
     this->visited = false;
+    this->pred = -1;
+    this->dist = INT_MAX;
 }
 
 string Station::getName() const {
@@ -49,6 +51,22 @@ bool Station::isVisited() const {
 
 void Station::setVisited(bool v) {
     this->visited = v;
+}
+
+int Station::getPred() const {
+    return pred;
+}
+
+void Station::setPred(int p) {
+    this->pred = p;
+}
+
+int Station::getDist() const {
+    return dist;
+}
+
+void Station::setDist(int d) {
+    this->dist = d;
 }
 
 void Station::print() const{
