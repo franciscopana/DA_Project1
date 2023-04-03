@@ -4,13 +4,6 @@ App::App(Graph& graph) {
     this->graph = graph;
 }
 
-void App::menu(){
-    cout << "--------- Menu ---------" << endl;
-    cout << "1 - Find maximum number of trains that can simultaneously travel between two stations" << endl;
-    cout << "2 - Stations with the max flow" << endl;
-    cout << "3 - Exit" << endl;
-}
-
 int App::getOption(){
     int option;
     cout << "Option: ";
@@ -19,8 +12,85 @@ int App::getOption(){
     return option;
 }
 
-void App::maxFlowBetweenTwoStations(){
+void App::printMenu(){
+    cout << "--------- Menu ---------" << endl;
+    cout << "1 - Exit" << endl;
+    cout << "2 - Basic Service Metrics" << endl;
+    cout << "3 - Operation Cost Optimization" << endl;
+    cout << "4 - Reliability and Sensitivity to Line Failures" << endl;
+}
 
+void App::printMenu2(){
+    cout << "----------------- Basic Service Metrics ----------------" << endl;
+    cout << "1 - Calculate the maximum number of trains that can simultaneously travel between two specific stations." << endl;
+    cout << "2 - Determine, from all pairs of stations, which ones require the most amount of trains when taking full advantage of the existing network capacity." << endl;
+    cout << "3 - Indicate where management should assign larger budgets for the purchasing and maintenance of trains." << endl;
+    cout << "4 - Report the maximum number of trains that can simultaneously arrive at a given station, taking into consideration the entire railway grid." << endl;
+    cout << "5 - Go back" << endl;
+}
+
+void App::task2() {
+    printMenu2();
+    int option = getOption();
+    switch (option){
+        case 1:
+            maxFlowBetweenTwoStations();
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            return;
+        default:
+            cout << "Invalid option" << endl;
+            return;
+    }
+}
+
+void App::printMenu3() {
+    cout << "----------------- Operation Cost Optimization ----------------" << endl;
+    cout << "1 - Calculate the maximum number of trains that can simultaneously travel between two specific stations with minimum cost." << endl;
+    cout << "2 - Go back" << endl;
+}
+
+void App::task3() {
+    printMenu3();
+    int option = getOption();
+    switch (option) {
+        case 1:
+            break;
+        case 2:
+            return;
+        default:
+            cout << "Invalid option" << endl;
+            return;
+    }
+}
+
+void App::printMenu4() {
+    cout << "----------------- Reliability and Sensitivity to Line Failures ----------------" << endl;
+    cout << "1 - Calculate the maximum number of trains that can simultaneously travel between two specific stations in a network of reduced connectivity." << endl;
+    cout << "2 - Go back" << endl;
+}
+
+void App::task4() {
+    printMenu4();
+    int option = getOption();
+    switch (option) {
+        case 1:
+            break;
+        case 2:
+            return;
+        default:
+            cout << "Invalid option" << endl;
+            return;
+    }
+}
+
+void App::maxFlowBetweenTwoStations(){
     cout << ">> FIRST STATION: " << endl;
     Station* stationA = selectStation();
     while(stationA == nullptr){
@@ -75,17 +145,20 @@ void App::run(){
     graph.addPaths();
 
     while (true){
-        menu();
+        printMenu();
         int option = getOption();
         switch (option){
             case 1:
-                maxFlowBetweenTwoStations();
-                break;
+                return;
             case 2:
-                selectStation();
+                task2();
                 break;
             case 3:
-                return;
+                task3();
+                break;
+            case 4:
+                task4();
+                break;
             default:
                 cout << "Invalid option" << endl;
         }

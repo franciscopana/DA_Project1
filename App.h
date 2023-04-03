@@ -13,7 +13,15 @@ public:
 private:
     Graph graph;
 
-    void menu();
+    void printMenu();
+    void printMenu2();
+    void printMenu3();
+    void printMenu4();
+
+    void task2();
+    void task3();
+    void task4();
+
     int getOption();
     void maxFlowBetweenTwoStations();
 

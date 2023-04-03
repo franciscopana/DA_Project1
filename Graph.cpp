@@ -175,7 +175,6 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
-
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {
     return municipalitiesByDistrict;
 }

@@ -14,7 +14,7 @@ public:
     string getService() const;
     int getFlow() const;
     void setFlow(int flow);
-    int getCostPerTrain() const;
+    int getCost() const;
 
 private:
     int stationA;
@@ -23,6 +23,7 @@ private:
     int flow;
     string service;
     int costPerTrain;
+    int cost;
 };
 
 
