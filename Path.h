@@ -7,13 +7,14 @@ using namespace std;
 
 class Path {
 public:
-    Path(int stationA, int stationB, int capacity, string service);
+    Path(int stationA, int stationB, int capacity, string& service);
     int getStationA() const;
     int getStationB() const;
     int getCapacity() const;
-    int getFlow() const;
     string getService() const;
+    int getFlow() const;
     void setFlow(int flow);
+    int getCostPerTrain() const;
 
 private:
     int stationA;
@@ -21,6 +22,7 @@ private:
     int capacity;
     int flow;
     string service;
+    int costPerTrain;
 };
 
 

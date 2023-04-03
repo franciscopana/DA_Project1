@@ -11,7 +11,7 @@ using namespace std;
 
 class Station {
 public:
-    Station(int id, string name, string district, string municipality, string township, string line);
+    Station(int id, string& name, string& district, string& municipality, string& township, string& line);
     int getId() const;
     string getName() const;
     string getDistrict() const;
@@ -22,12 +22,12 @@ public:
     void addPath(Path* path);
     bool isVisited() const;
     void setVisited(bool v);
+    int getPred() const;
+    void setPred(int p);
+    int getDist() const;
+    void setDist(int d);
 
     void print() const;
-
-    bool operator<(const Station &s) const {
-        return id < s.id;
-    }
 
 private:
     int id;
@@ -38,6 +38,8 @@ private:
     string line;
     vector<Path*> paths;
     bool visited;
+    int pred;
+    int dist;
 };
 
 

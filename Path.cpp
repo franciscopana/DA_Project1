@@ -1,11 +1,14 @@
 
 #include "Path.h"
 
-Path::Path(int stationA, int stationB, int capacity, string service) {
+Path::Path(int stationA, int stationB, int capacity, string& service) {
     this->stationA = stationA;
     this->stationB = stationB;
     this->capacity = capacity;
     this->service = service;
+    if(service == "STANDARD") this->costPerTrain = 2;
+    else if(service == "ALFA") this->costPerTrain = 4;
+    else this->costPerTrain = -1;
 }
 
 int Path::getStationA() const {
@@ -30,4 +33,8 @@ string Path::getService() const {
 
 void Path::setFlow(int flow) {
     this->flow = flow;
+}
+
+int Path::getCostPerTrain() const {
+    return costPerTrain;
 }

@@ -37,7 +37,7 @@ void Graph::addStations() {
         Station* station = new Station(i++, name, district, municipality, township, line);
         stations.push_back(station);
 
-        if (district.empty() || municipality.empty()) continue;
+        if(district.empty() || municipality.empty()) continue;
         if(municipalitiesByDistrict.find(district) == municipalitiesByDistrict.end()){
             vector<string> municipalities;
             municipalities.push_back(municipality);
@@ -98,70 +98,80 @@ void Graph::addPaths() {
 }
 
 
-bool Graph::bfs(int** residualGraph, int source, int sink, int parent[], int visited[]) {
-    for(int i = 0; i < stations.size(); i++){
-        visited[i] = false;
+int Graph::findMinFlowAlongPath(int source, int sink) {
+    int minFlow = INT_MAX;
+    int current = sink;
+    while(current != source){
+        Station* station = stations[current];
+        int pred = station->getPred();
+        Station* predStation = stations[pred];
+        for(auto path : station->getPaths()){
+            if(path->getStationA() == predStation->getId() || path->getStationB() == predStation->getId()){
+                minFlow = min(minFlow, path->getCapacity() - path->getFlow());
+                break;
+            }
+        }
+        current = pred;
+    }
+    return minFlow;
+}
+
+
+bool Graph::bfs(int source, int sink) {
+    for(auto station : stations){
+        station->setVisited(false);
+        station->setPred(-1);
+        station->setDist(INT_MAX);
     }
 
-    queue<int> q;
-    q.push(source);
-    visited[source] = true;
-    parent[source] = -1;
+    queue<Station*> q;
+    q.push(stations[source]);
+    stations[source]->setVisited(true);
+    stations[source]->setDist(0);
 
     while(!q.empty()){
-        int u = q.front();
+        Station* station = q.front();
         q.pop();
 
-        for(int v = 0; v < stations.size(); v++){
-            if(visited[v] == false && residualGraph[u][v] > 0){
-                q.push(v);
-                parent[v] = u;
-                visited[v] = true;
+        for(auto path : station->getPaths()){
+            int id = path->getStationA() == station->getId() ? path->getStationB() : path->getStationA();
+            Station* adjStation = stations[id];
+            if(!adjStation->isVisited() && path->getFlow() < path->getCapacity()){
+                adjStation->setVisited(true);
+                adjStation->setDist(station->getDist() + 1);
+                adjStation->setPred(station->getId());
+                q.push(adjStation);
             }
         }
     }
-
-    return (visited[sink] == true);
+    return stations[sink]->isVisited();
 }
 
 
 int Graph::edmondsKarp(int source, int sink) {
-    int** residualGraph = new int*[stations.size()];
-    for(int i = 0; i < stations.size(); i++){
-        residualGraph[i] = new int[stations.size()];
+    for(auto path: paths){
+        path->setFlow(0);
     }
-
-    for(int i = 0; i < stations.size(); i++){
-        for(int j = 0; j < stations.size(); j++){
-            residualGraph[i][j] = 0;
+    while(bfs(source, sink)){
+        int minFlow = findMinFlowAlongPath(source, sink);
+        int current = sink;
+        while(current != source){
+            Station* station = stations[current];
+            int pred = station->getPred();
+            Station* predStation = stations[pred];
+            for(auto path : station->getPaths()){
+                if(path->getStationA() == predStation->getId() || path->getStationB() == predStation->getId()){
+                    path->setFlow(path->getFlow() + minFlow);
+                    break;
+                }
+            }
+            current = pred;
         }
     }
-
-    for(auto path : paths){
-        residualGraph[path->getStationA()][path->getStationB()] = path->getCapacity();
-    }
-
-    int parent[stations.size()];
-    int visited[stations.size()];
-
     int maxFlow = 0;
-
-    while(bfs(residualGraph, source, sink, parent, visited)){
-        int pathFlow = INT_MAX;
-        for(int v = sink; v != source; v = parent[v]){
-            int u = parent[v];
-            pathFlow = min(pathFlow, residualGraph[u][v]);
-        }
-
-        for(int v = sink; v != source; v = parent[v]){
-            int u = parent[v];
-            residualGraph[u][v] -= pathFlow;
-            residualGraph[v][u] += pathFlow;
-        }
-
-        maxFlow += pathFlow;
+    for(auto path : stations[source]->getPaths()){
+        maxFlow += path->getFlow();
     }
-
     return maxFlow;
 }
 

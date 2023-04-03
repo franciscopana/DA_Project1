@@ -1,6 +1,6 @@
 #include "Station.h"
 
-Station::Station(int id, string name, string district, string municipality, string township, string line) {
+Station::Station(int id, string& name, string& district, string& municipality, string& township, string& line) {
     this->id = id;
     this->name = name;
     this->district = district;
@@ -9,6 +9,8 @@ Station::Station(int id, string name, string district, string municipality, stri
     this->line = line;
     this->paths = vector<Path*>();
     this->visited = false;
+    this->pred = -1;
+    this->dist = INT_MAX;
 }
 
 string Station::getName() const {
@@ -51,6 +53,22 @@ void Station::setVisited(bool v) {
     this->visited = v;
 }
 
+int Station::getPred() const {
+    return pred;
+}
+
+void Station::setPred(int p) {
+    this->pred = p;
+}
+
+int Station::getDist() const {
+    return dist;
+}
+
+void Station::setDist(int d) {
+    this->dist = d;
+}
+
 void Station::print() const{
-    cout << name << " | " << district << " | " << municipality << " | " << township << " | " << line << endl;
+    cout << "ID: " << id << " | " << name << " | " << district << " | " << municipality << " | " << township << " | " << line << endl;
 }
