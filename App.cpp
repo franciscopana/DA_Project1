@@ -81,6 +81,7 @@ void App::task4() {
     int option = getOption();
     switch (option) {
         case 1:
+            reducedConnectivity();
             break;
         case 2:
             return;
@@ -108,6 +109,48 @@ void App::maxFlowBetweenTwoStations(){
 
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
+}
+
+void App::reducedConnectivity() {
+    int n;
+    cout << "How many paths are affected? ";
+    cin >> n;
+    map<Path*, int> affectedPaths;
+    for(int i = 0; i < n; i++){
+        cout << "\n>> Path " << i+1 << endl;
+        cout << "From: " << endl;
+        auto from = selectStation();
+        cout << "To: " << endl;
+        auto to = selectStation();
+        bool valid = false;
+        Path* p = nullptr;
+        for(auto path : from->getPaths()){
+            if(path->getStationA() == to->getId() || path->getStationB() == to->getId()){
+                p = path;
+            }
+        }
+        if(p == nullptr){
+            cout << "This path does not exist! Try again" << endl;
+            i--;
+            continue;
+        }
+        int reducedCapacity;
+        cout << "What's this edge's capacity? ";
+        cin >> reducedCapacity;
+        while(reducedCapacity < 0 || reducedCapacity >= p->getCapacity()){
+            cout << "Invalid value! Must be greater or equal than 0 and lower than " << p->getCapacity() << endl;
+            cout << "What's this edge's capacity? ";
+            cin >> reducedCapacity;
+            cout << endl;
+        }
+        affectedPaths[p] = reducedCapacity;
+    }
+
+    // change edges capacity
+    // edmonds karp
+    // reset edges capacity
+
+    return;
 }
 
 Station* App::selectStation() {

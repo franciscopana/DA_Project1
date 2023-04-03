@@ -24,6 +24,7 @@ private:
 
     int getOption();
     void maxFlowBetweenTwoStations();
+    void reducedConnectivity();
 
     Station* selectStation();
 };
