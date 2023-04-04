@@ -11,6 +11,7 @@ public:
     int getStationA() const;
     int getStationB() const;
     int getCapacity() const;
+    void setCapacity(int capacity);
     string getService() const;
     int getFlow() const;
     void setFlow(int flow);

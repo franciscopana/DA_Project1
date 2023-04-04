@@ -175,6 +175,15 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
+void Graph::changePathCapacities(map<Path *, int> &newCapacities) {
+    map<Path*, int> oldCapacities;
+    for(auto element : newCapacities){
+        oldCapacities[element.first] = element.first->getCapacity();
+        element.first->setCapacity(element.second);
+    }
+    newCapacities = oldCapacities;
+}
+
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {
     return municipalitiesByDistrict;
 }

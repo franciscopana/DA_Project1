@@ -24,6 +24,7 @@ public:
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
     vector<string> getDistricts() const;
     vector<Station*> getStations() const;
+    void changePathCapacities(map<Path*, int> &newCapacities);
 
 private:
     vector<Station*> stations;

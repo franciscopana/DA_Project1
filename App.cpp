@@ -115,7 +115,7 @@ void App::reducedConnectivity() {
     int n;
     cout << "How many paths are affected? ";
     cin >> n;
-    map<Path*, int> affectedPaths;
+    map<Path*, int> newCapacities;
     for(int i = 0; i < n; i++){
         cout << "\n>> Path " << i+1 << endl;
         cout << "From: " << endl;
@@ -143,14 +143,12 @@ void App::reducedConnectivity() {
             cin >> reducedCapacity;
             cout << endl;
         }
-        affectedPaths[p] = reducedCapacity;
+        newCapacities[p] = reducedCapacity;
     }
 
-    // change edges capacity
-    // edmonds karp
-    // reset edges capacity
-
-    return;
+    graph.changePathCapacities(newCapacities);
+    maxFlowBetweenTwoStations();
+    graph.changePathCapacities(newCapacities);
 }
 
 Station* App::selectStation() {

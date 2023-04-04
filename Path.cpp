@@ -39,3 +39,7 @@ void Path::setFlow(int flow) {
 int Path::getCost() const {
     return cost;
 }
+
+void Path::setCapacity(int capacity) {
+    this->capacity = capacity;
+}
