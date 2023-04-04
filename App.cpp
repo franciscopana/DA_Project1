@@ -147,6 +147,8 @@ void App::reducedConnectivity() {
     }
 
     graph.changePathCapacities(newCapacities);
+
+    cout << "Now select 2 stations to calculate the maximum flow between them:" << endl;
     maxFlowBetweenTwoStations();
     graph.changePathCapacities(newCapacities);
 }

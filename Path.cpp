@@ -1,4 +1,3 @@
-
 #include "Path.h"
 
 Path::Path(int stationA, int stationB, int capacity, string& service) {
