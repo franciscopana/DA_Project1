@@ -122,7 +122,6 @@ void App::reducedConnectivity() {
         auto from = selectStation();
         cout << "To: " << endl;
         auto to = selectStation();
-        bool valid = false;
         Path* p = nullptr;
         for(auto path : from->getPaths()){
             if(path->getStationA() == to->getId() || path->getStationB() == to->getId()){
