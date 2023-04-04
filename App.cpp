@@ -39,6 +39,7 @@ void App::task2() {
         case 2:
             break;
         case 3:
+            k_municipalities_with_max_flow();
             break;
         case 4:
             break;
@@ -150,6 +151,26 @@ void App::reducedConnectivity() {
     cout << "Now select 2 stations to calculate the maximum flow between them:" << endl;
     maxFlowBetweenTwoStations();
     graph.changePathCapacities(newCapacities);
+}
+
+void App::k_municipalities_with_max_flow() {
+    auto flowByMunicipality = graph.totalFlowByMunicipality();
+    int k;
+    cout << "How many municipalities do you want to see? ";
+    cin >> k;
+    while(k < 0 || k > flowByMunicipality.size()){
+        cout << "Invalid value! Must be greater or equal than 0 and lower than " << flowByMunicipality.size() << endl;
+        cout << "How many municipalities do you want to see? ";
+        cin >> k;
+        cout << endl;
+    }
+
+    cout << "These are the " << k << " municipalities which should spend more money on maintenance and purchasing of trains:" << endl;
+    auto it = flowByMunicipality.end();
+    for(int i = 0; i < k; i++){
+        it--;
+        cout << it->second << endl;
+    }
 }
 
 Station* App::selectStation() {

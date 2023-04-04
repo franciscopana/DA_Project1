@@ -184,6 +184,32 @@ void Graph::changePathCapacities(map<Path *, int> &newCapacities) {
     newCapacities = oldCapacities;
 }
 
+vector<pair<int, int>> Graph::getPairs(vector<int> v){
+    vector<pair<int, int>> result;
+    for (int i = 0; i < v.size(); i++) {
+        for (int j = i + 1; j < v.size(); j++) {
+            pair<int, int> currentPair = make_pair(v[i], v[j]);
+            if (find(result.begin(), result.end(), currentPair) == result.end()) {
+                result.push_back(currentPair);
+            }
+        }
+    }
+    return result;
+}
+
+map<int, string> Graph::totalFlowByMunicipality() {
+    map<int , string> result;
+    for(auto& item : stationsByMunicipality){
+        int totalFlow = 0;
+        vector<pair<int, int>> pairs = getPairs(item.second);
+        for(auto pair : pairs){
+            totalFlow += edmondsKarp(pair.first, pair.second);
+        }
+        result[totalFlow] = item.first;
+    }
+    return result;
+}
+
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {
     return municipalitiesByDistrict;
 }

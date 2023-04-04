@@ -13,6 +13,8 @@ public:
 private:
     Graph graph;
 
+    int getOption();
+
     void printMenu();
     void printMenu2();
     void printMenu3();
@@ -22,9 +24,10 @@ private:
     void task3();
     void task4();
 
-    int getOption();
     void maxFlowBetweenTwoStations();
     void reducedConnectivity();
+    void k_municipalities_with_max_flow();
+
 
     Station* selectStation();
 };
