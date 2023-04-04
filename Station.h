@@ -22,8 +22,8 @@ public:
     void addPath(Path* path);
     bool isVisited() const;
     void setVisited(bool v);
-    int getPred() const;
-    void setPred(int p);
+    Path* getPred() const;
+    void setPred(Path* p);
     int getDist() const;
     void setDist(int d);
 
@@ -38,7 +38,7 @@ private:
     string line;
     vector<Path*> paths;
     bool visited;
-    int pred;
+    Path* pred;
     int dist;
 };
 

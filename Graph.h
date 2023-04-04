@@ -20,11 +20,12 @@ public:
     int edmondsKarp(int source, int sink);
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
+    void updateFlowAlongPath(int source, int sink, int flow);
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
     vector<string> getDistricts() const;
     vector<Station*> getStations() const;
-    void changePathCapacities(map<Path*, int> &newCapacities);
+    void changePathsCapacity(map<Path*, int> &newCapacities);
 
 private:
     vector<Station*> stations;

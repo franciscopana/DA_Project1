@@ -129,27 +129,27 @@ void App::reducedConnectivity() {
             }
         }
         if(p == nullptr){
-            cout << "This path does not exist! Try again" << endl;
+            cout << "This path does not exist! Try again." << endl;
             i--;
             continue;
         }
         int reducedCapacity;
-        cout << "What's this edge's capacity? ";
+        cout << "What's this path's capacity? ";
         cin >> reducedCapacity;
         while(reducedCapacity < 0 || reducedCapacity >= p->getCapacity()){
             cout << "Invalid value! Must be greater or equal than 0 and lower than " << p->getCapacity() << endl;
-            cout << "What's this edge's capacity? ";
+            cout << "What's this path's capacity? ";
             cin >> reducedCapacity;
             cout << endl;
         }
         newCapacities[p] = reducedCapacity;
     }
 
-    graph.changePathCapacities(newCapacities);
+    graph.changePathsCapacity(newCapacities);
 
     cout << "Now select 2 stations to calculate the maximum flow between them:" << endl;
     maxFlowBetweenTwoStations();
-    graph.changePathCapacities(newCapacities);
+    graph.changePathsCapacity(newCapacities);
 }
 
 Station* App::selectStation() {

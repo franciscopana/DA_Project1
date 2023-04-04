@@ -97,30 +97,10 @@ void Graph::addPaths() {
     sortMunicipalities();
 }
 
-
-int Graph::findMinFlowAlongPath(int source, int sink) {
-    int minFlow = INT_MAX;
-    int current = sink;
-    while(current != source){
-        Station* station = stations[current];
-        int pred = station->getPred();
-        Station* predStation = stations[pred];
-        for(auto path : station->getPaths()){
-            if(path->getStationA() == predStation->getId() || path->getStationB() == predStation->getId()){
-                minFlow = min(minFlow, path->getCapacity() - path->getFlow());
-                break;
-            }
-        }
-        current = pred;
-    }
-    return minFlow;
-}
-
-
 bool Graph::bfs(int source, int sink) {
     for(auto station : stations){
         station->setVisited(false);
-        station->setPred(-1);
+        station->setPred(nullptr);
         station->setDist(INT_MAX);
     }
 
@@ -139,12 +119,37 @@ bool Graph::bfs(int source, int sink) {
             if(!adjStation->isVisited() && path->getFlow() < path->getCapacity()){
                 adjStation->setVisited(true);
                 adjStation->setDist(station->getDist() + 1);
-                adjStation->setPred(station->getId());
+                adjStation->setPred(path);
                 q.push(adjStation);
             }
         }
     }
     return stations[sink]->isVisited();
+}
+
+
+int Graph::findMinFlowAlongPath(int source, int sink) {
+    int minFlow = INT_MAX;
+    int current = sink;
+    while(current != source){
+        Station* station = stations[current];
+        Path* predPath = station->getPred();
+        minFlow = min(minFlow, predPath->getCapacity() - predPath->getFlow());
+        int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
+        current = predId;
+    }
+    return minFlow;
+}
+
+void Graph::updateFlowAlongPath(int source, int sink, int flow) {
+    int current = sink;
+    while(current != source){
+        Station* station = stations[current];
+        Path* predPath = station->getPred();
+        predPath->setFlow(predPath->getFlow() + flow);
+        int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
+        current = predId;
+    }
 }
 
 
@@ -154,19 +159,7 @@ int Graph::edmondsKarp(int source, int sink) {
     }
     while(bfs(source, sink)){
         int minFlow = findMinFlowAlongPath(source, sink);
-        int current = sink;
-        while(current != source){
-            Station* station = stations[current];
-            int pred = station->getPred();
-            Station* predStation = stations[pred];
-            for(auto path : station->getPaths()){
-                if(path->getStationA() == predStation->getId() || path->getStationB() == predStation->getId()){
-                    path->setFlow(path->getFlow() + minFlow);
-                    break;
-                }
-            }
-            current = pred;
-        }
+        updateFlowAlongPath(source, sink, minFlow);
     }
     int maxFlow = 0;
     for(auto path : stations[source]->getPaths()){
@@ -175,7 +168,7 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
-void Graph::changePathCapacities(map<Path *, int> &newCapacities) {
+void Graph::changePathsCapacity(map<Path *, int> &newCapacities) {
     map<Path*, int> oldCapacities;
     for(auto element : newCapacities){
         oldCapacities[element.first] = element.first->getCapacity();
