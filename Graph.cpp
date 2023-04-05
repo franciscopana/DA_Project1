@@ -202,6 +202,60 @@ map<int, string> Graph::totalFlowByMunicipality() {
     }
     return result;
 }
+// Definition of Compare struct for priority_queue
+struct Compare {
+    bool operator()(const Station* s1, const Station* s2) {
+        return s1->getDist() > s2->getDist();
+    }
+};
+
+int Graph::dijkstra(const Station& source, const Station& destination) {
+    for(auto station : stations){
+        station->setVisited(false);
+        station->setPred(nullptr);
+        station->setDist(INT_MAX);
+    }
+
+    Station* src = const_cast<Station*>(&source); // Remove costness for setting distance
+    src->setDist(0);
+    priority_queue<Station*, vector<Station*>, Compare> pq;
+    pq.push(const_cast<Station*>(&source));
+
+    while(!pq.empty() && !destination.isVisited()){
+        Station* currStation = pq.top();
+        pq.pop();
+        currStation->setVisited(true);
+
+        if(currStation == &destination){
+            break;
+        }
+
+        for(Path* path : currStation->getPaths()){
+            Station* neighbor = nullptr;
+            if(path->getStationA() == currStation->getId()){
+                neighbor = stations[path->getStationB()];
+            } else {
+                neighbor = stations[path->getStationA()];
+            }
+
+            if(!neighbor->isVisited()){
+                int newDist = currStation->getDist() + path->getCost();
+                if(newDist < neighbor->getDist()){
+                    neighbor->setDist(newDist);
+                    neighbor->setPred(path);
+                    pq.push(neighbor);
+                }
+            }
+        }
+    }
+    int maxAmount = 0;
+    const Station* currStation = &destination;
+    while(currStation != nullptr && currStation->getPred() != nullptr){
+        maxAmount += 1;
+        currStation = stations[currStation->getPred()->getStationA()] == currStation ? stations[currStation->getPred()->getStationB()] : stations[currStation->getPred()->getStationA()];
+    }
+    return maxAmount;
+}
 
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {
     return municipalitiesByDistrict;

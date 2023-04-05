@@ -9,6 +9,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <limits>
 #include "Station.h"
 #include "Path.h"
 
@@ -19,6 +20,7 @@ public:
     void addPaths();
 
     int edmondsKarp(int source, int sink);
+    int dijkstra(const Station& source, const Station& destination);
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);

@@ -27,6 +27,7 @@ private:
     void maxFlowBetweenTwoStations();
     void reducedConnectivity();
     void k_municipalities_with_max_flow();
+    void maxAmountBetweenTwoStations();
 
 
     Station* selectStation();

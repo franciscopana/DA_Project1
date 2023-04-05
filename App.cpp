@@ -62,6 +62,7 @@ void App::task3() {
     int option = getOption();
     switch (option) {
         case 1:
+            maxAmountBetweenTwoStations();
             break;
         case 2:
             return;
@@ -90,6 +91,27 @@ void App::task4() {
             cout << "Invalid option" << endl;
             return;
     }
+}
+
+void App::maxAmountBetweenTwoStations() {
+    cout << ">> FIRST STATION: " << endl;
+    Station* stationA = selectStation();
+    while(stationA == nullptr){
+        cout << ">> FIRST STATION: " << endl;
+        stationA = selectStation();
+    }
+    stationA->print();
+    cout << endl << ">> SECOND STATION: " << endl;
+    Station* stationB = selectStation();
+    while(stationB == nullptr){
+        cout << endl << ">> SECOND STATION: " << endl;
+        stationB = selectStation();
+    }
+    stationB->print();
+
+    // Call dijkstra() and capture the returned value
+    int maxAmount = graph.dijkstra(*stationA, *stationB);
+    cout << endl << "Maximum amount of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxAmount << endl;
 }
 
 void App::maxFlowBetweenTwoStations(){
