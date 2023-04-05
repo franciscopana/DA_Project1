@@ -1,0 +1,52 @@
+The project involves 7 exercises: 2.1, 2.2, 2.3, 2.4, 3.1, 4.1 and 4.2.
+
+Once you run the program, the program will read the data files and, then, display a menu with the exercises.
+Choosing option 2 and then option 1 mean you want to solve exercise 2.1.
+
+When reading the data files, the program will generate a graph representing the portuguese railway.
+This graph's nodes represent the stations and the edges represent the connections between them.
+
+In topic 2.1, we are asked to find the maximum flow between two stations.
+We've implemented Edmonds-Karp algorithm to solve this problem.
+The program will ask for the source and sink stations and will display the maximum flow between them.
+
+In topic 2.2, we are asked to find the two stations of the entire network with the maximum flow between them.
+First, we compute the combination of all source and sink stations.
+It's important to note that, since the graph is undirected, the flow between stations A and B is the same as the flow between stations B and A.
+So, the computed combination set does not include pair (A,B) and (B,A).
+Then, for each pair, we calculate the maximum flow between them using Edmonds-Karp algorithm.
+Finally, we display the pair with the maximum flow.
+
+In topic 2.3 we are asked to find the top-k municipalities and districts that should spend more money in the railway system.
+We've decided that the criteria to distinguish the municipalities and districts is the maximum internal flow.
+When data files are read, we also organize the data in a way that we can easily know each district's municipalities and each municipality's stations.
+If we want to know the maximum flow of a municipality, we sum the maximum flow of all its pair of stations.
+Then we sort the municipalities by their maximum internal flow and display the top-k.
+A similar process is done for the districts.
+
+In topic 2.4 we are asked to find the maximum number of trains that can arrive at a given station, considering the entire network.
+First, we create a new node which will connect to all the stations which have only 1 connection (meaning that they're the beginning of a line).
+These connections have infinite capacity.
+Then, we calculate the maximum flow between this new node and the given station using Edmonds-Karp algorithm.
+This is the maximum number of trains that can arrive at the given station, considering the entire network.
+
+In topic 3.1 we are confronted with a new situation.
+Each STANDARD line has a cost of 2 euros per train and each ALFA STANDARD line has a cost of 4 euros per train.
+We've decided that the maximum cost of a line is its capacity multiplied by its cost per train.
+Then, we've implemented Dijkstra algorithm to find the minimum cost path between two stations, considering the maximum cost of each line.
+Then we find the maximum number of trains that can go through this path - it's the minimum capacity of all the connections in the path.
+Then we calculate the path's cost, which corresponds to the sum of each connection's cost per train multiplied by the maximum number of trains that can go through the path.
+Finally, we display the calculated path and its cost.
+
+Topic 4 involves studying the impact of failures (like accidents, construction works, etc) in the railway system.
+What we do, in this option, is change the capacity of some connections.
+The user indicates how many connections he wants to change and then, for each connection, he indicates the connection's new capacity.
+Then he can do see teh results of all exercises again, but using the new values.
+To remove the changes, the user must choose option 5 of the menu, which will reset the graph.
+
+Before changing the capacities, the user is asked if he wants to see a report of the most affected stations.
+We've defined that the most affected stations are the ones whose flow to the entire network is the most affected.
+If the user chooses to see the report, the program will display the top-5 most affected stations.
+First, we calculate the maximum flow between each station and the entire network, using the algorithm of the topic 2.4.
+Then, after teh changes, we recalculate these values and compare them with the previous ones.
+The stations with the hights difference between the previous and the new values are the most affected ones.
