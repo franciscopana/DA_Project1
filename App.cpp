@@ -40,6 +40,7 @@ void App::task2() {
             break;
         case 3:
             k_municipalities_with_max_flow();
+            k_districts_with_max_flow();
             break;
         case 4:
             break;
@@ -150,11 +151,12 @@ void App::reducedConnectivity() {
 
     cout << "Now select 2 stations to calculate the maximum flow between them:" << endl;
     maxFlowBetweenTwoStations();
+
     graph.changePathsCapacity(newCapacities);
 }
 
 void App::k_municipalities_with_max_flow() {
-    auto flowByMunicipality = graph.totalFlowByMunicipality();
+    auto flowByMunicipality = graph.flowsForAllMunicipalities();
     int k;
     cout << "How many municipalities do you want to see? ";
     cin >> k;
@@ -166,10 +168,26 @@ void App::k_municipalities_with_max_flow() {
     }
 
     cout << "These are the " << k << " municipalities which should spend more money on maintenance and purchasing of trains:" << endl;
-    auto it = flowByMunicipality.end();
     for(int i = 0; i < k; i++){
-        it--;
-        cout << it->second << endl;
+        cout << i+1 << " - " << flowByMunicipality[i].first  << "\t(total flow: " << flowByMunicipality[i].second << ")" << endl;
+    }
+}
+
+void App::k_districts_with_max_flow() {
+    auto flowByDistrict = graph.flowsForAllDistricts();
+    int k;
+    cout << "How many districts do you want to see? ";
+    cin >> k;
+    while(k < 0 || k > flowByDistrict.size()){
+        cout << "Invalid value! Must be greater or equal than 0 and lower than " << flowByDistrict.size() << endl;
+        cout << "How many districts do you want to see? ";
+        cin >> k;
+        cout << endl;
+    }
+
+    cout << "These are the " << k << " districts which should spend more money on maintenance and purchasing of trains:" << endl;
+    for(int i = 0; i < k; i++){
+        cout << i+1 << " - " <<  flowByDistrict[i].first << "\t(total flow: " << flowByDistrict[i].second << ")" << endl;;
     }
 }
 

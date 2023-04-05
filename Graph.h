@@ -22,8 +22,10 @@ public:
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);
-    map<int, string> totalFlowByMunicipality();
     vector<pair<int, int>> getPairs(vector<int> v);
+    int calculateTotalFlow(const vector<int> &v);
+    vector<pair<string, int>> flowsForAllMunicipalities();
+    vector<pair<string, int>> flowsForAllDistricts();
 
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;

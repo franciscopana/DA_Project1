@@ -190,16 +190,42 @@ vector<pair<int, int>> Graph::getPairs(vector<int> v){
     return result;
 }
 
-map<int, string> Graph::totalFlowByMunicipality() {
-    map<int , string> result;
-    for(auto& item : stationsByMunicipality){
-        int totalFlow = 0;
-        vector<pair<int, int>> pairs = getPairs(item.second);
-        for(auto pair : pairs){
-            totalFlow += edmondsKarp(pair.first, pair.second);
-        }
-        result[totalFlow] = item.first;
+int Graph::calculateTotalFlow(const vector<int> &v) {
+    int flow = 0;
+    vector<pair<int, int>> pairs = getPairs(v);
+    for(auto pair : pairs){
+        flow += edmondsKarp(pair.first, pair.second);
     }
+    return flow;
+}
+
+vector<pair<string, int>> Graph::flowsForAllMunicipalities() {
+    vector<pair<string, int>> result;
+    for(auto& item : stationsByMunicipality){
+        int totalFlow = calculateTotalFlow(item.second);
+        result.emplace_back(item.first, totalFlow);
+    }
+    sort(result.begin(), result.end(), [](pair<string, int> &a, pair<string, int> &b){
+        return a.second > b.second;
+    });
+    return result;
+}
+
+vector<pair<string, int>> Graph::flowsForAllDistricts() {
+    vector<pair<string, int>> result;
+    for(auto& item : municipalitiesByDistrict){
+        vector<int> districtStations;
+        for(auto &municipality : item.second){
+            for(auto &station : stationsByMunicipality[municipality]){
+                districtStations.push_back(station);
+            }
+        }
+        int districtFlow = calculateTotalFlow(districtStations);
+        result.emplace_back(item.first, districtFlow);
+    }
+    sort(result.begin(), result.end(), [](pair<string, int> &a, pair<string, int> &b){
+        return a.second > b.second;
+    });
     return result;
 }
 
