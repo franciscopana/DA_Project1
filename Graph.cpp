@@ -209,26 +209,23 @@ struct Compare {
     }
 };
 
-int Graph::dijkstra(const Station& source, const Station& destination) {
+int Graph::dijkstra(int source, int destination) {
     for(auto station : stations){
         station->setVisited(false);
         station->setPred(nullptr);
         station->setDist(INT_MAX);
     }
 
-    Station* src = const_cast<Station*>(&source); // Remove costness for setting distance
+    Station* src = stations[source];
+    Station* dest = stations[destination];
     src->setDist(0);
     priority_queue<Station*, vector<Station*>, Compare> pq;
-    pq.push(const_cast<Station*>(&source));
+    pq.push(src);
 
-    while(!pq.empty() && !destination.isVisited()){
+    while(!pq.empty()){
         Station* currStation = pq.top();
         pq.pop();
         currStation->setVisited(true);
-
-        if(currStation == &destination){
-            break;
-        }
 
         for(Path* path : currStation->getPaths()){
             Station* neighbor = nullptr;
@@ -248,13 +245,7 @@ int Graph::dijkstra(const Station& source, const Station& destination) {
             }
         }
     }
-    int maxAmount = 0;
-    const Station* currStation = &destination;
-    while(currStation != nullptr && currStation->getPred() != nullptr){
-        maxAmount += 1;
-        currStation = stations[currStation->getPred()->getStationA()] == currStation ? stations[currStation->getPred()->getStationB()] : stations[currStation->getPred()->getStationA()];
-    }
-    return maxAmount;
+    return dest->getDist();
 }
 
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {

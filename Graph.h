@@ -20,7 +20,7 @@ public:
     void addPaths();
 
     int edmondsKarp(int source, int sink);
-    int dijkstra(const Station& source, const Station& destination);
+    int dijkstra(int source,int destination);
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);

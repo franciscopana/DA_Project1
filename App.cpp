@@ -109,9 +109,8 @@ void App::maxAmountBetweenTwoStations() {
     }
     stationB->print();
 
-    // Call dijkstra() and capture the returned value
-    int maxAmount = graph.dijkstra(*stationA, *stationB);
-    cout << endl << "Maximum amount of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxAmount << endl;
+    int maxAmount = graph.dijkstra(stationA->getId(), stationB->getId());
+    cout << endl << "Maximum amount between " << stationA->getName() << " and " << stationB->getName() << " is " << maxAmount << endl;
 }
 
 void App::maxFlowBetweenTwoStations(){
