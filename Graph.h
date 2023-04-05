@@ -38,6 +38,8 @@ public:
     void changePathsCapacity(map<Path*, int> &newCapacities);
     void printPath(int source, int destination);
 
+    void reset();
+
 private:
     vector<Station*> stations;
     set<Path*> paths;

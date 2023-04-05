@@ -18,6 +18,7 @@ void App::printMenu(){
     cout << "2 - Basic Service Metrics" << endl;
     cout << "3 - Operation Cost Optimization" << endl;
     cout << "4 - Reliability and Sensitivity to Line Failures" << endl;
+    cout << "5 - Reset Graph" << endl;
 }
 
 void App::printMenu2(){
@@ -73,25 +74,8 @@ void App::task3() {
     }
 }
 
-void App::printMenu4() {
-    cout << "----------------- Reliability and Sensitivity to Line Failures ----------------" << endl;
-    cout << "1 - Calculate the maximum number of trains that can simultaneously travel between two specific stations in a network of reduced connectivity." << endl;
-    cout << "2 - Go back" << endl;
-}
-
 void App::task4() {
-    printMenu4();
-    int option = getOption();
-    switch (option) {
-        case 1:
-            reducedConnectivity();
-            break;
-        case 2:
-            return;
-        default:
-            cout << "Invalid option" << endl;
-            return;
-    }
+    reduceConnectivity();
 }
 
 void App::minAmountBetweenTwoStations() {
@@ -138,9 +122,9 @@ void App::maxFlowBetweenTwoStations(){
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
-void App::reducedConnectivity() {
+void App::reduceConnectivity() {
     int n;
-    cout << "How many paths are affected? ";
+    cout << "How many paths are affected? (0 to cancel) ";
     cin >> n;
     map<Path*, int> newCapacities;
     for(int i = 0; i < n; i++){
@@ -171,12 +155,6 @@ void App::reducedConnectivity() {
         }
         newCapacities[p] = reducedCapacity;
     }
-
-    graph.changePathsCapacity(newCapacities);
-
-    cout << "Now select 2 stations to calculate the maximum flow between them:" << endl;
-    maxFlowBetweenTwoStations();
-
     graph.changePathsCapacity(newCapacities);
 }
 
@@ -264,6 +242,11 @@ void App::run(){
                 break;
             case 4:
                 task4();
+                break;
+            case 5:
+                cout << "Resetting graph... ";
+                graph.reset();
+                cout << "Done!" << endl;
                 break;
             default:
                 cout << "Invalid option" << endl;

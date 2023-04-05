@@ -345,3 +345,21 @@ void Graph::sortMunicipalities() {
         sort(district.second.begin(), district.second.end());
     }
 }
+
+void Graph::reset(){
+    for(auto station : stations){
+        delete station;
+    }
+    for(auto path : paths){
+        delete path;
+    }
+
+    stations.clear();
+    paths.clear();
+    stationsByMunicipality.clear();
+    municipalitiesByDistrict.clear();
+    districts.clear();
+
+    addStations();
+    addPaths();
+}

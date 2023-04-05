@@ -18,14 +18,13 @@ private:
     void printMenu();
     void printMenu2();
     void printMenu3();
-    void printMenu4();
 
     void task2();
     void task3();
     void task4();
 
     void maxFlowBetweenTwoStations();
-    void reducedConnectivity();
+    void reduceConnectivity();
     void k_municipalities_with_max_flow();
     void k_districts_with_max_flow();
     void minAmountBetweenTwoStations();
