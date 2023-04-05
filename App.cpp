@@ -110,8 +110,12 @@ void App::minAmountBetweenTwoStations() {
     }
     stationB->print();
 
-    int maxAmount = graph.dijkstra(stationA->getId(), stationB->getId());
-    cout << endl << "Maximum amount between " << stationA->getName() << " and " << stationB->getName() << " is " << maxAmount << endl;
+    graph.dijkstra(stationA->getId(), stationB->getId());
+    int maxFlow = graph.getMinCapacityAlongPath(stationA->getId(), stationB->getId());
+    cout << endl << "The maximum number of trains that can go from " << stationA->getName() << " to " << stationB->getName() << " with minimum cost is " << maxFlow << endl;
+    cout << "Path: ";
+    graph.printPath(stationA->getId(), stationB->getId());
+    cout << "The cost of this path is " << graph.getPathCost(stationA->getId(), stationB->getId(), maxFlow) << endl;
 }
 
 void App::maxFlowBetweenTwoStations(){

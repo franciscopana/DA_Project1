@@ -28,12 +28,15 @@ public:
     int calculateTotalFlow(const vector<int> &v);
     vector<pair<string, int>> flowsForAllMunicipalities();
     vector<pair<string, int>> flowsForAllDistricts();
+    int getMinCapacityAlongPath(int source, int sink);
+    int getPathCost(int source, int destination, int flow);
 
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
     vector<string> getDistricts() const;
     vector<Station*> getStations() const;
     void changePathsCapacity(map<Path*, int> &newCapacities);
+    void printPath(int source, int destination);
 
 private:
     vector<Station*> stations;

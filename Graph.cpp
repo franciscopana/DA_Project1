@@ -1,4 +1,5 @@
 #include <queue>
+#include <stack>
 #include "Graph.h"
 #include "Path.h"
 
@@ -262,7 +263,7 @@ int Graph::dijkstra(int source, int destination) {
             }
 
             if(!neighbor->isVisited()){
-                int newDist = currStation->getDist() + path->getCost();
+                int newDist = currStation->getDist() + path->getMaxCost();
                 if(newDist < neighbor->getDist()){
                     neighbor->setDist(newDist);
                     neighbor->setPred(path);
@@ -272,6 +273,51 @@ int Graph::dijkstra(int source, int destination) {
         }
     }
     return dest->getDist();
+}
+
+void Graph::printPath(int source, int destination) {
+    stack<int> path;
+    int current = destination;
+    while(current != source){
+        path.push(current);
+        Station* station = stations[current];
+        Path* predPath = station->getPred();
+        int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
+        current = predId;
+    }
+    path.push(source);
+
+    while(path.size() > 1){
+        cout << stations[path.top()]->getName() << " -> ";
+        path.pop();
+    }
+    cout << stations[path.top()]->getName() << endl;
+}
+
+int Graph::getMinCapacityAlongPath(int source, int sink) {
+    int minCapacity = INT_MAX;
+    int current = sink;
+    while(current != source){
+        Station* station = stations[current];
+        Path* predPath = station->getPred();
+        int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
+        minCapacity = min(minCapacity, predPath->getCapacity());
+        current = predId;
+    }
+    return minCapacity;
+}
+
+int Graph::getPathCost(int source, int destination, int flow) {
+    int cost = 0;
+    int current = destination;
+    while(current != source){
+        Station* station = stations[current];
+        Path* predPath = station->getPred();
+        int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
+        cost += predPath->getCostPerTrain();
+        current = predId;
+    }
+    return cost * flow;
 }
 
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {

@@ -15,7 +15,8 @@ public:
     string getService() const;
     int getFlow() const;
     void setFlow(int flow);
-    int getCost() const;
+    int getMaxCost() const;
+    int getCostPerTrain() const;
 
 private:
     int stationA;

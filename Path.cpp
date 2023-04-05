@@ -35,10 +35,14 @@ void Path::setFlow(int flow) {
     this->flow = flow;
 }
 
-int Path::getCost() const {
+int Path::getMaxCost() const {
     return cost;
 }
 
 void Path::setCapacity(int capacity) {
     this->capacity = capacity;
+}
+
+int Path::getCostPerTrain() const {
+    return costPerTrain;
 }
