@@ -63,6 +63,7 @@ void App::task3() {
     int option = getOption();
     switch (option) {
         case 1:
+            minAmountBetweenTwoStations();
             break;
         case 2:
             return;
@@ -91,6 +92,26 @@ void App::task4() {
             cout << "Invalid option" << endl;
             return;
     }
+}
+
+void App::minAmountBetweenTwoStations() {
+    cout << ">> FIRST STATION: " << endl;
+    Station* stationA = selectStation();
+    while(stationA == nullptr){
+        cout << ">> FIRST STATION: " << endl;
+        stationA = selectStation();
+    }
+    stationA->print();
+    cout << endl << ">> SECOND STATION: " << endl;
+    Station* stationB = selectStation();
+    while(stationB == nullptr){
+        cout << endl << ">> SECOND STATION: " << endl;
+        stationB = selectStation();
+    }
+    stationB->print();
+
+    int maxAmount = graph.dijkstra(stationA->getId(), stationB->getId());
+    cout << endl << "Maximum amount between " << stationA->getName() << " and " << stationB->getName() << " is " << maxAmount << endl;
 }
 
 void App::maxFlowBetweenTwoStations(){

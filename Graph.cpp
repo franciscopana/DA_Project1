@@ -228,6 +228,51 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
     });
     return result;
 }
+// Definition of Compare struct for priority_queue
+struct Compare {
+    bool operator()(const Station* s1, const Station* s2) {
+        return s1->getDist() > s2->getDist();
+    }
+};
+
+int Graph::dijkstra(int source, int destination) {
+    for(auto station : stations){
+        station->setVisited(false);
+        station->setPred(nullptr);
+        station->setDist(INT_MAX);
+    }
+
+    Station* src = stations[source];
+    Station* dest = stations[destination];
+    src->setDist(0);
+    priority_queue<Station*, vector<Station*>, Compare> pq;
+    pq.push(src);
+
+    while(!pq.empty()){
+        Station* currStation = pq.top();
+        pq.pop();
+        currStation->setVisited(true);
+
+        for(Path* path : currStation->getPaths()){
+            Station* neighbor = nullptr;
+            if(path->getStationA() == currStation->getId()){
+                neighbor = stations[path->getStationB()];
+            } else {
+                neighbor = stations[path->getStationA()];
+            }
+
+            if(!neighbor->isVisited()){
+                int newDist = currStation->getDist() + path->getCost();
+                if(newDist < neighbor->getDist()){
+                    neighbor->setDist(newDist);
+                    neighbor->setPred(path);
+                    pq.push(neighbor);
+                }
+            }
+        }
+    }
+    return dest->getDist();
+}
 
 map<string, vector<string>> Graph::getMunicipalitiesByDistrict() const {
     return municipalitiesByDistrict;

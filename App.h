@@ -28,7 +28,7 @@ private:
     void reducedConnectivity();
     void k_municipalities_with_max_flow();
     void k_districts_with_max_flow();
-
+    void minAmountBetweenTwoStations();
 
     Station* selectStation();
 };
