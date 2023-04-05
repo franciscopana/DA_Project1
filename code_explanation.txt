@@ -49,4 +49,4 @@ We've defined that the most affected stations are the ones whose flow to the ent
 If the user chooses to see the report, the program will display the top-5 most affected stations.
 First, we calculate the maximum flow between each station and the entire network, using the algorithm of the topic 2.4.
 Then, after teh changes, we recalculate these values and compare them with the previous ones.
-The stations with the hights difference between the previous and the new values are the most affected ones.
+The stations with the highest difference between the previous and the new values are the most affected ones.
