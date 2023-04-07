@@ -28,6 +28,7 @@ public:
     int calculateTotalFlow(const vector<int> &v);
     vector<pair<string, int>> flowsForAllMunicipalities();
     vector<pair<string, int>> flowsForAllDistricts();
+    vector<pair<int, int>> maxPairs();
 
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
@@ -43,6 +44,7 @@ private:
     vector<string> districts;
     void sortDistricts();
     void sortMunicipalities();
+
 };
 
 

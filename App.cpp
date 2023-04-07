@@ -37,12 +37,14 @@ void App::task2() {
             maxFlowBetweenTwoStations();
             break;
         case 2:
+            maxFlowPairs();
             break;
         case 3:
             k_municipalities_with_max_flow();
             k_districts_with_max_flow();
             break;
         case 4:
+            //TO DO
             break;
         case 5:
             return;
@@ -132,6 +134,17 @@ void App::maxFlowBetweenTwoStations(){
 
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
+}
+
+void App::maxFlowPairs(){
+    vector<pair<int, int>> maxPairs = graph.maxPairs();
+    if(maxPairs.size() == 0) cout << "There's been an error. Try again" << endl;
+
+    cout << "The stations that require the most amount of trains are " << endl;
+
+    for(pair<int, int> stationPair : maxPairs){
+        cout << graph.getStations().at(stationPair.first)->getName() << " - " << graph.getStations().at(stationPair.second)->getName() << endl;
+    }
 }
 
 void App::reducedConnectivity() {
