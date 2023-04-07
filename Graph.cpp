@@ -169,6 +169,26 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
+vector<pair<int, int>> Graph::maxPairs(){
+    vector<pair<int, int>> maxPairs;
+    int maxFlow = INT_MIN;
+
+    for(unsigned int origin = 0; origin < stations.size() - 1; origin++){
+        for(unsigned int destination = origin + 1; destination < stations.size(); destination++){
+            int flow = edmondsKarp(origin, destination);
+            if(flow > maxFlow){
+                maxFlow = flow;
+                maxPairs.clear();
+                maxPairs.emplace_back(origin, destination);
+            }
+            else if(flow == maxFlow){
+                maxPairs.emplace_back(origin, destination);
+            }
+        }
+    }
+    return maxPairs;
+}
+
 void Graph::changePathsCapacity(map<Path *, int> &newCapacities) {
     map<Path*, int> oldCapacities;
     for(auto element : newCapacities){

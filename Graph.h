@@ -30,6 +30,8 @@ public:
     vector<pair<string, int>> flowsForAllDistricts();
     int getMinCapacityAlongPath(int source, int sink);
     int getPathCost(int source, int destination, int flow);
+    vector<pair<int, int>> maxPairs();
+
 
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
@@ -48,6 +50,7 @@ private:
     vector<string> districts;
     void sortDistricts();
     void sortMunicipalities();
+
 };
 
 
