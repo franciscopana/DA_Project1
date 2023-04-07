@@ -262,7 +262,7 @@ int Graph::dijkstra(int source, int destination) {
                 neighbor = stations[path->getStationA()];
             }
 
-            if(!neighbor->isVisited()){
+            if(!neighbor->isVisited() && path->getCapacity() > 0){
                 int newDist = currStation->getDist() + path->getMaxCost();
                 if(newDist < neighbor->getDist()){
                     neighbor->setDist(newDist);
@@ -300,6 +300,8 @@ int Graph::getMinCapacityAlongPath(int source, int sink) {
     while(current != source){
         Station* station = stations[current];
         Path* predPath = station->getPred();
+        if(predPath == nullptr)
+            return -1;
         int predId = predPath->getStationA() == station->getId() ? predPath->getStationB() : predPath->getStationA();
         minCapacity = min(minCapacity, predPath->getCapacity());
         current = predId;

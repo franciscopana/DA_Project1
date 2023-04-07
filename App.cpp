@@ -96,6 +96,10 @@ void App::minAmountBetweenTwoStations() {
 
     graph.dijkstra(stationA->getId(), stationB->getId());
     int maxFlow = graph.getMinCapacityAlongPath(stationA->getId(), stationB->getId());
+    if(maxFlow == -1){
+        cout << "There is no possible path between these two stations." << endl;
+        return;
+    }
     cout << endl << "The maximum number of trains that can go from " << stationA->getName() << " to " << stationB->getName() << " with minimum cost is " << maxFlow << endl;
     cout << "Path: ";
     graph.printPath(stationA->getId(), stationB->getId());
@@ -117,6 +121,10 @@ void App::maxFlowBetweenTwoStations(){
         stationB = selectStation();
     }
     stationB->print();
+    if(stationA->getId() == stationB->getId()){
+        cout << "The same station was selected twice! Try again." << endl;
+        return;
+    }
 
     int maxFlow = graph.edmondsKarp(stationA->getId(), stationB->getId());
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
