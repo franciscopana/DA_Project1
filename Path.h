@@ -1,6 +1,7 @@
 #ifndef TRABALHO2_PATH_H
 #define TRABALHO2_PATH_H
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -17,6 +18,8 @@ public:
     void setFlow(int flow);
     int getMaxCost() const;
     int getCostPerTrain() const;
+
+    void print() const;
 
 private:
     int stationA;

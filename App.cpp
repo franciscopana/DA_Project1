@@ -8,6 +8,12 @@ int App::getOption(){
     int option;
     cout << "Option: ";
     cin >> option;
+    while(cin.fail()){
+        cin.clear();
+        cin.ignore(256,'\n');
+        cout << "Insert a number: ";
+        cin >> option;
+    }
     cout << endl;
     return option;
 }
@@ -139,19 +145,27 @@ void App::reduceConnectivity() {
         cout << "\n>> Path " << i+1 << endl;
         cout << "From: " << endl;
         auto from = selectStation();
-        cout << "To: " << endl;
-        auto to = selectStation();
-        Path* p = nullptr;
-        for(auto path : from->getPaths()){
-            if(path->getStationA() == to->getId() || path->getStationB() == to->getId()){
-                p = path;
-            }
+
+        vector<Path*> paths = from->getPaths();
+
+        cout << "Select a path: " << endl;
+        for(int j = 0; j < paths.size(); j++){
+            cout << j+1 << " - ";
+            Path* p = paths[j];
+            Station* s1 = graph.getStations()[p->getStationA()];
+            Station* s2 = graph.getStations()[p->getStationB()];
+            Station* other = s1 == from ? s2 : s1;
+            cout << from->getName() << "  ->  " << other->getName() << endl;
         }
-        if(p == nullptr){
-            cout << "This path does not exist! Try again." << endl;
-            i--;
-            continue;
+
+        int option = getOption();
+        while(option < 1 || option > paths.size()){
+            cout << "Invalid option! Try again." << endl;
+            option = getOption();
         }
+
+        Path* p = paths[option-1];
+
         int reducedCapacity;
         cout << "What's this path's capacity? ";
         cin >> reducedCapacity;
