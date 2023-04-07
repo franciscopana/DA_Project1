@@ -145,6 +145,8 @@ void App::maxFlowPairs(){
     for(pair<int, int> stationPair : maxPairs){
         cout << graph.getStations().at(stationPair.first)->getName() << " - " << graph.getStations().at(stationPair.second)->getName() << endl;
     }
+
+    cout << "With a maximum of " << graph.edmondsKarp(maxPairs.at(0).first, maxPairs.at(0).second) << " trains\n" << endl;
 }
 
 void App::reducedConnectivity() {
