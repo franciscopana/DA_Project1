@@ -21,6 +21,7 @@ public:
 
     int edmondsKarp(int source, int sink);
     int dijkstra(int source,int destination);
+    void addNewStation(int id, string& name, string& district, string& municipality, string& township, string& line);
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);
@@ -28,6 +29,7 @@ public:
     int calculateTotalFlow(const vector<int> &v);
     vector<pair<string, int>> flowsForAllMunicipalities();
     vector<pair<string, int>> flowsForAllDistricts();
+    int maxSimultaneousArrivals(int id);
     int getMinCapacityAlongPath(int source, int sink);
     int getPathCost(int source, int destination, int flow);
     vector<pair<int, int>> maxPairs();

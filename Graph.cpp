@@ -98,6 +98,11 @@ void Graph::addPaths() {
     sortMunicipalities();
 }
 
+void Graph::addNewStation(int id, string& name, string& district, string& municipality, string& township, string& line){
+    Station* newStation = new Station(id, name, district, municipality, township, line);
+    stations.push_back(newStation);
+}
+
 bool Graph::bfs(int source, int sink) {
     for(auto station : stations){
         station->setVisited(false);
@@ -249,6 +254,42 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
     });
     return result;
 }
+
+int Graph::maxSimultaneousArrivals(int id) {
+    string emptyStr = "";
+
+    addNewStation(stations.size(), emptyStr, emptyStr, emptyStr, emptyStr, emptyStr);
+    Station* start = stations.at(stations.size() - 1);
+
+    addNewStation(stations.size(), emptyStr, emptyStr, emptyStr, emptyStr, emptyStr);
+    Station* end = stations.at(stations.size() - 1);
+
+    for(int i = 0; i < stations.size() - 2; i++){
+        if(stations.at(i)->getPaths().size() <= 1){
+            Path *newPath = new Path(i, start->getId(), INT_MAX, emptyStr);
+            stations.at(i)->addPath(newPath);
+            stations.at(start->getId())->addPath(newPath);
+        }
+    }
+
+    Path *newPathEnd = new Path(id, end->getId(), INT_MIN, emptyStr);
+    stations.at(id)->addPath(newPathEnd);
+    stations.at(end->getId())->addPath(newPathEnd);
+
+    int maxFlow = edmondsKarp(start->getId(), end->getId());
+
+    for(int i = 0; i < stations.size() - 2; i++){
+        if(stations.at(i)->getPaths().size() <= 2){
+            stations.at(i)->removePath();
+        }
+    }
+
+    stations.pop_back();
+    stations.pop_back();
+
+    return maxFlow;
+}
+
 // Definition of Compare struct for priority_queue
 struct Compare {
     bool operator()(const Station* s1, const Station* s2) {

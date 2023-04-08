@@ -45,6 +45,10 @@ void Station::addPath(Path* path) {
     paths.push_back(path);
 }
 
+void Station::removePath() {
+    paths.pop_back();
+}
+
 bool Station::isVisited() const {
     return visited;
 }

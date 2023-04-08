@@ -231,6 +231,11 @@ void App::k_districts_with_max_flow() {
     }
 }
 
+void App::simultaneousArrivals(){
+
+
+}
+
 Station* App::selectStation() {
     cout << "Select the district: " << endl;
     for (int i = 0; i < graph.getDistricts().size(); i++) {

@@ -20,6 +20,7 @@ public:
     string getLine() const;
     vector<Path*> getPaths() const;
     void addPath(Path* path);
+    void removePath();
     bool isVisited() const;
     void setVisited(bool v);
     Path* getPred() const;
@@ -40,6 +41,7 @@ private:
     bool visited;
     Path* pred;
     int dist;
+
 };
 
 
