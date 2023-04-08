@@ -276,7 +276,7 @@ int Graph::maxSimultaneousArrivals(int id) {
     stations.at(id)->addPath(newPathEnd);
     stations.at(end->getId())->addPath(newPathEnd);
 
-    int maxFlow = edmondsKarp(start->getId(), end->getId());
+    int maxArrivals = edmondsKarp(start->getId(), end->getId());
 
     for(int i = 0; i < stations.size() - 2; i++){
         if(stations.at(i)->getPaths().size() <= 2){
@@ -287,7 +287,7 @@ int Graph::maxSimultaneousArrivals(int id) {
     stations.pop_back();
     stations.pop_back();
 
-    return maxFlow;
+    return maxArrivals;
 }
 
 // Definition of Compare struct for priority_queue

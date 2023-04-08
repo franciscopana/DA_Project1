@@ -51,7 +51,7 @@ void App::task2() {
             k_districts_with_max_flow();
             break;
         case 4:
-            //TO DO
+            simultaneousArrivals();
             break;
         case 5:
             return;
@@ -232,8 +232,16 @@ void App::k_districts_with_max_flow() {
 }
 
 void App::simultaneousArrivals(){
+    cout << ">> CHOOSE A STATION: " << endl;
+    Station* stationA = selectStation();
+    while(stationA == nullptr){
+        cout << ">> CHOOSE A STATION: " << endl;
+        stationA = selectStation();
+    }
+    stationA->print();
 
-
+    int maxArrivals = graph.maxSimultaneousArrivals(stationA->getId());
+    cout << endl << "Maximum number of trains that can simultaneously arrive at " << stationA->getName() <<  " is " << maxArrivals << endl;
 }
 
 Station* App::selectStation() {
