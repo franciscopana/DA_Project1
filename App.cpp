@@ -83,7 +83,33 @@ void App::task3() {
 }
 
 void App::task4() {
-    reduceConnectivity();
+    cout << "----------------- Reliability and Sensitivity to Line Failures ----------------" << endl;
+    cout << "Do you want to see a report of the most affected stations? (y/n) ";
+    char chooseReport;
+    cin >> chooseReport;
+    if(chooseReport == 'y' || chooseReport == 'Y'){
+        vector<int> beforeResults;
+
+        for(int i = 0; i < graph.getStations().size()-1; i++) {
+            beforeResults.push_back(graph.maxSimultaneousArrivals(i));
+        }
+
+        reduceConnectivity();
+
+        vector<int> afterResults;
+        for(int i = 0; i < graph.getStations().size()-1; i++){
+            afterResults.push_back(graph.maxSimultaneousArrivals(i));
+        }
+
+        vector<pair<Station*, int>> results = graph.compareResults(beforeResults, afterResults);
+        cout << "Affected stations: " << endl;
+        for(int i = 0; i < results.size(); i++){
+            if(results[i].second >= 0) break;
+            cout << results[i].first->getName() << ": " << results[i].second << " trains" << endl;
+        }
+    }
+    else
+        reduceConnectivity();
 }
 
 void App::minAmountBetweenTwoStations() {

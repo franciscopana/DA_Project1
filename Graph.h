@@ -19,10 +19,10 @@ public:
     void setup();
     void reset();
 
+    bool bfs(int source, int sink);
     int edmondsKarp(int source, int sink);
     int dijkstra(int source,int destination);
 
-    bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);
     vector<pair<int, int>> getPairs(vector<int> v);
@@ -33,7 +33,7 @@ public:
     int getMinCapacityAlongPath(int source, int sink);
     int getPathCost(int source, int destination, int flow);
     vector<pair<int, int>> maxPairs();
-
+    vector<pair<Station*, int>> compareResults(vector<int> v1, vector<int> v2);
 
     map<string, vector<int>> getStationsByMunicipality() const;
     map<string, vector<string>> getMunicipalitiesByDistrict() const;
@@ -55,6 +55,8 @@ private:
 
     void sortDistricts();
     void sortMunicipalities();
+
+    void clear();
 };
 
 

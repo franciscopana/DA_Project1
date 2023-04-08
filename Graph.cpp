@@ -251,7 +251,23 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
 }
 
 int Graph::maxSimultaneousArrivals(int id) {
-    return edmondsKarp(stations.back()->getId(), id);
+    auto superNode = stations.back();
+    bool hasDirectConnection = false;
+    for(auto path : superNode->getPaths()){
+        if(path->getStationA() == id || path->getStationB() == id){
+            hasDirectConnection = true;
+            path->setCapacity(0);
+            break;
+        }
+    }
+    int result = edmondsKarp(stations.back()->getId(), id);
+    for(auto path : superNode->getPaths()){
+        if(path->getStationA() == id || path->getStationB() == id){
+            path->setCapacity(INT_MAX);
+            break;
+        }
+    }
+    return result;
 }
 
 // Definition of Compare struct for priority_queue
@@ -374,12 +390,7 @@ void Graph::sortMunicipalities() {
 }
 
 void Graph::reset(){
-    for(auto station : stations){
-        delete station;
-    }
-    for(auto path : paths){
-        delete path;
-    }
+    clear();
     setup();
 }
 
@@ -400,7 +411,37 @@ void Graph::setupSuperNode() {
         if(stations[i]->getPaths().size() == 1){
             Path* newPath = new Path(superNode->getId(), stations[i]->getId(), INT_MAX, emptyStr);
             stations[i]->addPath(newPath);
+            paths.insert(newPath);
             superNode->addPath(newPath);
         }
     }
+}
+
+vector<pair<Station*,int>> Graph::compareResults(vector<int> v1, vector<int> v2) {
+    vector<pair<Station*, int>> result;
+
+    for(int i = 0; i < v1.size(); i++){
+        result.emplace_back(stations[i], v2[i]-v1[i]);
+    }
+
+    sort(result.begin(), result.end(), [](pair<Station*, int> &a, pair<Station*, int> &b){
+        return a.second < b.second;
+    });
+
+    return result;
+}
+
+void Graph::clear(){
+    for(auto station : stations){
+        delete station;
+    }
+    for(auto path : paths){
+        delete path;
+    }
+
+    stationsByMunicipality.clear();
+    stations.clear();
+    paths.clear();
+    municipalitiesByDistrict.clear();
+    districts.clear();
 }

@@ -7,7 +7,7 @@ Path::Path(int stationA, int stationB, int capacity, string& service) {
     this->service = service;
     if(service == "STANDARD") this->costPerTrain = 2;
     else if(service == "ALFA PENDULAR") this->costPerTrain = 4;
-    else this->costPerTrain = -1;
+    else this->costPerTrain = INT_MAX;
     this->cost = this->capacity * this->costPerTrain;
 }
 
