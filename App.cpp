@@ -275,8 +275,7 @@ Station* App::selectStation() {
 }
 
 void App::run(){
-    graph.addStations();
-    graph.addPaths();
+    graph.setup();
 
     while (true){
         printMenu();

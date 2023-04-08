@@ -98,11 +98,6 @@ void Graph::addPaths() {
     sortMunicipalities();
 }
 
-void Graph::addNewStation(int id, string& name, string& district, string& municipality, string& township, string& line){
-    Station* newStation = new Station(id, name, district, municipality, township, line);
-    stations.push_back(newStation);
-}
-
 bool Graph::bfs(int source, int sink) {
     for(auto station : stations){
         station->setVisited(false);
@@ -178,8 +173,8 @@ vector<pair<int, int>> Graph::maxPairs(){
     vector<pair<int, int>> maxPairs;
     int maxFlow = INT_MIN;
 
-    for(unsigned int origin = 0; origin < stations.size() - 1; origin++){
-        for(unsigned int destination = origin + 1; destination < stations.size(); destination++){
+    for(unsigned int origin = 0; origin < stations.size() - -2; origin++){
+        for(unsigned int destination = origin + 1; destination < stations.size() - 1; destination++){
             int flow = edmondsKarp(origin, destination);
             if(flow > maxFlow){
                 maxFlow = flow;
@@ -256,38 +251,7 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
 }
 
 int Graph::maxSimultaneousArrivals(int id) {
-    string emptyStr = "";
-
-    addNewStation(stations.size(), emptyStr, emptyStr, emptyStr, emptyStr, emptyStr);
-    Station* start = stations.at(stations.size() - 1);
-
-    addNewStation(stations.size(), emptyStr, emptyStr, emptyStr, emptyStr, emptyStr);
-    Station* end = stations.at(stations.size() - 1);
-
-    for(int i = 0; i < stations.size() - 2; i++){
-        if(stations.at(i)->getPaths().size() <= 1){
-            Path *newPath = new Path(i, start->getId(), INT_MAX, emptyStr);
-            stations.at(i)->addPath(newPath);
-            stations.at(start->getId())->addPath(newPath);
-        }
-    }
-
-    Path *newPathEnd = new Path(id, end->getId(), INT_MIN, emptyStr);
-    stations.at(id)->addPath(newPathEnd);
-    stations.at(end->getId())->addPath(newPathEnd);
-
-    int maxArrivals = edmondsKarp(start->getId(), end->getId());
-
-    for(int i = 0; i < stations.size() - 2; i++){
-        if(stations.at(i)->getPaths().size() <= 2){
-            stations.at(i)->removePath();
-        }
-    }
-
-    stations.pop_back();
-    stations.pop_back();
-
-    return maxArrivals;
+    return edmondsKarp(stations.back()->getId(), id);
 }
 
 // Definition of Compare struct for priority_queue
@@ -416,13 +380,27 @@ void Graph::reset(){
     for(auto path : paths){
         delete path;
     }
+    setup();
+}
 
-    stations.clear();
-    paths.clear();
-    stationsByMunicipality.clear();
-    municipalitiesByDistrict.clear();
-    districts.clear();
-
+void Graph::setup(){
     addStations();
     addPaths();
+    sortDistricts();
+    sortMunicipalities();
+    setupSuperNode();
+}
+
+void Graph::setupSuperNode() {
+    string name = "SUPERNODE";
+    string emptyStr = "";
+    auto superNode = new Station(stations.size(), name, emptyStr, emptyStr, emptyStr, emptyStr);
+    stations.push_back(superNode);
+    for(int i = 0; i < stations.size() - 1; i++){
+        if(stations[i]->getPaths().size() == 1){
+            Path* newPath = new Path(superNode->getId(), stations[i]->getId(), INT_MAX, emptyStr);
+            stations[i]->addPath(newPath);
+            superNode->addPath(newPath);
+        }
+    }
 }

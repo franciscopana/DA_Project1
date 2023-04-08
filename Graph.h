@@ -16,12 +16,12 @@
 class Graph {
 public:
     Graph();
-    void addStations();
-    void addPaths();
+    void setup();
+    void reset();
 
     int edmondsKarp(int source, int sink);
     int dijkstra(int source,int destination);
-    void addNewStation(int id, string& name, string& district, string& municipality, string& township, string& line);
+
     bool bfs(int source, int sink);
     int findMinFlowAlongPath(int source, int sink);
     void updateFlowAlongPath(int source, int sink, int flow);
@@ -42,17 +42,19 @@ public:
     void changePathsCapacity(map<Path*, int> &newCapacities);
     void printPath(int source, int destination);
 
-    void reset();
-
 private:
     vector<Station*> stations;
     set<Path*> paths;
     map<string, vector<int>> stationsByMunicipality;
     map<string, vector<string>> municipalitiesByDistrict;
     vector<string> districts;
+
+    void addStations();
+    void addPaths();
+    void setupSuperNode();
+
     void sortDistricts();
     void sortMunicipalities();
-
 };
 
 
