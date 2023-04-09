@@ -110,19 +110,12 @@ void Station::addPath(Path* path) {
     paths.push_back(path);
 }
 
-<<<<<<< HEAD
-void Station::removePath() {
-    paths.pop_back();
-}
-
-=======
 /**
  * @brief Gets the visited status of the station.
  * @return The visited status of the station.
  *
  * Time Complexity: O(1)
  */
->>>>>>> doxygen
 bool Station::isVisited() const {
     return visited;
 }

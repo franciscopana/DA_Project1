@@ -39,26 +39,15 @@ private:
     void task3();/**< Runs task 3 */
     void task4();/**< Runs task 4 */
 
-<<<<<<< HEAD
-    void maxFlowBetweenTwoStations();
-    void maxFlowPairs();
-    void reduceConnectivity();
-    void k_municipalities_with_max_flow();
-    void k_districts_with_max_flow();
-    void simultaneousArrivals();
-    void minAmountBetweenTwoStations();
-
-    Station* selectStation();
-
-=======
     void maxFlowBetweenTwoStations();/**< Runs task 2.1 */
-    void reduceConnectivity();/**< Runs task 4.1 */
-    void k_municipalities_with_max_flow();/**< Runs task 4.2 */
-    void k_districts_with_max_flow();/**< Runs task 4.3 */
+    void maxFlowPairs();/**< Runs task 2.2 */
+    void k_municipalities_with_max_flow();/**< Runs task 2.3 */
+    void k_districts_with_max_flow();/**< Runs task 2.3 */
+    void simultaneousArrivals();/**< Runs task 2.4 */
     void minAmountBetweenTwoStations();/**< Runs task 3.1 */
+    void reduceConnectivity();/**< Runs task 4.1 */
 
     Station* selectStation();/**< Selects a station */
->>>>>>> doxygen
 };
 
 

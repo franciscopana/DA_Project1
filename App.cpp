@@ -221,12 +221,11 @@ void App::maxFlowBetweenTwoStations(){
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
-<<<<<<< HEAD
 void App::maxFlowPairs(){
     vector<pair<int, int>> maxPairs = graph.maxPairs();
     if(maxPairs.size() == 0) cout << "There's been an error. Try again" << endl;
 
-    cout << "The stations that require the most amount of trains are " << endl;
+    cout << "The connection that requires the most amount of trains is " << endl;
 
     for(pair<int, int> stationPair : maxPairs){
         cout << graph.getStations().at(stationPair.first)->getName() << " - " << graph.getStations().at(stationPair.second)->getName() << endl;
@@ -235,14 +234,12 @@ void App::maxFlowPairs(){
     cout << "With a maximum of " << graph.edmondsKarp(maxPairs.at(0).first, maxPairs.at(0).second) << " trains\n" << endl;
 }
 
-=======
 /**
- * @brief reduces the connectivity of the graph by removing the edges
+ * @brief reduces the connectivity of the graph by changing the edges capacity
  * @return
  *
  * Time Complexity: O(E), where E is the number of edges in the graph. This is because it iterates through all edges and removes them one by one.
  */
->>>>>>> doxygen
 void App::reduceConnectivity() {
     int n;
     cout << "How many paths are affected? (0 to cancel) ";
@@ -312,7 +309,7 @@ void App::k_municipalities_with_max_flow() {
 }
 
 /**
- * @brief Displays the top k districts with the highest flow and suggests investing in maintenance and purchasing of trains.
+ * @brief Displays the top k districts and top k municipalities with the highest flow.
  *
  * Time Complexity: O(D log N + D log D + k) where D is the number of edges and N is the number of vertices in the graph.
  */
@@ -334,7 +331,6 @@ void App::k_districts_with_max_flow() {
     }
 }
 
-<<<<<<< HEAD
 void App::simultaneousArrivals(){
     cout << ">> CHOOSE A STATION: " << endl;
     Station* stationA = selectStation();
@@ -348,15 +344,12 @@ void App::simultaneousArrivals(){
     cout << endl << "Maximum number of trains that can simultaneously arrive at " << stationA->getName() <<  " is " << maxArrivals << endl;
 }
 
-=======
-
 /**
  * @brief allows the user to select a station from a district and municipality
  * @return Station* A pointer to the selected station, or nullptr if the user wants to go back.
  *
  * Time Complexity: O(D + M + S), where D is the number of districts, M is the number of municipalities and S is the number of stations.
  */
->>>>>>> doxygen
 Station* App::selectStation() {
     cout << "Select the district: " << endl;
     for (int i = 0; i < graph.getDistricts().size(); i++) {

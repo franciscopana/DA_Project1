@@ -228,7 +228,6 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
-<<<<<<< HEAD
 vector<pair<int, int>> Graph::maxPairs(){
     vector<pair<int, int>> maxPairs;
     int maxFlow = INT_MIN;
@@ -249,7 +248,6 @@ vector<pair<int, int>> Graph::maxPairs(){
     return maxPairs;
 }
 
-=======
 /**
  * @brief Change the capacity of the given paths to the new capacities.
  * @param newCapacities
@@ -257,7 +255,6 @@ vector<pair<int, int>> Graph::maxPairs(){
  *
  * Time Complexity: O(n)
  */
->>>>>>> doxygen
 void Graph::changePathsCapacity(map<Path *, int> &newCapacities) {
     map<Path*, int> oldCapacities;
     for(auto element : newCapacities){

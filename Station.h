@@ -96,9 +96,6 @@ public:
      * Time Complexity: O(1)
      */
     void addPath(Path* path);
-<<<<<<< HEAD
-    void removePath();
-=======
 
     /**
      * @brief Checks whether the station has been visited.
@@ -106,7 +103,6 @@ public:
      *
      * Time Complexity: O(1)
      */
->>>>>>> doxygen
     bool isVisited() const;
 
     /**
@@ -157,19 +153,6 @@ public:
     void print() const;
 
 private:
-<<<<<<< HEAD
-    int id;
-    string name;
-    string district;
-    string municipality;
-    string township;
-    string line;
-    vector<Path*> paths;
-    bool visited;
-    Path* pred;
-    int dist;
-
-=======
     int id; /**< The unique identifier of the station */
     string name; /**< The name of the station */
     string district; /**< The district where the station is located */
@@ -180,7 +163,6 @@ private:
     bool visited; /**< Whether the station has been visited */
     Path* pred; /**< The predecessor path of this station */
     int dist; /**< The distance to this station */
->>>>>>> doxygen
 };
 
 
