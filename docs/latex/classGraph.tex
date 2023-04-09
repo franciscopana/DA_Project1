@@ -1,0 +1,71 @@
+\hypertarget{classGraph}{}\doxysection{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraph_ac3272e9680be9947c33ed0f86aa38c12}\label{classGraph_ac3272e9680be9947c33ed0f86aa38c12}} 
+void {\bfseries add\+Stations} ()
+\item 
+\mbox{\Hypertarget{classGraph_a0a0aa246a4103c9bc812bba4abb70476}\label{classGraph_a0a0aa246a4103c9bc812bba4abb70476}} 
+void {\bfseries add\+Paths} ()
+\item 
+\mbox{\Hypertarget{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}\label{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}} 
+int {\bfseries edmonds\+Karp} (int source, int sink)
+\item 
+\mbox{\Hypertarget{classGraph_aa2e653c25d31156904b904ba2f919f6a}\label{classGraph_aa2e653c25d31156904b904ba2f919f6a}} 
+int {\bfseries dijkstra} (int source, int destination)
+\item 
+\mbox{\Hypertarget{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}\label{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}} 
+bool {\bfseries bfs} (int source, int sink)
+\item 
+\mbox{\Hypertarget{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}\label{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}} 
+int {\bfseries find\+Min\+Flow\+Along\+Path} (int source, int sink)
+\item 
+\mbox{\Hypertarget{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}\label{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}} 
+void {\bfseries update\+Flow\+Along\+Path} (int source, int sink, int flow)
+\item 
+\mbox{\Hypertarget{classGraph_a4714e1064710ca166696926a64d79ca3}\label{classGraph_a4714e1064710ca166696926a64d79ca3}} 
+vector$<$ pair$<$ int, int $>$ $>$ {\bfseries get\+Pairs} (vector$<$ int $>$ v)
+\item 
+\mbox{\Hypertarget{classGraph_af6009b74b55cfcfba809c335a525f1bd}\label{classGraph_af6009b74b55cfcfba809c335a525f1bd}} 
+int {\bfseries calculate\+Total\+Flow} (const vector$<$ int $>$ \&v)
+\item 
+\mbox{\Hypertarget{classGraph_ad0638ee0d603ef3168979e8ed578e19b}\label{classGraph_ad0638ee0d603ef3168979e8ed578e19b}} 
+vector$<$ pair$<$ string, int $>$ $>$ {\bfseries flows\+For\+All\+Municipalities} ()
+\item 
+\mbox{\Hypertarget{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}\label{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}} 
+vector$<$ pair$<$ string, int $>$ $>$ {\bfseries flows\+For\+All\+Districts} ()
+\item 
+\mbox{\Hypertarget{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}\label{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}} 
+int {\bfseries get\+Min\+Capacity\+Along\+Path} (int source, int sink)
+\item 
+\mbox{\Hypertarget{classGraph_ac925493231087fd150e49e2eaac29883}\label{classGraph_ac925493231087fd150e49e2eaac29883}} 
+int {\bfseries get\+Path\+Cost} (int source, int destination, int flow)
+\item 
+\mbox{\Hypertarget{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}\label{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}} 
+map$<$ string, vector$<$ int $>$ $>$ {\bfseries get\+Stations\+By\+Municipality} () const
+\item 
+\mbox{\Hypertarget{classGraph_a22395b66de206430f3fb5efb7dcef727}\label{classGraph_a22395b66de206430f3fb5efb7dcef727}} 
+map$<$ string, vector$<$ string $>$ $>$ {\bfseries get\+Municipalities\+By\+District} () const
+\item 
+\mbox{\Hypertarget{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}\label{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}} 
+vector$<$ string $>$ {\bfseries get\+Districts} () const
+\item 
+\mbox{\Hypertarget{classGraph_a78c3724cce8db42d71602f13b69dfb68}\label{classGraph_a78c3724cce8db42d71602f13b69dfb68}} 
+vector$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$ $>$ {\bfseries get\+Stations} () const
+\item 
+\mbox{\Hypertarget{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}\label{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}} 
+void {\bfseries change\+Paths\+Capacity} (map$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$, int $>$ \&new\+Capacities)
+\item 
+\mbox{\Hypertarget{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}\label{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}} 
+void {\bfseries print\+Path} (int source, int destination)
+\item 
+\mbox{\Hypertarget{classGraph_a68f211a37b40067115fc6274d46153ed}\label{classGraph_a68f211a37b40067115fc6274d46153ed}} 
+void {\bfseries reset} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+h\item 
+Graph.\+cpp\end{DoxyCompactItemize}

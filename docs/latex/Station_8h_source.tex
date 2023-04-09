@@ -1,0 +1,51 @@
+\hypertarget{Station_8h_source}{}\doxysection{Station.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DA\_PROJECT1\_STATION\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DA\_PROJECT1\_STATION\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Path.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classStation}{Station}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{classStation}{Station}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{string}\& name, \textcolor{keywordtype}{string}\& district, \textcolor{keywordtype}{string}\& municipality, \textcolor{keywordtype}{string}\& township, \textcolor{keywordtype}{string}\& line);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} getId() \textcolor{keyword}{const};}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{string} getDistrict() \textcolor{keyword}{const};}
+\DoxyCodeLine{18     \textcolor{keywordtype}{string} getMunicipality() \textcolor{keyword}{const};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{string} getTownship() \textcolor{keyword}{const};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{string} getLine() \textcolor{keyword}{const};}
+\DoxyCodeLine{21     vector<Path*> getPaths() \textcolor{keyword}{const};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} addPath(\mbox{\hyperlink{classPath}{Path}}* path);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{bool} isVisited() \textcolor{keyword}{const};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} setVisited(\textcolor{keywordtype}{bool} v);}
+\DoxyCodeLine{25     \mbox{\hyperlink{classPath}{Path}}* getPred() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} setPred(\mbox{\hyperlink{classPath}{Path}}* p);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} getDist() \textcolor{keyword}{const};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} setDist(\textcolor{keywordtype}{int} d);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} print() \textcolor{keyword}{const};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{string} district;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{string} municipality;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{string} township;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{39     vector<Path*> paths;}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool} visited;}
+\DoxyCodeLine{41     \mbox{\hyperlink{classPath}{Path}}* pred;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} dist;}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DA\_PROJECT1\_STATION\_H}}
+
+\end{DoxyCode}
