@@ -53,7 +53,8 @@ public:
 
 private:
     vector<Station*> stations;
-    set<Path*> paths;
+    vector<Path*> paths;
+    vector<Path*> superPaths;
     map<string, vector<int>> stationsByMunicipality;
     map<string, vector<string>> municipalitiesByDistrict;
     vector<string> districts;

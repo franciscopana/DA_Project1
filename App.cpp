@@ -222,6 +222,7 @@ void App::maxFlowBetweenTwoStations(){
 }
 
 void App::maxFlowPairs(){
+    cout << "Calculating ..." << endl;
     vector<pair<int, int>> maxPairs = graph.maxPairs();
     if(maxPairs.size() == 0) cout << "There's been an error. Try again" << endl;
 
@@ -250,20 +251,37 @@ void App::reduceConnectivity() {
         cout << "From: " << endl;
         auto from = selectStation();
 
+        while(from == nullptr){
+            cout << "From: " << endl;
+            from = selectStation();
+        }
+
+        if(from->getPaths().empty()){
+            cout << "This station has no paths! Select another one." << endl;
+            i--;
+            continue;
+        }
+
         vector<Path*> paths = from->getPaths();
 
         cout << "Select a path: " << endl;
+
+        bool connectionToSuperNode = false;
         for(int j = 0; j < paths.size(); j++){
-            cout << j+1 << " - ";
             Path* p = paths[j];
             Station* s1 = graph.getStations()[p->getStationA()];
             Station* s2 = graph.getStations()[p->getStationB()];
             Station* other = s1 == from ? s2 : s1;
-            cout << from->getName() << "  ->  " << other->getName() << endl;
+            if(other->getName() == "SUPERNODE") {
+                connectionToSuperNode = true;
+                continue;
+            }
+            cout << j+1 << " - " << from->getName() << "  ->  " << other->getName() << "  (" << p->getService() << ")" << endl;
         }
 
+        int maxOption = (connectionToSuperNode)? paths.size()-1 : paths.size();
         int option = getOption();
-        while(option < 1 || option > paths.size()){
+        while(option < 1 || option > maxOption){
             cout << "Invalid option! Try again." << endl;
             option = getOption();
         }

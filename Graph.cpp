@@ -16,7 +16,7 @@
  */
 Graph::Graph() {
     this->stations = vector<Station*>();
-    this->paths = set<Path*>();
+    this->paths = vector<Path*>();
 }
 
 
@@ -114,7 +114,7 @@ void Graph::addPaths() {
         }
 
         Path* path = new Path(stationA->getId(), stationB->getId(), stoi(row[2]), row[3]);
-        paths.insert(path);
+        paths.push_back(path);
         stationA->addPath(path);
         stationB->addPath(path);
     }
@@ -344,21 +344,17 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
 }
 
 int Graph::maxSimultaneousArrivals(int id) {
-    auto superNode = stations.back();
-    bool hasDirectConnection = false;
-    for(auto path : superNode->getPaths()){
-        if(path->getStationA() == id || path->getStationB() == id){
-            hasDirectConnection = true;
-            path->setCapacity(0);
-            break;
+    for(auto superPath: superPaths){
+        if(superPath->getStationB() == id || superPath->getStationA() == id){
+            superPath->setCapacity(0);
+        }
+        else{
+            superPath->setCapacity(INT_MAX);
         }
     }
     int result = edmondsKarp(stations.back()->getId(), id);
-    for(auto path : superNode->getPaths()){
-        if(path->getStationA() == id || path->getStationB() == id){
-            path->setCapacity(INT_MAX);
-            break;
-        }
+    for(auto superPath: superPaths){
+        superPath->setCapacity(0);
     }
     return result;
 }
@@ -578,10 +574,11 @@ void Graph::setupSuperNode() {
     stations.push_back(superNode);
     for(int i = 0; i < stations.size() - 1; i++){
         if(stations[i]->getPaths().size() == 1){
-            Path* newPath = new Path(superNode->getId(), stations[i]->getId(), INT_MAX, emptyStr);
+            Path* newPath = new Path(superNode->getId(), stations[i]->getId(), 0, emptyStr);
             stations[i]->addPath(newPath);
-            paths.insert(newPath);
             superNode->addPath(newPath);
+            superPaths.push_back(newPath);
+            paths.push_back(newPath);
         }
     }
 }
