@@ -7,8 +7,8 @@
 
 /**
  * @brief Constructor of the class
- * @param stationA ID of the first station
- * @param stationB ID of the second station
+ * @param stationA ID of the one of the stations
+ * @param stationB ID of the one of the stations
  * @param capacity Capacity of the path
  * @param service Service of the path
  *

@@ -12,16 +12,16 @@
 using namespace std;
 
 /**
- * @brief Class that represents a path between two stations
+ * @brief Class that represents a connection between two stations
  */
 class Path {
 public:
     /**
      * @brief Constructor of the class
-     * @param stationA ID of the first station
-     * @param stationB ID of the second station
+     * @param stationA ID of one of the stations
+     * @param stationB ID of one of the stations
      * @param capacity Capacity of the path
-     * @param service Service of the path
+     * @param service Type of service of the path
      *
      * Time Complexity: O(1)
      */
@@ -51,9 +51,10 @@ public:
      */
     int getCapacity() const;
 
+
     /**
-     * @brief Gets the flow of the path
-     * @return Flow of the path
+     * @brief Sets the capacity of the path
+     * @param capacity Capacity of the path
      *
      * Time Complexity: O(1)
      */
@@ -68,8 +69,8 @@ public:
     string getService() const;
 
     /**
-     * @brief Gets the maximum cost of the path
-     * @return Maximum cost of the path
+     * @brief Gets the flow of the path
+     * @return Flow of the path
      *
      * Time Complexity: O(1)
      */
@@ -84,7 +85,7 @@ public:
     void setFlow(int flow);
 
     /**
-     * @brief Gets the maximum cost of the path
+     * @brief Gets the maximum cost of the path (cost per train * capacity)
      * @return Maximum cost of the path
      *
      * Time Complexity: O(1)
@@ -99,11 +100,16 @@ public:
      */
     int getCostPerTrain() const;
 
+    /**
+     * @brief prints the path's specifications
+     *
+     * Time Complexity: O(1)
+     */
     void print() const;
 
 private:
-    int stationA; /**< ID of the first station */
-    int stationB; /**< ID of the second station */
+    int stationA; /**< ID of one of the stations */
+    int stationB; /**< ID of the of the stations */
     int capacity; /**< Capacity of the path */
     int flow; /**< Flow of the path */
     string service; /**< Service of the path */

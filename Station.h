@@ -82,7 +82,7 @@ public:
     string getLine() const;
 
     /**
-     * @brief Gets the paths connected to this station.
+     * @brief Gets the paths which are connected to this station.
      * @return The paths connected to this station.
      *
      * Time Complexity: O(1)

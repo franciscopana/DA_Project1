@@ -126,7 +126,7 @@ void App::task3() {
 /**
  * @brief Task 4, handles option 4 from the main menu
  *
- * Time Complexity: O(1)
+ * Time Complexity: O(k) where k is the complexity of the function called inside the switch case statements (either reduceConnectivity() or reduceConnectivity() and compareResults()
  */
 void App::task4() {
     cout << "----------------- Reliability and Sensitivity to Line Failures ----------------" << endl;
@@ -161,7 +161,7 @@ void App::task4() {
 /**
  * @brief Calculates the minimum amount of trains required to travel between two stations with minimum cost
  *
- * Time Complexity: O(Elog(V)), where E is the number of edges in the graph and V is the number of vertices. This is because it uses Dijkstra's algorithm to find the shortest path between two stations, and the implementation of Dijkstra's algorithm in the Graph class has a time complexity of O(Elog(V))
+ * Time Complexity: O(k) k is the complexity of the dijkstra function
  */
 void App::minAmountBetweenTwoStations() {
     cout << ">> FIRST STATION: " << endl;
@@ -195,7 +195,7 @@ void App::minAmountBetweenTwoStations() {
 /**
  * @brief Calculates the maximum flow between two stations
  *
- * Time Complexity: O(EV^2), where E is the number of edges in the graph and V is the number of vertices. This is because it uses Edmonds-Karp algorithm to find the maximum flow between two stations, and the implementation of Edmonds-Karp algorithm in the Graph class has a time complexity of O(EV^2)
+ * Time Complexity: O(k) where k is the complexity of the edmondsKarp function
  */
 void App::maxFlowBetweenTwoStations(){
     cout << ">> FIRST STATION: " << endl;
@@ -221,6 +221,12 @@ void App::maxFlowBetweenTwoStations(){
     cout << endl << "Maximum number of trains that can simultaneously travel between " << stationA->getName() << " and " << stationB->getName() << " is " << maxFlow << endl;
 }
 
+
+/**
+ * @brief Calculates the maximum flow between all pairs of stations
+ *
+ * Time Complexity: O(k) where k is the complexity of the maxPairs function
+ */
 void App::maxFlowPairs(){
     cout << "Calculating ..." << endl;
     vector<pair<int, int>> maxPairs = graph.maxPairs();
@@ -239,7 +245,7 @@ void App::maxFlowPairs(){
  * @brief reduces the connectivity of the graph by changing the edges capacity
  * @return
  *
- * Time Complexity: O(E), where E is the number of edges in the graph. This is because it iterates through all edges and removes them one by one.
+ * Time Complexity: O(E), where E is the number of altered edges in the graph.
  */
 void App::reduceConnectivity() {
     int n;
@@ -306,7 +312,7 @@ void App::reduceConnectivity() {
 /**
  * @brief Displays the top k municipalities with the highest flow and suggests investing in maintenance and purchasing of trains.
  *
- * Time Complexity: O(M log N + M log M + k) where M is the number of edges and N is the number of vertices in the graph.
+ * Time Complexity: O(k), where k is the complexity of the flowsForAllMunicipalities function
  */
 void App::k_municipalities_with_max_flow() {
     auto flowByMunicipality = graph.flowsForAllMunicipalities();
@@ -329,7 +335,7 @@ void App::k_municipalities_with_max_flow() {
 /**
  * @brief Displays the top k districts and top k municipalities with the highest flow.
  *
- * Time Complexity: O(D log N + D log D + k) where D is the number of edges and N is the number of vertices in the graph.
+ * Time Complexity: O(k), where k is the complexity of the flowsForAllDistricts function
  */
 void App::k_districts_with_max_flow() {
     auto flowByDistrict = graph.flowsForAllDistricts();
@@ -349,6 +355,11 @@ void App::k_districts_with_max_flow() {
     }
 }
 
+/**
+ * @brief Displays the top k stations with the highest flow.
+ *
+ * Time Complexity: O(k), where k is the complexity of the maxSimultaneousArrivals function
+ */
 void App::simultaneousArrivals(){
     cout << ">> CHOOSE A STATION: " << endl;
     Station* stationA = selectStation();
@@ -400,8 +411,6 @@ Station* App::selectStation() {
 
 /**
  * @brief Main function of the application. It adds stations and paths to the graph and displays a menu with different tasks.
- *
- * Time Complexity: O(S + M log N + T) where S is the number of stations, M is the number of edges and N is the number of vertices in the graph and T is the total time complexity of all the tasks combined.
  */
 void App::run(){
     graph.setup();

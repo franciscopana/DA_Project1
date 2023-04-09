@@ -27,9 +27,11 @@ A similar process is done for the districts.
 
 In topic 2.4 we are asked to find the maximum number of trains that can arrive at a given station, considering the entire network.
 First, we create a new node which will connect to all the stations which have only 1 connection (meaning that they're the beginning of a line).
-These connections have infinite capacity.
+These connections have null capacity, so they will not be considered in the rest of the tasks.
+Once we start this exercise's algorithm, we will put all these "special" connections with infinite capacity, if they are not connected to the given station.
 Then, we calculate the maximum flow between this new node and the given station using Edmonds-Karp algorithm.
 This is the maximum number of trains that can arrive at the given station, considering the entire network.
+Once we finish this exercise's algorithm, we will put all these "special" connections with null capacity again, in order to not interfere with the rest of the tasks.
 
 In topic 3.1 we are confronted with a new situation.
 Each STANDARD line has a cost of 2 euros per train and each ALFA STANDARD line has a cost of 4 euros per train.

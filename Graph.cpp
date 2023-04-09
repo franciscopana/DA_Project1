@@ -17,14 +17,17 @@
 Graph::Graph() {
     this->stations = vector<Station*>();
     this->paths = vector<Path*>();
+    this->superPaths = vector<Path*>();
+    this->stationsByMunicipality = map<string, vector<int>>();
+    this->municipalitiesByDistrict = map<string, vector<string>>();
+    this->districts = vector<string>();
 }
 
 
 /**
  * @brief Adds all Stations to the graph from a CSV file
  *
- *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the number of stations
  */
 void Graph::addStations() {
     ifstream file("../Data/stations.csv");
@@ -82,7 +85,7 @@ void Graph::addStations() {
 /**
  * @brief Adds all Paths to the graph from a CSV file
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the number of paths
  */
 void Graph::addPaths() {
     ifstream file("../Data/network.csv");
@@ -118,8 +121,6 @@ void Graph::addPaths() {
         stationA->addPath(path);
         stationB->addPath(path);
     }
-    sortDistricts();
-    sortMunicipalities();
 }
 
 
@@ -130,7 +131,7 @@ void Graph::addPaths() {
  * @param sink The id of the sink Station
  * @return True if there exists a path from source to sink, false otherwise
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(v + e), where v is the number of stations and e is the number of paths
  */
 bool Graph::bfs(int source, int sink) {
     for(auto station : stations){
@@ -169,7 +170,7 @@ bool Graph::bfs(int source, int sink) {
  * @param sink The id of the sink Station
  * @return The minimum flow along a path from source to sink
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the length of the path from source to sink
  */
 int Graph::findMinFlowAlongPath(int source, int sink) {
     int minFlow = INT_MAX;
@@ -191,7 +192,7 @@ int Graph::findMinFlowAlongPath(int source, int sink) {
  * @param sink The id of the sink Station
  * @param flow The flow to be added to the path
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the length of the path from source to sink
  */
 void Graph::updateFlowAlongPath(int source, int sink, int flow) {
     int current = sink;
@@ -211,7 +212,7 @@ void Graph::updateFlowAlongPath(int source, int sink, int flow) {
  * @param sink The id of the sink Station
  * @return The maximum flow from source to sink
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O(v * e^2), where v is the number of stations and e is the number of paths
  */
 int Graph::edmondsKarp(int source, int sink) {
     for(auto path: paths){
@@ -228,13 +229,20 @@ int Graph::edmondsKarp(int source, int sink) {
     return maxFlow;
 }
 
+/**
+ * @brief Finds the maximum flow for all pairs of stations in the graph
+ *
+ * @return A vector with all pairs of stations that have the maximum flow
+ *
+ * Time Complexity: O(v^3 * e^2), where v is the number of stations and e is the number of paths
+ */
 vector<pair<int, int>> Graph::maxPairs(){
     vector<pair<int, int>> maxPairs;
     int maxFlow = INT_MIN;
 
     for(unsigned int origin = 0; origin < stations.size() - -2; origin++){
-        for(unsigned int destination = origin + 1; destination < stations.size() - 1; destination++){
-            int flow = edmondsKarp(origin, destination);
+        for(unsigned int destination = origin + 1; destination < stations.size() - 1; destination++){ // v^2
+            int flow = edmondsKarp(origin, destination);  // v * e^2
             if(flow > maxFlow){
                 maxFlow = flow;
                 maxPairs.clear();
@@ -253,7 +261,7 @@ vector<pair<int, int>> Graph::maxPairs(){
  * @param newCapacities
  * @return
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the length of the newCapacities map
  */
 void Graph::changePathsCapacity(map<Path *, int> &newCapacities) {
     map<Path*, int> oldCapacities;
@@ -270,7 +278,7 @@ void Graph::changePathsCapacity(map<Path *, int> &newCapacities) {
  * @param v The vector
  * @return A vector of all adjacent pairs
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O(n^2), where n is the length of the vector v
  */
 vector<pair<int, int>> Graph::getPairs(vector<int> v){
     vector<pair<int, int>> result;
@@ -290,7 +298,7 @@ vector<pair<int, int>> Graph::getPairs(vector<int> v){
  * @param v The set of paths
  * @return The total flow for the set of paths
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O(n^2 * v * e^2), where n is the length of the vector v, v is the number of stations and e is the number of paths
  */
 int Graph::calculateTotalFlow(const vector<int> &v) {
     int flow = 0;
@@ -305,7 +313,7 @@ int Graph::calculateTotalFlow(const vector<int> &v) {
  * @brief Gets the flow for all municipalities
  * @return A vector of pairs containing the municipality name and its flow
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O(M * m + M * log(M)), where M is the number of municipalities and m is the number of stations in each municipality
  */
 vector<pair<string, int>> Graph::flowsForAllMunicipalities() {
     vector<pair<string, int>> result;
@@ -323,7 +331,7 @@ vector<pair<string, int>> Graph::flowsForAllMunicipalities() {
  * @brief Gets the flow for all districts
  * @return A vector of pairs containing the district name and its flow
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O(D * d + D * log(D)), where D is the number of districts and d is the number of stations in each district
  */
 vector<pair<string, int>> Graph::flowsForAllDistricts() {
     vector<pair<string, int>> result;
@@ -343,6 +351,13 @@ vector<pair<string, int>> Graph::flowsForAllDistricts() {
     return result;
 }
 
+/**
+ * @brief Gets the maximum simultaneous arrivals from the entire network for a given station
+ * @param id The id of the station
+ * @return The maximum simultaneous arrivals for the station
+ *
+ * Time Complexity: O(v * e^2), where v is the number of stations and e is the number of paths
+ */
 int Graph::maxSimultaneousArrivals(int id) {
     for(auto superPath: superPaths){
         if(superPath->getStationB() == id || superPath->getStationA() == id){
@@ -359,7 +374,9 @@ int Graph::maxSimultaneousArrivals(int id) {
     return result;
 }
 
-// Definition of Compare struct for priority_queue
+/**
+ * @brief A comparison function object for sorting Stations by their distance.
+ */
 struct Compare {
     bool operator()(const Station* s1, const Station* s2) {
         return s1->getDist() > s2->getDist();
@@ -372,7 +389,7 @@ struct Compare {
  * @param destination The id of the destination Station
  * @return The minimum cost flow from source to destination
  *
- * Time Complexity: O(n^2)
+ * Time Complexity: O((E+V)logV), where E is the number of paths and V is the number of stations
  */
 int Graph::dijkstra(int source, int destination) {
     for(auto station : stations){
@@ -419,7 +436,7 @@ int Graph::dijkstra(int source, int destination) {
  * @param source
  * @param destination
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the number of stations in the path
  */
 void Graph::printPath(int source, int destination) {
     stack<int> path;
@@ -447,7 +464,7 @@ void Graph::printPath(int source, int destination) {
  * @param sink
  * @return
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the number of stations in the path
  */
 int Graph::getMinCapacityAlongPath(int source, int sink) {
     int minCapacity = INT_MAX;
@@ -472,7 +489,7 @@ int Graph::getMinCapacityAlongPath(int source, int sink) {
  * @param flow
  * @return
  *
- * Time Complexity: O(n)
+ * Time Complexity: O(n), where n is the number of stations in the path
  */
 int Graph::getPathCost(int source, int destination, int flow) {
     int cost = 0;
@@ -531,7 +548,7 @@ vector<Station*> Graph::getStations() const {
  * @brief Sort the districts vector.
  * @return
  *
- * Time Complexity: O(nlogn)
+ * Time Complexity: O(n*logn)
  */
 void Graph::sortDistricts() {
     sort(districts.begin(), districts.end());
@@ -541,7 +558,7 @@ void Graph::sortDistricts() {
  * @brief Sort the municipalities vector.
  * @return
  *
- * Time Complexity: O(nlogn)
+ * Time Complexity: O(n*logn)
  */
 void Graph::sortMunicipalities() {
     for(auto& district : municipalitiesByDistrict){
@@ -559,6 +576,13 @@ void Graph::reset(){
     setup();
 }
 
+
+/**
+ * @brief Clears the graph.
+ *
+ * Time Complexity: O(v + e + dlogd + mlogm), where v is the number of stations, e is the number of paths, d is the number of districts and m is the number of municipalities
+ */
+ */
 void Graph::setup(){
     addStations();
     addPaths();
@@ -567,6 +591,11 @@ void Graph::setup(){
     setupSuperNode();
 }
 
+/**
+ * @brief Adds a supernode connected to the terminal stations.
+ *
+ * Time Complexity: O(v), where v is the number of stations
+ */
 void Graph::setupSuperNode() {
     string name = "SUPERNODE";
     string emptyStr = "";
@@ -583,6 +612,12 @@ void Graph::setupSuperNode() {
     }
 }
 
+
+/**
+ * @brief Adds the stations to the graph.
+ *
+ * Time Complexity: O(v), where v is the number of stations
+ */
 vector<pair<Station*,int>> Graph::compareResults(vector<int> v1, vector<int> v2) {
     vector<pair<Station*, int>> result;
 
@@ -597,6 +632,11 @@ vector<pair<Station*,int>> Graph::compareResults(vector<int> v1, vector<int> v2)
     return result;
 }
 
+/**
+ * @brief Deletes all information from the graph.
+ *
+ * Time Complexity: O(v + e + ), where v is the number of stations
+ */
 void Graph::clear(){
     for(auto station : stations){
         delete station;
