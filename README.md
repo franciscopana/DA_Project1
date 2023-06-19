@@ -11,6 +11,17 @@ network to failures as to anticipate service disruption or at least to mitigate 
 
 You can find the complete Project Description [here](Project1_Description.pdf) and a more detailed explanation of how we solve each exercise [here](code_explanation.txt)
 
+To test the program, you can dowload [delivery.zip](delivery.zip) and run the following commands:
+
+```bash
+$ unzip delivery.zip
+$ cd delivery
+$ cd src
+$ cmake CMakeLists.txt
+$ make
+$ ./project1
+```
+
 ### Members
 
 | Name                                        | Number    | Git                                             |
