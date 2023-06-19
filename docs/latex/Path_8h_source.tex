@@ -1,37 +1,51 @@
 \hypertarget{Path_8h_source}{}\doxysection{Path.\+h}
-
+\mbox{\hyperlink{Path_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TRABALHO2\_PATH\_H}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TRABALHO2\_PATH\_H}}
-\DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{classPath}{Path}} \{}
-\DoxyCodeLine{9 \textcolor{keyword}{public}:}
-\DoxyCodeLine{10     \mbox{\hyperlink{classPath}{Path}}(\textcolor{keywordtype}{int} stationA, \textcolor{keywordtype}{int} stationB, \textcolor{keywordtype}{int} capacity, \textcolor{keywordtype}{string}\& service);}
-\DoxyCodeLine{11     \textcolor{keywordtype}{int} getStationA() \textcolor{keyword}{const};}
-\DoxyCodeLine{12     \textcolor{keywordtype}{int} getStationB() \textcolor{keyword}{const};}
-\DoxyCodeLine{13     \textcolor{keywordtype}{int} getCapacity() \textcolor{keyword}{const};}
-\DoxyCodeLine{14     \textcolor{keywordtype}{void} setCapacity(\textcolor{keywordtype}{int} capacity);}
-\DoxyCodeLine{15     \textcolor{keywordtype}{string} getService() \textcolor{keyword}{const};}
-\DoxyCodeLine{16     \textcolor{keywordtype}{int} getFlow() \textcolor{keyword}{const};}
-\DoxyCodeLine{17     \textcolor{keywordtype}{void} setFlow(\textcolor{keywordtype}{int} flow);}
-\DoxyCodeLine{18     \textcolor{keywordtype}{int} getMaxCost() \textcolor{keyword}{const};}
-\DoxyCodeLine{19     \textcolor{keywordtype}{int} getCostPerTrain() \textcolor{keyword}{const};}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{keyword}{private}:}
-\DoxyCodeLine{22     \textcolor{keywordtype}{int} stationA;}
-\DoxyCodeLine{23     \textcolor{keywordtype}{int} stationB;}
-\DoxyCodeLine{24     \textcolor{keywordtype}{int} capacity;}
-\DoxyCodeLine{25     \textcolor{keywordtype}{int} flow;}
-\DoxyCodeLine{26     \textcolor{keywordtype}{string} service;}
-\DoxyCodeLine{27     \textcolor{keywordtype}{int} costPerTrain;}
-\DoxyCodeLine{28     \textcolor{keywordtype}{int} cost;}
-\DoxyCodeLine{29 \};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO2\_PATH\_H}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef TRABALHO2\_PATH\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define TRABALHO2\_PATH\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classPath}{Path}} \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{classPath}{Path}}(\textcolor{keywordtype}{int} stationA, \textcolor{keywordtype}{int} stationB, \textcolor{keywordtype}{int} capacity, \textcolor{keywordtype}{string}\& service);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_abba6141927d0185d4a4dfb34c2570ac6}{getStationA}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_ab9aebe5ff48671b59b4b2dff75660d53}{getStationB}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_a6e995b7a4107960d34afe05f69d5eeea}{getCapacity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPath_a38fd609c26468b0d47e858ebbc233ff7}{setCapacity}}(\textcolor{keywordtype}{int} capacity);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{string} \mbox{\hyperlink{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}{getService}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_a8e421f0918e57595152033235169ab1b}{getFlow}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPath_a1640cb67ba26e7529cd7b1480c76f278}{setFlow}}(\textcolor{keywordtype}{int} flow);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_a4acf27cb4e2e078713f16465bd30cc64}{getMaxCost}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPath_a560670158b88c9d2e30d61e5e980cd05}{getCostPerTrain}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPath_acee3a5f2f2798aec28b91ab68f2df2c8}{print}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{private}:}
+\DoxyCodeLine{111     \textcolor{keywordtype}{int} stationA; }
+\DoxyCodeLine{112     \textcolor{keywordtype}{int} stationB; }
+\DoxyCodeLine{113     \textcolor{keywordtype}{int} capacity; }
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} flow; }
+\DoxyCodeLine{115     \textcolor{keywordtype}{string} service; }
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} costPerTrain; }
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} cost; }
+\DoxyCodeLine{118 \};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO2\_PATH\_H}}
 
 \end{DoxyCode}

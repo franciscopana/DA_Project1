@@ -1,59 +1,349 @@
 \hypertarget{classStation}{}\doxysection{Station Class Reference}
 \label{classStation}\index{Station@{Station}}
+
+
+The \mbox{\hyperlink{classStation}{Station}} class represents a station in a transportation network.  
+
+
+
+
+{\ttfamily \#include $<$Station.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classStation_ab7c33e68e8312ca250008ec7b02d2d83}\label{classStation_ab7c33e68e8312ca250008ec7b02d2d83}} 
-{\bfseries Station} (int id, string \&name, string \&district, string \&municipality, string \&township, string \&line)
-\item 
-\mbox{\Hypertarget{classStation_afd0de4c1f7e51648bfe465c5b8b02c88}\label{classStation_afd0de4c1f7e51648bfe465c5b8b02c88}} 
-int {\bfseries get\+Id} () const
-\item 
-\mbox{\Hypertarget{classStation_ac823ae175ec0e2baff462ed9612c7bae}\label{classStation_ac823ae175ec0e2baff462ed9612c7bae}} 
-string {\bfseries get\+Name} () const
-\item 
-\mbox{\Hypertarget{classStation_adfeb6e1c7361d9de1a8efade27b82c7c}\label{classStation_adfeb6e1c7361d9de1a8efade27b82c7c}} 
-string {\bfseries get\+District} () const
-\item 
-\mbox{\Hypertarget{classStation_a352841c01b6cdb25e84cae3b7b2f6418}\label{classStation_a352841c01b6cdb25e84cae3b7b2f6418}} 
-string {\bfseries get\+Municipality} () const
-\item 
-\mbox{\Hypertarget{classStation_a1e3c26415e7886648ea5e1a9dfddcdde}\label{classStation_a1e3c26415e7886648ea5e1a9dfddcdde}} 
-string {\bfseries get\+Township} () const
-\item 
-\mbox{\Hypertarget{classStation_a29859ce5b681749459b415b3bf86ae81}\label{classStation_a29859ce5b681749459b415b3bf86ae81}} 
-string {\bfseries get\+Line} () const
-\item 
-\mbox{\Hypertarget{classStation_a15199f2dad79187420cdd63c4ecce69e}\label{classStation_a15199f2dad79187420cdd63c4ecce69e}} 
-vector$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$ $>$ {\bfseries get\+Paths} () const
-\item 
-\mbox{\Hypertarget{classStation_a9a17bf769be65a441e971f9abfe02a3d}\label{classStation_a9a17bf769be65a441e971f9abfe02a3d}} 
-void {\bfseries add\+Path} (\mbox{\hyperlink{classPath}{Path}} $\ast$path)
-\item 
-\mbox{\Hypertarget{classStation_a3eee49988559a4a26fa715f3fc44beac}\label{classStation_a3eee49988559a4a26fa715f3fc44beac}} 
-bool {\bfseries is\+Visited} () const
-\item 
-\mbox{\Hypertarget{classStation_a02d3713ffbe523ef2713a45bf253fddb}\label{classStation_a02d3713ffbe523ef2713a45bf253fddb}} 
-void {\bfseries set\+Visited} (bool v)
-\item 
-\mbox{\Hypertarget{classStation_a053c7e90dc4a02b434de67c42fc8940b}\label{classStation_a053c7e90dc4a02b434de67c42fc8940b}} 
-\mbox{\hyperlink{classPath}{Path}} $\ast$ {\bfseries get\+Pred} () const
-\item 
-\mbox{\Hypertarget{classStation_a675f369a6e941cad561de64cf01120c8}\label{classStation_a675f369a6e941cad561de64cf01120c8}} 
-void {\bfseries set\+Pred} (\mbox{\hyperlink{classPath}{Path}} $\ast$p)
-\item 
-\mbox{\Hypertarget{classStation_af8002d32e57461be2e39360db8057464}\label{classStation_af8002d32e57461be2e39360db8057464}} 
-int {\bfseries get\+Dist} () const
-\item 
-\mbox{\Hypertarget{classStation_ab6398466604ebfadf939bb95df2c7d44}\label{classStation_ab6398466604ebfadf939bb95df2c7d44}} 
-void {\bfseries set\+Dist} (int d)
-\item 
-\mbox{\Hypertarget{classStation_ac7bd52b51c88ebb6911dd2de4f972fde}\label{classStation_ac7bd52b51c88ebb6911dd2de4f972fde}} 
-void {\bfseries print} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classStation_ab7c33e68e8312ca250008ec7b02d2d83}{Station}} (int id, string \&name, string \&district, string \&municipality, string \&township, string \&line)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classStation}{Station}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStation_afd0de4c1f7e51648bfe465c5b8b02c88}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the station. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStation_ac823ae175ec0e2baff462ed9612c7bae}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the station. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStation_adfeb6e1c7361d9de1a8efade27b82c7c}{get\+District}} () const
+\begin{DoxyCompactList}\small\item\em Gets the district where the station is located. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStation_a352841c01b6cdb25e84cae3b7b2f6418}{get\+Municipality}} () const
+\begin{DoxyCompactList}\small\item\em Gets the municipality where the station is located. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStation_a1e3c26415e7886648ea5e1a9dfddcdde}{get\+Township}} () const
+\begin{DoxyCompactList}\small\item\em Gets the township where the station is located. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classStation_a29859ce5b681749459b415b3bf86ae81}{get\+Line}} () const
+\begin{DoxyCompactList}\small\item\em Gets the line on which the station is located. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$ $>$ \mbox{\hyperlink{classStation_a15199f2dad79187420cdd63c4ecce69e}{get\+Paths}} () const
+\begin{DoxyCompactList}\small\item\em Gets the paths which are connected to this station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_a9a17bf769be65a441e971f9abfe02a3d}{add\+Path}} (\mbox{\hyperlink{classPath}{Path}} $\ast$path)
+\begin{DoxyCompactList}\small\item\em Adds a path connected to this station. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStation_a3eee49988559a4a26fa715f3fc44beac}{is\+Visited}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the station has been visited. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_a02d3713ffbe523ef2713a45bf253fddb}{set\+Visited}} (bool v)
+\begin{DoxyCompactList}\small\item\em Sets whether the station has been visited. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPath}{Path}} $\ast$ \mbox{\hyperlink{classStation_a053c7e90dc4a02b434de67c42fc8940b}{get\+Pred}} () const
+\begin{DoxyCompactList}\small\item\em Gets the predecessor path of this station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_a675f369a6e941cad561de64cf01120c8}{set\+Pred}} (\mbox{\hyperlink{classPath}{Path}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Sets the predecessor path of this station. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStation_af8002d32e57461be2e39360db8057464}{get\+Dist}} () const
+\begin{DoxyCompactList}\small\item\em Gets the distance to this station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_ab6398466604ebfadf939bb95df2c7d44}{set\+Dist}} (int d)
+\begin{DoxyCompactList}\small\item\em Sets the distance to this station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_ac7bd52b51c88ebb6911dd2de4f972fde}{print}} () const
+\begin{DoxyCompactList}\small\item\em Prints the information of this station. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classStation}{Station}} class represents a station in a transportation network. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStation_ab7c33e68e8312ca250008ec7b02d2d83}\label{classStation_ab7c33e68e8312ca250008ec7b02d2d83}} 
+\index{Station@{Station}!Station@{Station}}
+\index{Station@{Station}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{Station()}{Station()}}
+{\footnotesize\ttfamily Station\+::\+Station (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string \&}]{name,  }\item[{string \&}]{district,  }\item[{string \&}]{municipality,  }\item[{string \&}]{township,  }\item[{string \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classStation}{Station}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the station. \\
+\hline
+{\em name} & The name of the station. \\
+\hline
+{\em district} & The district where the station is located. \\
+\hline
+{\em municipality} & The municipality where the station is located. \\
+\hline
+{\em township} & The township where the station is located. \\
+\hline
+{\em line} & The line on which the station is located.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStation_a9a17bf769be65a441e971f9abfe02a3d}\label{classStation_a9a17bf769be65a441e971f9abfe02a3d}} 
+\index{Station@{Station}!addPath@{addPath}}
+\index{addPath@{addPath}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{addPath()}{addPath()}}
+{\footnotesize\ttfamily void Station\+::add\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}} $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Adds a path connected to this station. 
+
+Adds a path to the station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to add.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be added.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_af8002d32e57461be2e39360db8057464}\label{classStation_af8002d32e57461be2e39360db8057464}} 
+\index{Station@{Station}!getDist@{getDist}}
+\index{getDist@{getDist}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getDist()}{getDist()}}
+{\footnotesize\ttfamily int Station\+::get\+Dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the distance to this station. 
+
+Gets the distance of the station.
+
+\begin{DoxyReturn}{Returns}
+The distance to this station.
+\end{DoxyReturn}
+Time Complexity\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+The distance of the station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_adfeb6e1c7361d9de1a8efade27b82c7c}\label{classStation_adfeb6e1c7361d9de1a8efade27b82c7c}} 
+\index{Station@{Station}!getDistrict@{getDistrict}}
+\index{getDistrict@{getDistrict}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getDistrict()}{getDistrict()}}
+{\footnotesize\ttfamily string Station\+::get\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the district where the station is located. 
+
+\begin{DoxyReturn}{Returns}
+The district where the station is located.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_afd0de4c1f7e51648bfe465c5b8b02c88}\label{classStation_afd0de4c1f7e51648bfe465c5b8b02c88}} 
+\index{Station@{Station}!getId@{getId}}
+\index{getId@{getId}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Station\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the ID of the station. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a29859ce5b681749459b415b3bf86ae81}\label{classStation_a29859ce5b681749459b415b3bf86ae81}} 
+\index{Station@{Station}!getLine@{getLine}}
+\index{getLine@{getLine}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily string Station\+::get\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the line on which the station is located. 
+
+\begin{DoxyReturn}{Returns}
+The line on which the station is located.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a352841c01b6cdb25e84cae3b7b2f6418}\label{classStation_a352841c01b6cdb25e84cae3b7b2f6418}} 
+\index{Station@{Station}!getMunicipality@{getMunicipality}}
+\index{getMunicipality@{getMunicipality}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getMunicipality()}{getMunicipality()}}
+{\footnotesize\ttfamily string Station\+::get\+Municipality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the municipality where the station is located. 
+
+\begin{DoxyReturn}{Returns}
+The municipality where the station is located.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_ac823ae175ec0e2baff462ed9612c7bae}\label{classStation_ac823ae175ec0e2baff462ed9612c7bae}} 
+\index{Station@{Station}!getName@{getName}}
+\index{getName@{getName}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Station\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the station. 
+
+\begin{DoxyReturn}{Returns}
+The name of the station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a15199f2dad79187420cdd63c4ecce69e}\label{classStation_a15199f2dad79187420cdd63c4ecce69e}} 
+\index{Station@{Station}!getPaths@{getPaths}}
+\index{getPaths@{getPaths}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getPaths()}{getPaths()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$ $>$ Station\+::get\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the paths which are connected to this station. 
+
+Gets the paths connected to this station.
+
+\begin{DoxyReturn}{Returns}
+The paths connected to this station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a053c7e90dc4a02b434de67c42fc8940b}\label{classStation_a053c7e90dc4a02b434de67c42fc8940b}} 
+\index{Station@{Station}!getPred@{getPred}}
+\index{getPred@{getPred}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getPred()}{getPred()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPath}{Path}} $\ast$ Station\+::get\+Pred (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the predecessor path of this station. 
+
+Gets the predecessor of the station.
+
+\begin{DoxyReturn}{Returns}
+The predecessor path of this station.
+\end{DoxyReturn}
+Time Complexity\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+The predecessor of the station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a1e3c26415e7886648ea5e1a9dfddcdde}\label{classStation_a1e3c26415e7886648ea5e1a9dfddcdde}} 
+\index{Station@{Station}!getTownship@{getTownship}}
+\index{getTownship@{getTownship}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getTownship()}{getTownship()}}
+{\footnotesize\ttfamily string Station\+::get\+Township (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the township where the station is located. 
+
+\begin{DoxyReturn}{Returns}
+The township where the station is located.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a3eee49988559a4a26fa715f3fc44beac}\label{classStation_a3eee49988559a4a26fa715f3fc44beac}} 
+\index{Station@{Station}!isVisited@{isVisited}}
+\index{isVisited@{isVisited}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{isVisited()}{isVisited()}}
+{\footnotesize\ttfamily bool Station\+::is\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the station has been visited. 
+
+Gets the visited status of the station.
+
+\begin{DoxyReturn}{Returns}
+True if the station has been visited, false otherwise.
+\end{DoxyReturn}
+Time Complexity\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+The visited status of the station.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_ac7bd52b51c88ebb6911dd2de4f972fde}\label{classStation_ac7bd52b51c88ebb6911dd2de4f972fde}} 
+\index{Station@{Station}!print@{print}}
+\index{print@{print}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Station\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the information of this station. 
+
+Prints the station.
+
+Time Complexity\+: O(1)
+
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_ab6398466604ebfadf939bb95df2c7d44}\label{classStation_ab6398466604ebfadf939bb95df2c7d44}} 
+\index{Station@{Station}!setDist@{setDist}}
+\index{setDist@{setDist}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setDist()}{setDist()}}
+{\footnotesize\ttfamily void Station\+::set\+Dist (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})}
+
+
+
+Sets the distance to this station. 
+
+Sets the distance of the station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The distance to this station.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The new distance of the station.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a675f369a6e941cad561de64cf01120c8}\label{classStation_a675f369a6e941cad561de64cf01120c8}} 
+\index{Station@{Station}!setPred@{setPred}}
+\index{setPred@{setPred}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setPred()}{setPred()}}
+{\footnotesize\ttfamily void Station\+::set\+Pred (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Sets the predecessor path of this station. 
+
+Sets the predecessor of the station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The predecessor path of this station.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The new predecessor of the station.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classStation_a02d3713ffbe523ef2713a45bf253fddb}\label{classStation_a02d3713ffbe523ef2713a45bf253fddb}} 
+\index{Station@{Station}!setVisited@{setVisited}}
+\index{setVisited@{setVisited}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setVisited()}{setVisited()}}
+{\footnotesize\ttfamily void Station\+::set\+Visited (\begin{DoxyParamCaption}\item[{bool}]{v }\end{DoxyParamCaption})}
+
+
+
+Sets whether the station has been visited. 
+
+Sets the visited status of the station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Whether the station has been visited.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The visited status of the station.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Station.\+h\item 
-Station.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{Station_8h}{Station.\+h}}\item 
+\mbox{\hyperlink{Station_8cpp}{Station.\+cpp}}\end{DoxyCompactItemize}

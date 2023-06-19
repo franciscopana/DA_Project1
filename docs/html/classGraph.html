@@ -76,73 +76,765 @@ $(function() {
   <div class="headertitle"><div class="title">Graph Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classGraph.html" title="The Graph class represents a graph.">Graph</a> class represents a graph.  
+ <a href="classGraph.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Graph_8h_source.html">Graph.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3272e9680be9947c33ed0f86aa38c12"><td class="memItemLeft" align="right" valign="top"><a id="ac3272e9680be9947c33ed0f86aa38c12" name="ac3272e9680be9947c33ed0f86aa38c12"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addStations</b> ()</td></tr>
-<tr class="separator:ac3272e9680be9947c33ed0f86aa38c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a0aa246a4103c9bc812bba4abb70476"><td class="memItemLeft" align="right" valign="top"><a id="a0a0aa246a4103c9bc812bba4abb70476" name="a0a0aa246a4103c9bc812bba4abb70476"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addPaths</b> ()</td></tr>
-<tr class="separator:a0a0aa246a4103c9bc812bba4abb70476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd2749a1cd58db2d3b6fa6eef639399c"><td class="memItemLeft" align="right" valign="top"><a id="afd2749a1cd58db2d3b6fa6eef639399c" name="afd2749a1cd58db2d3b6fa6eef639399c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>edmondsKarp</b> (int source, int sink)</td></tr>
-<tr class="separator:afd2749a1cd58db2d3b6fa6eef639399c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2e653c25d31156904b904ba2f919f6a"><td class="memItemLeft" align="right" valign="top"><a id="aa2e653c25d31156904b904ba2f919f6a" name="aa2e653c25d31156904b904ba2f919f6a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dijkstra</b> (int source, int destination)</td></tr>
-<tr class="separator:aa2e653c25d31156904b904ba2f919f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd6fbc5243626bfb7b7116b76fedab0"><td class="memItemLeft" align="right" valign="top"><a id="acfd6fbc5243626bfb7b7116b76fedab0" name="acfd6fbc5243626bfb7b7116b76fedab0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>bfs</b> (int source, int sink)</td></tr>
-<tr class="separator:acfd6fbc5243626bfb7b7116b76fedab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ee50a21940feb6d1186c4c310aaa4a"><td class="memItemLeft" align="right" valign="top"><a id="ad6ee50a21940feb6d1186c4c310aaa4a" name="ad6ee50a21940feb6d1186c4c310aaa4a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>findMinFlowAlongPath</b> (int source, int sink)</td></tr>
-<tr class="separator:ad6ee50a21940feb6d1186c4c310aaa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac03d4adbe433bb37eef7f57305b1d9c2"><td class="memItemLeft" align="right" valign="top"><a id="ac03d4adbe433bb37eef7f57305b1d9c2" name="ac03d4adbe433bb37eef7f57305b1d9c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateFlowAlongPath</b> (int source, int sink, int flow)</td></tr>
-<tr class="separator:ac03d4adbe433bb37eef7f57305b1d9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4714e1064710ca166696926a64d79ca3"><td class="memItemLeft" align="right" valign="top"><a id="a4714e1064710ca166696926a64d79ca3" name="a4714e1064710ca166696926a64d79ca3"></a>
-vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPairs</b> (vector&lt; int &gt; v)</td></tr>
-<tr class="separator:a4714e1064710ca166696926a64d79ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6009b74b55cfcfba809c335a525f1bd"><td class="memItemLeft" align="right" valign="top"><a id="af6009b74b55cfcfba809c335a525f1bd" name="af6009b74b55cfcfba809c335a525f1bd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>calculateTotalFlow</b> (const vector&lt; int &gt; &amp;v)</td></tr>
-<tr class="separator:af6009b74b55cfcfba809c335a525f1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0638ee0d603ef3168979e8ed578e19b"><td class="memItemLeft" align="right" valign="top"><a id="ad0638ee0d603ef3168979e8ed578e19b" name="ad0638ee0d603ef3168979e8ed578e19b"></a>
-vector&lt; pair&lt; string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>flowsForAllMunicipalities</b> ()</td></tr>
-<tr class="separator:ad0638ee0d603ef3168979e8ed578e19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45bb96ae0aee4794c27bf5a7978ab63f"><td class="memItemLeft" align="right" valign="top"><a id="a45bb96ae0aee4794c27bf5a7978ab63f" name="a45bb96ae0aee4794c27bf5a7978ab63f"></a>
-vector&lt; pair&lt; string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>flowsForAllDistricts</b> ()</td></tr>
-<tr class="separator:a45bb96ae0aee4794c27bf5a7978ab63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"><td class="memItemLeft" align="right" valign="top"><a id="a0cfbb4df8f1b2c9b449c7bf5c95fd5a3" name="a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getMinCapacityAlongPath</b> (int source, int sink)</td></tr>
-<tr class="separator:a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac925493231087fd150e49e2eaac29883"><td class="memItemLeft" align="right" valign="top"><a id="ac925493231087fd150e49e2eaac29883" name="ac925493231087fd150e49e2eaac29883"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getPathCost</b> (int source, int destination, int flow)</td></tr>
-<tr class="separator:ac925493231087fd150e49e2eaac29883"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c59f0a35a48625ef04e510fc535a6fd"><td class="memItemLeft" align="right" valign="top"><a id="a0c59f0a35a48625ef04e510fc535a6fd" name="a0c59f0a35a48625ef04e510fc535a6fd"></a>
-map&lt; string, vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStationsByMunicipality</b> () const</td></tr>
-<tr class="separator:a0c59f0a35a48625ef04e510fc535a6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22395b66de206430f3fb5efb7dcef727"><td class="memItemLeft" align="right" valign="top"><a id="a22395b66de206430f3fb5efb7dcef727" name="a22395b66de206430f3fb5efb7dcef727"></a>
-map&lt; string, vector&lt; string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getMunicipalitiesByDistrict</b> () const</td></tr>
-<tr class="separator:a22395b66de206430f3fb5efb7dcef727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca0a80cbb2b25567a92118f5f75bb72e"><td class="memItemLeft" align="right" valign="top"><a id="aca0a80cbb2b25567a92118f5f75bb72e" name="aca0a80cbb2b25567a92118f5f75bb72e"></a>
-vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getDistricts</b> () const</td></tr>
-<tr class="separator:aca0a80cbb2b25567a92118f5f75bb72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78c3724cce8db42d71602f13b69dfb68"><td class="memItemLeft" align="right" valign="top"><a id="a78c3724cce8db42d71602f13b69dfb68" name="a78c3724cce8db42d71602f13b69dfb68"></a>
-vector&lt; <a class="el" href="classStation.html">Station</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStations</b> () const</td></tr>
-<tr class="separator:a78c3724cce8db42d71602f13b69dfb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e7a465edee2c785f08094cc4b88ad3c"><td class="memItemLeft" align="right" valign="top"><a id="a5e7a465edee2c785f08094cc4b88ad3c" name="a5e7a465edee2c785f08094cc4b88ad3c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>changePathsCapacity</b> (map&lt; <a class="el" href="classPath.html">Path</a> *, int &gt; &amp;newCapacities)</td></tr>
-<tr class="separator:a5e7a465edee2c785f08094cc4b88ad3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333bdd7dd71e7aab1ce15a194b31a136"><td class="memItemLeft" align="right" valign="top"><a id="a333bdd7dd71e7aab1ce15a194b31a136" name="a333bdd7dd71e7aab1ce15a194b31a136"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printPath</b> (int source, int destination)</td></tr>
-<tr class="separator:a333bdd7dd71e7aab1ce15a194b31a136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f211a37b40067115fc6274d46153ed"><td class="memItemLeft" align="right" valign="top"><a id="a68f211a37b40067115fc6274d46153ed" name="a68f211a37b40067115fc6274d46153ed"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memitem:ae4c72b8ac4d693c49800a4c7e273654f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ae4c72b8ac4d693c49800a4c7e273654f">Graph</a> ()</td></tr>
+<tr class="memdesc:ae4c72b8ac4d693c49800a4c7e273654f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classGraph.html" title="The Graph class represents a graph.">Graph</a> object.  <a href="classGraph.html#ae4c72b8ac4d693c49800a4c7e273654f">More...</a><br /></td></tr>
+<tr class="separator:ae4c72b8ac4d693c49800a4c7e273654f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f52721d1f0fd91a3de02e094c46d2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a3f52721d1f0fd91a3de02e094c46d2fe">setup</a> ()</td></tr>
+<tr class="memdesc:a3f52721d1f0fd91a3de02e094c46d2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the graph.  <a href="classGraph.html#a3f52721d1f0fd91a3de02e094c46d2fe">More...</a><br /></td></tr>
+<tr class="separator:a3f52721d1f0fd91a3de02e094c46d2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f211a37b40067115fc6274d46153ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a68f211a37b40067115fc6274d46153ed">reset</a> ()</td></tr>
+<tr class="memdesc:a68f211a37b40067115fc6274d46153ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the graph to its initial state.  <a href="classGraph.html#a68f211a37b40067115fc6274d46153ed">More...</a><br /></td></tr>
 <tr class="separator:a68f211a37b40067115fc6274d46153ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd6fbc5243626bfb7b7116b76fedab0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#acfd6fbc5243626bfb7b7116b76fedab0">bfs</a> (int source, int sink)</td></tr>
+<tr class="memdesc:acfd6fbc5243626bfb7b7116b76fedab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a breadth-first search to find a path from source to sink.  <a href="classGraph.html#acfd6fbc5243626bfb7b7116b76fedab0">More...</a><br /></td></tr>
+<tr class="separator:acfd6fbc5243626bfb7b7116b76fedab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2749a1cd58db2d3b6fa6eef639399c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#afd2749a1cd58db2d3b6fa6eef639399c">edmondsKarp</a> (int source, int sink)</td></tr>
+<tr class="memdesc:afd2749a1cd58db2d3b6fa6eef639399c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Edmonds-Karp algorithm for maximum flow.  <a href="classGraph.html#afd2749a1cd58db2d3b6fa6eef639399c">More...</a><br /></td></tr>
+<tr class="separator:afd2749a1cd58db2d3b6fa6eef639399c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e653c25d31156904b904ba2f919f6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa2e653c25d31156904b904ba2f919f6a">dijkstra</a> (int source, int destination)</td></tr>
+<tr class="memdesc:aa2e653c25d31156904b904ba2f919f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Dijkstra algorithm for minimum cost flow.  <a href="classGraph.html#aa2e653c25d31156904b904ba2f919f6a">More...</a><br /></td></tr>
+<tr class="separator:aa2e653c25d31156904b904ba2f919f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ee50a21940feb6d1186c4c310aaa4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ad6ee50a21940feb6d1186c4c310aaa4a">findMinFlowAlongPath</a> (int source, int sink)</td></tr>
+<tr class="memdesc:ad6ee50a21940feb6d1186c4c310aaa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the minimum flow along a path from source to sink.  <a href="classGraph.html#ad6ee50a21940feb6d1186c4c310aaa4a">More...</a><br /></td></tr>
+<tr class="separator:ad6ee50a21940feb6d1186c4c310aaa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03d4adbe433bb37eef7f57305b1d9c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac03d4adbe433bb37eef7f57305b1d9c2">updateFlowAlongPath</a> (int source, int sink, int flow)</td></tr>
+<tr class="memdesc:ac03d4adbe433bb37eef7f57305b1d9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the flow along a path from source to sink.  <a href="classGraph.html#ac03d4adbe433bb37eef7f57305b1d9c2">More...</a><br /></td></tr>
+<tr class="separator:ac03d4adbe433bb37eef7f57305b1d9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4714e1064710ca166696926a64d79ca3"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a4714e1064710ca166696926a64d79ca3">getPairs</a> (vector&lt; int &gt; v)</td></tr>
+<tr class="memdesc:a4714e1064710ca166696926a64d79ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all pairs of adjacent elements from a vector.  <a href="classGraph.html#a4714e1064710ca166696926a64d79ca3">More...</a><br /></td></tr>
+<tr class="separator:a4714e1064710ca166696926a64d79ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6009b74b55cfcfba809c335a525f1bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#af6009b74b55cfcfba809c335a525f1bd">calculateTotalFlow</a> (const vector&lt; int &gt; &amp;v)</td></tr>
+<tr class="memdesc:af6009b74b55cfcfba809c335a525f1bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the total flow for a given set of paths.  <a href="classGraph.html#af6009b74b55cfcfba809c335a525f1bd">More...</a><br /></td></tr>
+<tr class="separator:af6009b74b55cfcfba809c335a525f1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0638ee0d603ef3168979e8ed578e19b"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ad0638ee0d603ef3168979e8ed578e19b">flowsForAllMunicipalities</a> ()</td></tr>
+<tr class="memdesc:ad0638ee0d603ef3168979e8ed578e19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the flow for all municipalities.  <a href="classGraph.html#ad0638ee0d603ef3168979e8ed578e19b">More...</a><br /></td></tr>
+<tr class="separator:ad0638ee0d603ef3168979e8ed578e19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bb96ae0aee4794c27bf5a7978ab63f"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a45bb96ae0aee4794c27bf5a7978ab63f">flowsForAllDistricts</a> ()</td></tr>
+<tr class="memdesc:a45bb96ae0aee4794c27bf5a7978ab63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the flow for all districts.  <a href="classGraph.html#a45bb96ae0aee4794c27bf5a7978ab63f">More...</a><br /></td></tr>
+<tr class="separator:a45bb96ae0aee4794c27bf5a7978ab63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15118383e3530bc8a3ca556c89e3c7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aa15118383e3530bc8a3ca556c89e3c7f">maxSimultaneousArrivals</a> (int id)</td></tr>
+<tr class="memdesc:aa15118383e3530bc8a3ca556c89e3c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum simultaneous arrivals from the entire network for a given station.  <a href="classGraph.html#aa15118383e3530bc8a3ca556c89e3c7f">More...</a><br /></td></tr>
+<tr class="separator:aa15118383e3530bc8a3ca556c89e3c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a0cfbb4df8f1b2c9b449c7bf5c95fd5a3">getMinCapacityAlongPath</a> (int source, int sink)</td></tr>
+<tr class="memdesc:a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum capacity along a path from source to sink.  <a href="classGraph.html#a0cfbb4df8f1b2c9b449c7bf5c95fd5a3">More...</a><br /></td></tr>
+<tr class="separator:a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac925493231087fd150e49e2eaac29883"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac925493231087fd150e49e2eaac29883">getPathCost</a> (int source, int destination, int flow)</td></tr>
+<tr class="memdesc:ac925493231087fd150e49e2eaac29883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cost for a path from source to destination.  <a href="classGraph.html#ac925493231087fd150e49e2eaac29883">More...</a><br /></td></tr>
+<tr class="separator:ac925493231087fd150e49e2eaac29883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43fa4e6ba4e6adce8c5e3495f6db45c4"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a43fa4e6ba4e6adce8c5e3495f6db45c4">maxPairs</a> ()</td></tr>
+<tr class="memdesc:a43fa4e6ba4e6adce8c5e3495f6db45c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the maximum flow for all pairs of stations in the graph.  <a href="classGraph.html#a43fa4e6ba4e6adce8c5e3495f6db45c4">More...</a><br /></td></tr>
+<tr class="separator:a43fa4e6ba4e6adce8c5e3495f6db45c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1031e8fa29a91a1e3625e4cbd29b50dc"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; <a class="el" href="classStation.html">Station</a> *, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a1031e8fa29a91a1e3625e4cbd29b50dc">compareResults</a> (vector&lt; int &gt; v1, vector&lt; int &gt; v2)</td></tr>
+<tr class="memdesc:a1031e8fa29a91a1e3625e4cbd29b50dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the stations to the graph.  <a href="classGraph.html#a1031e8fa29a91a1e3625e4cbd29b50dc">More...</a><br /></td></tr>
+<tr class="separator:a1031e8fa29a91a1e3625e4cbd29b50dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7a465edee2c785f08094cc4b88ad3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a5e7a465edee2c785f08094cc4b88ad3c">changePathsCapacity</a> (map&lt; <a class="el" href="classPath.html">Path</a> *, int &gt; &amp;newCapacities)</td></tr>
+<tr class="memdesc:a5e7a465edee2c785f08094cc4b88ad3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the capacity of the given paths to the new capacities.  <a href="classGraph.html#a5e7a465edee2c785f08094cc4b88ad3c">More...</a><br /></td></tr>
+<tr class="separator:a5e7a465edee2c785f08094cc4b88ad3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c59f0a35a48625ef04e510fc535a6fd"><td class="memItemLeft" align="right" valign="top">map&lt; string, vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a0c59f0a35a48625ef04e510fc535a6fd">getStationsByMunicipality</a> () const</td></tr>
+<tr class="memdesc:a0c59f0a35a48625ef04e510fc535a6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of stations indexed by municipality.  <a href="classGraph.html#a0c59f0a35a48625ef04e510fc535a6fd">More...</a><br /></td></tr>
+<tr class="separator:a0c59f0a35a48625ef04e510fc535a6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22395b66de206430f3fb5efb7dcef727"><td class="memItemLeft" align="right" valign="top">map&lt; string, vector&lt; string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a22395b66de206430f3fb5efb7dcef727">getMunicipalitiesByDistrict</a> () const</td></tr>
+<tr class="memdesc:a22395b66de206430f3fb5efb7dcef727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of municipalities indexed by district.  <a href="classGraph.html#a22395b66de206430f3fb5efb7dcef727">More...</a><br /></td></tr>
+<tr class="separator:a22395b66de206430f3fb5efb7dcef727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0a80cbb2b25567a92118f5f75bb72e"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aca0a80cbb2b25567a92118f5f75bb72e">getDistricts</a> () const</td></tr>
+<tr class="memdesc:aca0a80cbb2b25567a92118f5f75bb72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of districts.  <a href="classGraph.html#aca0a80cbb2b25567a92118f5f75bb72e">More...</a><br /></td></tr>
+<tr class="separator:aca0a80cbb2b25567a92118f5f75bb72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c3724cce8db42d71602f13b69dfb68"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classStation.html">Station</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a78c3724cce8db42d71602f13b69dfb68">getStations</a> () const</td></tr>
+<tr class="memdesc:a78c3724cce8db42d71602f13b69dfb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of Stations.  <a href="classGraph.html#a78c3724cce8db42d71602f13b69dfb68">More...</a><br /></td></tr>
+<tr class="separator:a78c3724cce8db42d71602f13b69dfb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333bdd7dd71e7aab1ce15a194b31a136"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a333bdd7dd71e7aab1ce15a194b31a136">printPath</a> (int source, int destination)</td></tr>
+<tr class="memdesc:a333bdd7dd71e7aab1ce15a194b31a136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the path from source to destination.  <a href="classGraph.html#a333bdd7dd71e7aab1ce15a194b31a136">More...</a><br /></td></tr>
+<tr class="separator:a333bdd7dd71e7aab1ce15a194b31a136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The <a class="el" href="classGraph.html" title="The Graph class represents a graph.">Graph</a> class represents a graph. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae4c72b8ac4d693c49800a4c7e273654f" name="ae4c72b8ac4d693c49800a4c7e273654f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c72b8ac4d693c49800a4c7e273654f">&#9670;&#160;</a></span>Graph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph::Graph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classGraph.html" title="The Graph class represents a graph.">Graph</a> object. </p>
+<p >Time Complexity: O(1) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acfd6fbc5243626bfb7b7116b76fedab0" name="acfd6fbc5243626bfb7b7116b76fedab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd6fbc5243626bfb7b7116b76fedab0">&#9670;&#160;</a></span>bfs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Graph::bfs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sink</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements a breadth-first search to find a path from source to sink. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The id of the source <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">sink</td><td>The id of the sink <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there exists a path from source to sink, false otherwise</dd></dl>
+<p>Time Complexity: O(v + e), where v is the number of stations and e is the number of paths </p>
+
+</div>
+</div>
+<a id="af6009b74b55cfcfba809c335a525f1bd" name="af6009b74b55cfcfba809c335a525f1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6009b74b55cfcfba809c335a525f1bd">&#9670;&#160;</a></span>calculateTotalFlow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::calculateTotalFlow </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the total flow for a given set of paths. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The set of paths </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total flow for the set of paths</dd></dl>
+<p>Time Complexity: O(n^2 * v * e^2), where n is the length of the vector v, v is the number of stations and e is the number of paths </p>
+
+</div>
+</div>
+<a id="a5e7a465edee2c785f08094cc4b88ad3c" name="a5e7a465edee2c785f08094cc4b88ad3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7a465edee2c785f08094cc4b88ad3c">&#9670;&#160;</a></span>changePathsCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::changePathsCapacity </td>
+          <td>(</td>
+          <td class="paramtype">map&lt; <a class="el" href="classPath.html">Path</a> *, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>newCapacities</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the capacity of the given paths to the new capacities. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newCapacities</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(n), where n is the length of the newCapacities map </p>
+
+</div>
+</div>
+<a id="a1031e8fa29a91a1e3625e4cbd29b50dc" name="a1031e8fa29a91a1e3625e4cbd29b50dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1031e8fa29a91a1e3625e4cbd29b50dc">&#9670;&#160;</a></span>compareResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; <a class="el" href="classStation.html">Station</a> *, int &gt; &gt; Graph::compareResults </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds the stations to the graph. </p>
+<p >Time Complexity: O(v), where v is the number of stations </p>
+
+</div>
+</div>
+<a id="aa2e653c25d31156904b904ba2f919f6a" name="aa2e653c25d31156904b904ba2f919f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e653c25d31156904b904ba2f919f6a">&#9670;&#160;</a></span>dijkstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::dijkstra </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>destination</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements the Dijkstra algorithm for minimum cost flow. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The id of the source <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">destination</td><td>The id of the destination <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The minimum cost flow from source to destination</dd></dl>
+<p>Time Complexity: O((E+V)logV), where E is the number of paths and V is the number of stations </p>
+
+</div>
+</div>
+<a id="afd2749a1cd58db2d3b6fa6eef639399c" name="afd2749a1cd58db2d3b6fa6eef639399c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2749a1cd58db2d3b6fa6eef639399c">&#9670;&#160;</a></span>edmondsKarp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::edmondsKarp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sink</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements the Edmonds-Karp algorithm for maximum flow. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The id of the source <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">sink</td><td>The id of the sink <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The maximum flow from source to sink</dd></dl>
+<p>Time Complexity: O(v * e^2), where v is the number of stations and e is the number of paths </p>
+
+</div>
+</div>
+<a id="ad6ee50a21940feb6d1186c4c310aaa4a" name="ad6ee50a21940feb6d1186c4c310aaa4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ee50a21940feb6d1186c4c310aaa4a">&#9670;&#160;</a></span>findMinFlowAlongPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::findMinFlowAlongPath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sink</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the minimum flow along a path from source to sink. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The id of the source <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">sink</td><td>The id of the sink <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The minimum flow along a path from source to sink</dd></dl>
+<p>Time Complexity: O(n), where n is the length of the path from source to sink </p>
+
+</div>
+</div>
+<a id="a45bb96ae0aee4794c27bf5a7978ab63f" name="a45bb96ae0aee4794c27bf5a7978ab63f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bb96ae0aee4794c27bf5a7978ab63f">&#9670;&#160;</a></span>flowsForAllDistricts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; string, int &gt; &gt; Graph::flowsForAllDistricts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the flow for all districts. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of pairs containing the district name and its flow</dd></dl>
+<p>Time Complexity: O(D * d + D * log(D)), where D is the number of districts and d is the number of stations in each district </p>
+
+</div>
+</div>
+<a id="ad0638ee0d603ef3168979e8ed578e19b" name="ad0638ee0d603ef3168979e8ed578e19b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0638ee0d603ef3168979e8ed578e19b">&#9670;&#160;</a></span>flowsForAllMunicipalities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; string, int &gt; &gt; Graph::flowsForAllMunicipalities </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the flow for all municipalities. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of pairs containing the municipality name and its flow</dd></dl>
+<p>Time Complexity: O(M * m + M * log(M)), where M is the number of municipalities and m is the number of stations in each municipality </p>
+
+</div>
+</div>
+<a id="aca0a80cbb2b25567a92118f5f75bb72e" name="aca0a80cbb2b25567a92118f5f75bb72e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0a80cbb2b25567a92118f5f75bb72e">&#9670;&#160;</a></span>getDistricts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; Graph::getDistricts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the vector of districts. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(1) </p>
+
+</div>
+</div>
+<a id="a0cfbb4df8f1b2c9b449c7bf5c95fd5a3" name="a0cfbb4df8f1b2c9b449c7bf5c95fd5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cfbb4df8f1b2c9b449c7bf5c95fd5a3">&#9670;&#160;</a></span>getMinCapacityAlongPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::getMinCapacityAlongPath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sink</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the minimum capacity along a path from source to sink. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td></td></tr>
+    <tr><td class="paramname">sink</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(n), where n is the number of stations in the path </p>
+
+</div>
+</div>
+<a id="a22395b66de206430f3fb5efb7dcef727" name="a22395b66de206430f3fb5efb7dcef727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22395b66de206430f3fb5efb7dcef727">&#9670;&#160;</a></span>getMunicipalitiesByDistrict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt; string, vector&lt; string &gt; &gt; Graph::getMunicipalitiesByDistrict </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the map of municipalities indexed by district. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(1) </p>
+
+</div>
+</div>
+<a id="a4714e1064710ca166696926a64d79ca3" name="a4714e1064710ca166696926a64d79ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4714e1064710ca166696926a64d79ca3">&#9670;&#160;</a></span>getPairs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; int, int &gt; &gt; Graph::getPairs </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all pairs of adjacent elements from a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of all adjacent pairs</dd></dl>
+<p>Time Complexity: O(n^2), where n is the length of the vector v </p>
+
+</div>
+</div>
+<a id="ac925493231087fd150e49e2eaac29883" name="ac925493231087fd150e49e2eaac29883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac925493231087fd150e49e2eaac29883">&#9670;&#160;</a></span>getPathCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::getPathCost </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the cost for a path from source to destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td></td></tr>
+    <tr><td class="paramname">destination</td><td></td></tr>
+    <tr><td class="paramname">flow</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(n), where n is the number of stations in the path </p>
+
+</div>
+</div>
+<a id="a78c3724cce8db42d71602f13b69dfb68" name="a78c3724cce8db42d71602f13b69dfb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c3724cce8db42d71602f13b69dfb68">&#9670;&#160;</a></span>getStations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classStation.html">Station</a> * &gt; Graph::getStations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the vector of Stations. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(1) </p>
+
+</div>
+</div>
+<a id="a0c59f0a35a48625ef04e510fc535a6fd" name="a0c59f0a35a48625ef04e510fc535a6fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c59f0a35a48625ef04e510fc535a6fd">&#9670;&#160;</a></span>getStationsByMunicipality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt; string, vector&lt; int &gt; &gt; Graph::getStationsByMunicipality </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the map of stations indexed by municipality. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Time Complexity: O(1) </p>
+
+</div>
+</div>
+<a id="a43fa4e6ba4e6adce8c5e3495f6db45c4" name="a43fa4e6ba4e6adce8c5e3495f6db45c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43fa4e6ba4e6adce8c5e3495f6db45c4">&#9670;&#160;</a></span>maxPairs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; int, int &gt; &gt; Graph::maxPairs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the maximum flow for all pairs of stations in the graph. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector with all pairs of stations that have the maximum flow</dd></dl>
+<p>Time Complexity: O(v^3 * e^2), where v is the number of stations and e is the number of paths </p>
+
+</div>
+</div>
+<a id="aa15118383e3530bc8a3ca556c89e3c7f" name="aa15118383e3530bc8a3ca556c89e3c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15118383e3530bc8a3ca556c89e3c7f">&#9670;&#160;</a></span>maxSimultaneousArrivals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Graph::maxSimultaneousArrivals </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the maximum simultaneous arrivals from the entire network for a given station. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The id of the station </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The maximum simultaneous arrivals for the station</dd></dl>
+<p>Time Complexity: O(v * e^2), where v is the number of stations and e is the number of paths </p>
+
+</div>
+</div>
+<a id="a333bdd7dd71e7aab1ce15a194b31a136" name="a333bdd7dd71e7aab1ce15a194b31a136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333bdd7dd71e7aab1ce15a194b31a136">&#9670;&#160;</a></span>printPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::printPath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>destination</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints the path from source to destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td></td></tr>
+    <tr><td class="paramname">destination</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Time Complexity: O(n), where n is the number of stations in the path </p>
+
+</div>
+</div>
+<a id="a68f211a37b40067115fc6274d46153ed" name="a68f211a37b40067115fc6274d46153ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f211a37b40067115fc6274d46153ed">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the graph to its initial state. </p>
+<p >Time Complexity: O(n) </p>
+
+</div>
+</div>
+<a id="a3f52721d1f0fd91a3de02e094c46d2fe" name="a3f52721d1f0fd91a3de02e094c46d2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f52721d1f0fd91a3de02e094c46d2fe">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the graph. </p>
+<p >Time Complexity: O(v + e + dlogd + mlogm), where v is the number of stations, e is the number of paths, d is the number of districts and m is the number of municipalities </p>
+
+</div>
+</div>
+<a id="ac03d4adbe433bb37eef7f57305b1d9c2" name="ac03d4adbe433bb37eef7f57305b1d9c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03d4adbe433bb37eef7f57305b1d9c2">&#9670;&#160;</a></span>updateFlowAlongPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::updateFlowAlongPath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sink</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the flow along a path from source to sink. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The id of the source <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">sink</td><td>The id of the sink <a class="el" href="classStation.html" title="The Station class represents a station in a transportation network.">Station</a> </td></tr>
+    <tr><td class="paramname">flow</td><td>The flow to be added to the path</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Time Complexity: O(n), where n is the length of the path from source to sink </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="Graph_8h_source.html">Graph.h</a></li>
-<li>Graph.cpp</li>
+<li><a class="el" href="Graph_8cpp.html">Graph.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -30,7 +30,7 @@ Graph::Graph() {
  * Time Complexity: O(n), where n is the number of stations
  */
 void Graph::addStations() {
-    ifstream file("../Data/stations.csv");
+    ifstream file("Data/stations.csv");
 
     if (!file.is_open()) {
         cout << "Error opening stations.csv" << endl;
@@ -88,7 +88,7 @@ void Graph::addStations() {
  * Time Complexity: O(n), where n is the number of paths
  */
 void Graph::addPaths() {
-    ifstream file("../Data/network.csv");
+    ifstream file("Data/network.csv");
 
     if (!file.is_open()) {
         cout << "Error opening network.csv" << endl;

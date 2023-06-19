@@ -1,41 +1,234 @@
 \hypertarget{classPath}{}\doxysection{Path Class Reference}
 \label{classPath}\index{Path@{Path}}
+
+
+Class that represents a connection between two stations.  
+
+
+
+
+{\ttfamily \#include $<$Path.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPath_a1b61f26a74805dc1b293acee063d8572}\label{classPath_a1b61f26a74805dc1b293acee063d8572}} 
-{\bfseries Path} (int stationA, int stationB, int capacity, string \&service)
-\item 
-\mbox{\Hypertarget{classPath_abba6141927d0185d4a4dfb34c2570ac6}\label{classPath_abba6141927d0185d4a4dfb34c2570ac6}} 
-int {\bfseries get\+StationA} () const
-\item 
-\mbox{\Hypertarget{classPath_ab9aebe5ff48671b59b4b2dff75660d53}\label{classPath_ab9aebe5ff48671b59b4b2dff75660d53}} 
-int {\bfseries get\+StationB} () const
-\item 
-\mbox{\Hypertarget{classPath_a6e995b7a4107960d34afe05f69d5eeea}\label{classPath_a6e995b7a4107960d34afe05f69d5eeea}} 
-int {\bfseries get\+Capacity} () const
-\item 
-\mbox{\Hypertarget{classPath_a38fd609c26468b0d47e858ebbc233ff7}\label{classPath_a38fd609c26468b0d47e858ebbc233ff7}} 
-void {\bfseries set\+Capacity} (int capacity)
-\item 
-\mbox{\Hypertarget{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}\label{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}} 
-string {\bfseries get\+Service} () const
-\item 
-\mbox{\Hypertarget{classPath_a8e421f0918e57595152033235169ab1b}\label{classPath_a8e421f0918e57595152033235169ab1b}} 
-int {\bfseries get\+Flow} () const
-\item 
-\mbox{\Hypertarget{classPath_a1640cb67ba26e7529cd7b1480c76f278}\label{classPath_a1640cb67ba26e7529cd7b1480c76f278}} 
-void {\bfseries set\+Flow} (int flow)
-\item 
-\mbox{\Hypertarget{classPath_a4acf27cb4e2e078713f16465bd30cc64}\label{classPath_a4acf27cb4e2e078713f16465bd30cc64}} 
-int {\bfseries get\+Max\+Cost} () const
-\item 
-\mbox{\Hypertarget{classPath_a560670158b88c9d2e30d61e5e980cd05}\label{classPath_a560670158b88c9d2e30d61e5e980cd05}} 
-int {\bfseries get\+Cost\+Per\+Train} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPath_a1b61f26a74805dc1b293acee063d8572}{Path}} (int stationA, int stationB, int capacity, string \&service)
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_abba6141927d0185d4a4dfb34c2570ac6}{get\+StationA}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the first station. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_ab9aebe5ff48671b59b4b2dff75660d53}{get\+StationB}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the second station. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_a6e995b7a4107960d34afe05f69d5eeea}{get\+Capacity}} () const
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPath_a38fd609c26468b0d47e858ebbc233ff7}{set\+Capacity}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Sets the capacity of the path. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}{get\+Service}} () const
+\begin{DoxyCompactList}\small\item\em Gets the service of the path. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_a8e421f0918e57595152033235169ab1b}{get\+Flow}} () const
+\begin{DoxyCompactList}\small\item\em Gets the flow of the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPath_a1640cb67ba26e7529cd7b1480c76f278}{set\+Flow}} (int flow)
+\begin{DoxyCompactList}\small\item\em Sets the flow of the path. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_a4acf27cb4e2e078713f16465bd30cc64}{get\+Max\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum cost of the path (cost per train $\ast$ capacity) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPath_a560670158b88c9d2e30d61e5e980cd05}{get\+Cost\+Per\+Train}} () const
+\begin{DoxyCompactList}\small\item\em Gets the cost per train of the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPath_acee3a5f2f2798aec28b91ab68f2df2c8}{print}} () const
+\begin{DoxyCompactList}\small\item\em prints the path\textquotesingle{}s specifications \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class that represents a connection between two stations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPath_a1b61f26a74805dc1b293acee063d8572}\label{classPath_a1b61f26a74805dc1b293acee063d8572}} 
+\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}}
+{\footnotesize\ttfamily Path\+::\+Path (\begin{DoxyParamCaption}\item[{int}]{stationA,  }\item[{int}]{stationB,  }\item[{int}]{capacity,  }\item[{string \&}]{service }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stationA} & ID of one of the stations \\
+\hline
+{\em stationB} & ID of one of the stations \\
+\hline
+{\em capacity} & Capacity of the path \\
+\hline
+{\em service} & Type of service of the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em stationA} & ID of the one of the stations \\
+\hline
+{\em stationB} & ID of the one of the stations \\
+\hline
+{\em capacity} & Capacity of the path \\
+\hline
+{\em service} & Service of the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPath_a6e995b7a4107960d34afe05f69d5eeea}\label{classPath_a6e995b7a4107960d34afe05f69d5eeea}} 
+\index{Path@{Path}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Path\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the capacity of the path. 
+
+\begin{DoxyReturn}{Returns}
+Capacity of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_a560670158b88c9d2e30d61e5e980cd05}\label{classPath_a560670158b88c9d2e30d61e5e980cd05}} 
+\index{Path@{Path}!getCostPerTrain@{getCostPerTrain}}
+\index{getCostPerTrain@{getCostPerTrain}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getCostPerTrain()}{getCostPerTrain()}}
+{\footnotesize\ttfamily int Path\+::get\+Cost\+Per\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the cost per train of the path. 
+
+\begin{DoxyReturn}{Returns}
+Cost per train of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_a8e421f0918e57595152033235169ab1b}\label{classPath_a8e421f0918e57595152033235169ab1b}} 
+\index{Path@{Path}!getFlow@{getFlow}}
+\index{getFlow@{getFlow}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getFlow()}{getFlow()}}
+{\footnotesize\ttfamily int Path\+::get\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the flow of the path. 
+
+\begin{DoxyReturn}{Returns}
+Flow of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_a4acf27cb4e2e078713f16465bd30cc64}\label{classPath_a4acf27cb4e2e078713f16465bd30cc64}} 
+\index{Path@{Path}!getMaxCost@{getMaxCost}}
+\index{getMaxCost@{getMaxCost}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getMaxCost()}{getMaxCost()}}
+{\footnotesize\ttfamily int Path\+::get\+Max\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the maximum cost of the path (cost per train $\ast$ capacity) 
+
+Gets the maximum cost of the path.
+
+\begin{DoxyReturn}{Returns}
+Maximum cost of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}\label{classPath_ab7db0c9c2f64b2d2ac48a77ceb6d1572}} 
+\index{Path@{Path}!getService@{getService}}
+\index{getService@{getService}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getService()}{getService()}}
+{\footnotesize\ttfamily string Path\+::get\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the service of the path. 
+
+Sets the flow of the path.
+
+\begin{DoxyReturn}{Returns}
+Service of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em flow} & Flow of the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_abba6141927d0185d4a4dfb34c2570ac6}\label{classPath_abba6141927d0185d4a4dfb34c2570ac6}} 
+\index{Path@{Path}!getStationA@{getStationA}}
+\index{getStationA@{getStationA}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getStationA()}{getStationA()}}
+{\footnotesize\ttfamily int Path\+::get\+StationA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the ID of the first station. 
+
+\begin{DoxyReturn}{Returns}
+ID of the first station
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_ab9aebe5ff48671b59b4b2dff75660d53}\label{classPath_ab9aebe5ff48671b59b4b2dff75660d53}} 
+\index{Path@{Path}!getStationB@{getStationB}}
+\index{getStationB@{getStationB}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{getStationB()}{getStationB()}}
+{\footnotesize\ttfamily int Path\+::get\+StationB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the ID of the second station. 
+
+\begin{DoxyReturn}{Returns}
+ID of the second station
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_acee3a5f2f2798aec28b91ab68f2df2c8}\label{classPath_acee3a5f2f2798aec28b91ab68f2df2c8}} 
+\index{Path@{Path}!print@{print}}
+\index{print@{print}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Path\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+prints the path\textquotesingle{}s specifications 
+
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_a38fd609c26468b0d47e858ebbc233ff7}\label{classPath_a38fd609c26468b0d47e858ebbc233ff7}} 
+\index{Path@{Path}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily void Path\+::set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Sets the capacity of the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Capacity of the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classPath_a1640cb67ba26e7529cd7b1480c76f278}\label{classPath_a1640cb67ba26e7529cd7b1480c76f278}} 
+\index{Path@{Path}!setFlow@{setFlow}}
+\index{setFlow@{setFlow}!Path@{Path}}
+\doxysubsubsection{\texorpdfstring{setFlow()}{setFlow()}}
+{\footnotesize\ttfamily void Path\+::set\+Flow (\begin{DoxyParamCaption}\item[{int}]{flow }\end{DoxyParamCaption})}
+
+
+
+Sets the flow of the path. 
+
+Gets the maximum cost of the path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flow} & Flow of the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+Maximum cost of the path
+\end{DoxyReturn}
+Time Complexity\+: O(1) 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Path.\+h\item 
-Path.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{Path_8h}{Path.\+h}}\item 
+\mbox{\hyperlink{Path_8cpp}{Path.\+cpp}}\end{DoxyCompactItemize}

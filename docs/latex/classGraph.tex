@@ -1,71 +1,436 @@
 \hypertarget{classGraph}{}\doxysection{Graph Class Reference}
 \label{classGraph}\index{Graph@{Graph}}
+
+
+The \mbox{\hyperlink{classGraph}{Graph}} class represents a graph.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGraph_ac3272e9680be9947c33ed0f86aa38c12}\label{classGraph_ac3272e9680be9947c33ed0f86aa38c12}} 
-void {\bfseries add\+Stations} ()
-\item 
-\mbox{\Hypertarget{classGraph_a0a0aa246a4103c9bc812bba4abb70476}\label{classGraph_a0a0aa246a4103c9bc812bba4abb70476}} 
-void {\bfseries add\+Paths} ()
-\item 
-\mbox{\Hypertarget{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}\label{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}} 
-int {\bfseries edmonds\+Karp} (int source, int sink)
-\item 
-\mbox{\Hypertarget{classGraph_aa2e653c25d31156904b904ba2f919f6a}\label{classGraph_aa2e653c25d31156904b904ba2f919f6a}} 
-int {\bfseries dijkstra} (int source, int destination)
-\item 
-\mbox{\Hypertarget{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}\label{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}} 
-bool {\bfseries bfs} (int source, int sink)
-\item 
-\mbox{\Hypertarget{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}\label{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}} 
-int {\bfseries find\+Min\+Flow\+Along\+Path} (int source, int sink)
-\item 
-\mbox{\Hypertarget{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}\label{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}} 
-void {\bfseries update\+Flow\+Along\+Path} (int source, int sink, int flow)
-\item 
-\mbox{\Hypertarget{classGraph_a4714e1064710ca166696926a64d79ca3}\label{classGraph_a4714e1064710ca166696926a64d79ca3}} 
-vector$<$ pair$<$ int, int $>$ $>$ {\bfseries get\+Pairs} (vector$<$ int $>$ v)
-\item 
-\mbox{\Hypertarget{classGraph_af6009b74b55cfcfba809c335a525f1bd}\label{classGraph_af6009b74b55cfcfba809c335a525f1bd}} 
-int {\bfseries calculate\+Total\+Flow} (const vector$<$ int $>$ \&v)
-\item 
-\mbox{\Hypertarget{classGraph_ad0638ee0d603ef3168979e8ed578e19b}\label{classGraph_ad0638ee0d603ef3168979e8ed578e19b}} 
-vector$<$ pair$<$ string, int $>$ $>$ {\bfseries flows\+For\+All\+Municipalities} ()
-\item 
-\mbox{\Hypertarget{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}\label{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}} 
-vector$<$ pair$<$ string, int $>$ $>$ {\bfseries flows\+For\+All\+Districts} ()
-\item 
-\mbox{\Hypertarget{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}\label{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}} 
-int {\bfseries get\+Min\+Capacity\+Along\+Path} (int source, int sink)
-\item 
-\mbox{\Hypertarget{classGraph_ac925493231087fd150e49e2eaac29883}\label{classGraph_ac925493231087fd150e49e2eaac29883}} 
-int {\bfseries get\+Path\+Cost} (int source, int destination, int flow)
-\item 
-\mbox{\Hypertarget{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}\label{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}} 
-map$<$ string, vector$<$ int $>$ $>$ {\bfseries get\+Stations\+By\+Municipality} () const
-\item 
-\mbox{\Hypertarget{classGraph_a22395b66de206430f3fb5efb7dcef727}\label{classGraph_a22395b66de206430f3fb5efb7dcef727}} 
-map$<$ string, vector$<$ string $>$ $>$ {\bfseries get\+Municipalities\+By\+District} () const
-\item 
-\mbox{\Hypertarget{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}\label{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}} 
-vector$<$ string $>$ {\bfseries get\+Districts} () const
-\item 
-\mbox{\Hypertarget{classGraph_a78c3724cce8db42d71602f13b69dfb68}\label{classGraph_a78c3724cce8db42d71602f13b69dfb68}} 
-vector$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$ $>$ {\bfseries get\+Stations} () const
-\item 
-\mbox{\Hypertarget{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}\label{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}} 
-void {\bfseries change\+Paths\+Capacity} (map$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$, int $>$ \&new\+Capacities)
-\item 
-\mbox{\Hypertarget{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}\label{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}} 
-void {\bfseries print\+Path} (int source, int destination)
-\item 
-\mbox{\Hypertarget{classGraph_a68f211a37b40067115fc6274d46153ed}\label{classGraph_a68f211a37b40067115fc6274d46153ed}} 
-void {\bfseries reset} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGraph}{Graph}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a3f52721d1f0fd91a3de02e094c46d2fe}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Clears the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a68f211a37b40067115fc6274d46153ed}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the graph to its initial state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}{bfs}} (int source, int sink)
+\begin{DoxyCompactList}\small\item\em Implements a breadth-\/first search to find a path from source to sink. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}{edmonds\+Karp}} (int source, int sink)
+\begin{DoxyCompactList}\small\item\em Implements the Edmonds-\/\+Karp algorithm for maximum flow. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_aa2e653c25d31156904b904ba2f919f6a}{dijkstra}} (int source, int destination)
+\begin{DoxyCompactList}\small\item\em Implements the Dijkstra algorithm for minimum cost flow. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}{find\+Min\+Flow\+Along\+Path}} (int source, int sink)
+\begin{DoxyCompactList}\small\item\em Finds the minimum flow along a path from source to sink. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}{update\+Flow\+Along\+Path}} (int source, int sink, int flow)
+\begin{DoxyCompactList}\small\item\em Updates the flow along a path from source to sink. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classGraph_a4714e1064710ca166696926a64d79ca3}{get\+Pairs}} (vector$<$ int $>$ v)
+\begin{DoxyCompactList}\small\item\em Gets all pairs of adjacent elements from a vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_af6009b74b55cfcfba809c335a525f1bd}{calculate\+Total\+Flow}} (const vector$<$ int $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Calculates the total flow for a given set of paths. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ string, int $>$ $>$ \mbox{\hyperlink{classGraph_ad0638ee0d603ef3168979e8ed578e19b}{flows\+For\+All\+Municipalities}} ()
+\begin{DoxyCompactList}\small\item\em Gets the flow for all municipalities. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ string, int $>$ $>$ \mbox{\hyperlink{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}{flows\+For\+All\+Districts}} ()
+\begin{DoxyCompactList}\small\item\em Gets the flow for all districts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_aa15118383e3530bc8a3ca556c89e3c7f}{max\+Simultaneous\+Arrivals}} (int id)
+\begin{DoxyCompactList}\small\item\em Gets the maximum simultaneous arrivals from the entire network for a given station. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}{get\+Min\+Capacity\+Along\+Path}} (int source, int sink)
+\begin{DoxyCompactList}\small\item\em Gets the minimum capacity along a path from source to sink. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_ac925493231087fd150e49e2eaac29883}{get\+Path\+Cost}} (int source, int destination, int flow)
+\begin{DoxyCompactList}\small\item\em Gets the cost for a path from source to destination. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classGraph_a43fa4e6ba4e6adce8c5e3495f6db45c4}{max\+Pairs}} ()
+\begin{DoxyCompactList}\small\item\em Finds the maximum flow for all pairs of stations in the graph. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$, int $>$ $>$ \mbox{\hyperlink{classGraph_a1031e8fa29a91a1e3625e4cbd29b50dc}{compare\+Results}} (vector$<$ int $>$ v1, vector$<$ int $>$ v2)
+\begin{DoxyCompactList}\small\item\em Adds the stations to the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}{change\+Paths\+Capacity}} (map$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$, int $>$ \&new\+Capacities)
+\begin{DoxyCompactList}\small\item\em Change the capacity of the given paths to the new capacities. \end{DoxyCompactList}\item 
+map$<$ string, vector$<$ int $>$ $>$ \mbox{\hyperlink{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}{get\+Stations\+By\+Municipality}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of stations indexed by municipality. \end{DoxyCompactList}\item 
+map$<$ string, vector$<$ string $>$ $>$ \mbox{\hyperlink{classGraph_a22395b66de206430f3fb5efb7dcef727}{get\+Municipalities\+By\+District}} () const
+\begin{DoxyCompactList}\small\item\em Get the map of municipalities indexed by district. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}{get\+Districts}} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of districts. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$ $>$ \mbox{\hyperlink{classGraph_a78c3724cce8db42d71602f13b69dfb68}{get\+Stations}} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of Stations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}{print\+Path}} (int source, int destination)
+\begin{DoxyCompactList}\small\item\em Prints the path from source to destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGraph}{Graph}} class represents a graph. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}\label{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classGraph}{Graph}} object. 
+
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}\label{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}} 
+\index{Graph@{Graph}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}}
+{\footnotesize\ttfamily bool Graph\+::bfs (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{sink }\end{DoxyParamCaption})}
+
+
+
+Implements a breadth-\/first search to find a path from source to sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The id of the source \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em sink} & The id of the sink \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there exists a path from source to sink, false otherwise
+\end{DoxyReturn}
+Time Complexity\+: O(v + e), where v is the number of stations and e is the number of paths \mbox{\Hypertarget{classGraph_af6009b74b55cfcfba809c335a525f1bd}\label{classGraph_af6009b74b55cfcfba809c335a525f1bd}} 
+\index{Graph@{Graph}!calculateTotalFlow@{calculateTotalFlow}}
+\index{calculateTotalFlow@{calculateTotalFlow}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculateTotalFlow()}{calculateTotalFlow()}}
+{\footnotesize\ttfamily int Graph\+::calculate\+Total\+Flow (\begin{DoxyParamCaption}\item[{const vector$<$ int $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Calculates the total flow for a given set of paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The set of paths \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total flow for the set of paths
+\end{DoxyReturn}
+Time Complexity\+: O(n$^\wedge$2 $\ast$ v $\ast$ e$^\wedge$2), where n is the length of the vector v, v is the number of stations and e is the number of paths \mbox{\Hypertarget{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}\label{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}} 
+\index{Graph@{Graph}!changePathsCapacity@{changePathsCapacity}}
+\index{changePathsCapacity@{changePathsCapacity}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{changePathsCapacity()}{changePathsCapacity()}}
+{\footnotesize\ttfamily void Graph\+::change\+Paths\+Capacity (\begin{DoxyParamCaption}\item[{map$<$ \mbox{\hyperlink{classPath}{Path}} $\ast$, int $>$ \&}]{new\+Capacities }\end{DoxyParamCaption})}
+
+
+
+Change the capacity of the given paths to the new capacities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Capacities} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(n), where n is the length of the new\+Capacities map \mbox{\Hypertarget{classGraph_a1031e8fa29a91a1e3625e4cbd29b50dc}\label{classGraph_a1031e8fa29a91a1e3625e4cbd29b50dc}} 
+\index{Graph@{Graph}!compareResults@{compareResults}}
+\index{compareResults@{compareResults}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{compareResults()}{compareResults()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$, int $>$ $>$ Graph\+::compare\+Results (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{v1,  }\item[{vector$<$ int $>$}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Adds the stations to the graph. 
+
+Time Complexity\+: O(v), where v is the number of stations \mbox{\Hypertarget{classGraph_aa2e653c25d31156904b904ba2f919f6a}\label{classGraph_aa2e653c25d31156904b904ba2f919f6a}} 
+\index{Graph@{Graph}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily int Graph\+::dijkstra (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{destination }\end{DoxyParamCaption})}
+
+
+
+Implements the Dijkstra algorithm for minimum cost flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The id of the source \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em destination} & The id of the destination \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The minimum cost flow from source to destination
+\end{DoxyReturn}
+Time Complexity\+: O((E+V)logV), where E is the number of paths and V is the number of stations \mbox{\Hypertarget{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}\label{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}} 
+\index{Graph@{Graph}!edmondsKarp@{edmondsKarp}}
+\index{edmondsKarp@{edmondsKarp}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{edmondsKarp()}{edmondsKarp()}}
+{\footnotesize\ttfamily int Graph\+::edmonds\+Karp (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{sink }\end{DoxyParamCaption})}
+
+
+
+Implements the Edmonds-\/\+Karp algorithm for maximum flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The id of the source \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em sink} & The id of the sink \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum flow from source to sink
+\end{DoxyReturn}
+Time Complexity\+: O(v $\ast$ e$^\wedge$2), where v is the number of stations and e is the number of paths \mbox{\Hypertarget{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}\label{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}} 
+\index{Graph@{Graph}!findMinFlowAlongPath@{findMinFlowAlongPath}}
+\index{findMinFlowAlongPath@{findMinFlowAlongPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{findMinFlowAlongPath()}{findMinFlowAlongPath()}}
+{\footnotesize\ttfamily int Graph\+::find\+Min\+Flow\+Along\+Path (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{sink }\end{DoxyParamCaption})}
+
+
+
+Finds the minimum flow along a path from source to sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The id of the source \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em sink} & The id of the sink \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The minimum flow along a path from source to sink
+\end{DoxyReturn}
+Time Complexity\+: O(n), where n is the length of the path from source to sink \mbox{\Hypertarget{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}\label{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}} 
+\index{Graph@{Graph}!flowsForAllDistricts@{flowsForAllDistricts}}
+\index{flowsForAllDistricts@{flowsForAllDistricts}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{flowsForAllDistricts()}{flowsForAllDistricts()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ string, int $>$ $>$ Graph\+::flows\+For\+All\+Districts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the flow for all districts. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pairs containing the district name and its flow
+\end{DoxyReturn}
+Time Complexity\+: O(D $\ast$ d + D $\ast$ log(\+D)), where D is the number of districts and d is the number of stations in each district \mbox{\Hypertarget{classGraph_ad0638ee0d603ef3168979e8ed578e19b}\label{classGraph_ad0638ee0d603ef3168979e8ed578e19b}} 
+\index{Graph@{Graph}!flowsForAllMunicipalities@{flowsForAllMunicipalities}}
+\index{flowsForAllMunicipalities@{flowsForAllMunicipalities}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{flowsForAllMunicipalities()}{flowsForAllMunicipalities()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ string, int $>$ $>$ Graph\+::flows\+For\+All\+Municipalities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the flow for all municipalities. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pairs containing the municipality name and its flow
+\end{DoxyReturn}
+Time Complexity\+: O(M $\ast$ m + M $\ast$ log(\+M)), where M is the number of municipalities and m is the number of stations in each municipality \mbox{\Hypertarget{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}\label{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}} 
+\index{Graph@{Graph}!getDistricts@{getDistricts}}
+\index{getDistricts@{getDistricts}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getDistricts()}{getDistricts()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::get\+Districts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of districts. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}\label{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}} 
+\index{Graph@{Graph}!getMinCapacityAlongPath@{getMinCapacityAlongPath}}
+\index{getMinCapacityAlongPath@{getMinCapacityAlongPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getMinCapacityAlongPath()}{getMinCapacityAlongPath()}}
+{\footnotesize\ttfamily int Graph\+::get\+Min\+Capacity\+Along\+Path (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{sink }\end{DoxyParamCaption})}
+
+
+
+Gets the minimum capacity along a path from source to sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \\
+\hline
+{\em sink} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(n), where n is the number of stations in the path \mbox{\Hypertarget{classGraph_a22395b66de206430f3fb5efb7dcef727}\label{classGraph_a22395b66de206430f3fb5efb7dcef727}} 
+\index{Graph@{Graph}!getMunicipalitiesByDistrict@{getMunicipalitiesByDistrict}}
+\index{getMunicipalitiesByDistrict@{getMunicipalitiesByDistrict}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getMunicipalitiesByDistrict()}{getMunicipalitiesByDistrict()}}
+{\footnotesize\ttfamily map$<$ string, vector$<$ string $>$ $>$ Graph\+::get\+Municipalities\+By\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of municipalities indexed by district. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classGraph_a4714e1064710ca166696926a64d79ca3}\label{classGraph_a4714e1064710ca166696926a64d79ca3}} 
+\index{Graph@{Graph}!getPairs@{getPairs}}
+\index{getPairs@{getPairs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getPairs()}{getPairs()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ int, int $>$ $>$ Graph\+::get\+Pairs (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Gets all pairs of adjacent elements from a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of all adjacent pairs
+\end{DoxyReturn}
+Time Complexity\+: O(n$^\wedge$2), where n is the length of the vector v \mbox{\Hypertarget{classGraph_ac925493231087fd150e49e2eaac29883}\label{classGraph_ac925493231087fd150e49e2eaac29883}} 
+\index{Graph@{Graph}!getPathCost@{getPathCost}}
+\index{getPathCost@{getPathCost}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getPathCost()}{getPathCost()}}
+{\footnotesize\ttfamily int Graph\+::get\+Path\+Cost (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{destination,  }\item[{int}]{flow }\end{DoxyParamCaption})}
+
+
+
+Gets the cost for a path from source to destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \\
+\hline
+{\em destination} & \\
+\hline
+{\em flow} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(n), where n is the number of stations in the path \mbox{\Hypertarget{classGraph_a78c3724cce8db42d71602f13b69dfb68}\label{classGraph_a78c3724cce8db42d71602f13b69dfb68}} 
+\index{Graph@{Graph}!getStations@{getStations}}
+\index{getStations@{getStations}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getStations()}{getStations()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classStation}{Station}} $\ast$ $>$ Graph\+::get\+Stations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of Stations. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}\label{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}} 
+\index{Graph@{Graph}!getStationsByMunicipality@{getStationsByMunicipality}}
+\index{getStationsByMunicipality@{getStationsByMunicipality}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getStationsByMunicipality()}{getStationsByMunicipality()}}
+{\footnotesize\ttfamily map$<$ string, vector$<$ int $>$ $>$ Graph\+::get\+Stations\+By\+Municipality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the map of stations indexed by municipality. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Time Complexity\+: O(1) \mbox{\Hypertarget{classGraph_a43fa4e6ba4e6adce8c5e3495f6db45c4}\label{classGraph_a43fa4e6ba4e6adce8c5e3495f6db45c4}} 
+\index{Graph@{Graph}!maxPairs@{maxPairs}}
+\index{maxPairs@{maxPairs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{maxPairs()}{maxPairs()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ int, int $>$ $>$ Graph\+::max\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finds the maximum flow for all pairs of stations in the graph. 
+
+\begin{DoxyReturn}{Returns}
+A vector with all pairs of stations that have the maximum flow
+\end{DoxyReturn}
+Time Complexity\+: O(v$^\wedge$3 $\ast$ e$^\wedge$2), where v is the number of stations and e is the number of paths \mbox{\Hypertarget{classGraph_aa15118383e3530bc8a3ca556c89e3c7f}\label{classGraph_aa15118383e3530bc8a3ca556c89e3c7f}} 
+\index{Graph@{Graph}!maxSimultaneousArrivals@{maxSimultaneousArrivals}}
+\index{maxSimultaneousArrivals@{maxSimultaneousArrivals}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{maxSimultaneousArrivals()}{maxSimultaneousArrivals()}}
+{\footnotesize\ttfamily int Graph\+::max\+Simultaneous\+Arrivals (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets the maximum simultaneous arrivals from the entire network for a given station. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the station \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum simultaneous arrivals for the station
+\end{DoxyReturn}
+Time Complexity\+: O(v $\ast$ e$^\wedge$2), where v is the number of stations and e is the number of paths \mbox{\Hypertarget{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}\label{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}} 
+\index{Graph@{Graph}!printPath@{printPath}}
+\index{printPath@{printPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{printPath()}{printPath()}}
+{\footnotesize\ttfamily void Graph\+::print\+Path (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{destination }\end{DoxyParamCaption})}
+
+
+
+Prints the path from source to destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \\
+\hline
+{\em destination} & \\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where n is the number of stations in the path \mbox{\Hypertarget{classGraph_a68f211a37b40067115fc6274d46153ed}\label{classGraph_a68f211a37b40067115fc6274d46153ed}} 
+\index{Graph@{Graph}!reset@{reset}}
+\index{reset@{reset}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Graph\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the graph to its initial state. 
+
+Time Complexity\+: O(n) \mbox{\Hypertarget{classGraph_a3f52721d1f0fd91a3de02e094c46d2fe}\label{classGraph_a3f52721d1f0fd91a3de02e094c46d2fe}} 
+\index{Graph@{Graph}!setup@{setup}}
+\index{setup@{setup}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Graph\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the graph. 
+
+Time Complexity\+: O(v + e + dlogd + mlogm), where v is the number of stations, e is the number of paths, d is the number of districts and m is the number of municipalities \mbox{\Hypertarget{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}\label{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}} 
+\index{Graph@{Graph}!updateFlowAlongPath@{updateFlowAlongPath}}
+\index{updateFlowAlongPath@{updateFlowAlongPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{updateFlowAlongPath()}{updateFlowAlongPath()}}
+{\footnotesize\ttfamily void Graph\+::update\+Flow\+Along\+Path (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{sink,  }\item[{int}]{flow }\end{DoxyParamCaption})}
+
+
+
+Updates the flow along a path from source to sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The id of the source \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em sink} & The id of the sink \mbox{\hyperlink{classStation}{Station}} \\
+\hline
+{\em flow} & The flow to be added to the path\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where n is the length of the path from source to sink 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Graph.\+h\item 
-Graph.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\item 
+\mbox{\hyperlink{Graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}

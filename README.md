@@ -9,13 +9,11 @@ allow management to decide on aspects such as how to best assign selected trains
 its revenue when multiple levels of service are offered, or even, identify more sensitive sections of its
 network to failures as to anticipate service disruption or at least to mitigate its nefarious effects.
 
-You can find the complete Project Description [here](Project1_Description.pdf) and a more detailed explanation of how we solve each exercise [here](code_explanation.txt)
+You can find the complete Project Description [here](descrption.pdf) and a more detailed explanation of how we solve each exercise [here](our_approaches.txt)
 
-To test the program, you can dowload [delivery.zip](delivery.zip) and run the following commands:
+To test the program, you must run the following commands:
 
 ```bash
-$ unzip delivery.zip
-$ cd delivery
 $ cd src
 $ cmake CMakeLists.txt
 $ make

@@ -1,59 +1,71 @@
 \hypertarget{Graph_8h_source}{}\doxysection{Graph.\+h}
-
+\mbox{\hyperlink{Graph_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TRABALHO2\_GRAPH\_H}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TRABALHO2\_GRAPH\_H}}
-\DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <set>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <sstream>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iomanip>}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <limits>}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}Station.h"{}}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Path.h"{}}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classGraph}{Graph}} \{}
-\DoxyCodeLine{17 \textcolor{keyword}{public}:}
-\DoxyCodeLine{18     \mbox{\hyperlink{classGraph}{Graph}}();}
-\DoxyCodeLine{19     \textcolor{keywordtype}{void} addStations();}
-\DoxyCodeLine{20     \textcolor{keywordtype}{void} addPaths();}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef TRABALHO2\_GRAPH\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define TRABALHO2\_GRAPH\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Station_8h}{Station.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Path_8h}{Path.h}}"{}}}
+\DoxyCodeLine{20 }
 \DoxyCodeLine{21 }
-\DoxyCodeLine{22     \textcolor{keywordtype}{int} edmondsKarp(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
-\DoxyCodeLine{23     \textcolor{keywordtype}{int} dijkstra(\textcolor{keywordtype}{int} source,\textcolor{keywordtype}{int} destination);}
-\DoxyCodeLine{24     \textcolor{keywordtype}{bool} bfs(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
-\DoxyCodeLine{25     \textcolor{keywordtype}{int} findMinFlowAlongPath(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} updateFlowAlongPath(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink, \textcolor{keywordtype}{int} flow);}
-\DoxyCodeLine{27     vector<pair<int, int>> getPairs(vector<int> v);}
-\DoxyCodeLine{28     \textcolor{keywordtype}{int} calculateTotalFlow(\textcolor{keyword}{const} vector<int> \&v);}
-\DoxyCodeLine{29     vector<pair<string, int>> flowsForAllMunicipalities();}
-\DoxyCodeLine{30     vector<pair<string, int>> flowsForAllDistricts();}
-\DoxyCodeLine{31     \textcolor{keywordtype}{int} getMinCapacityAlongPath(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
-\DoxyCodeLine{32     \textcolor{keywordtype}{int} getPathCost(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} destination, \textcolor{keywordtype}{int} flow);}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     map<string, vector<int>> getStationsByMunicipality() \textcolor{keyword}{const};}
-\DoxyCodeLine{35     map<string, vector<string>> getMunicipalitiesByDistrict() \textcolor{keyword}{const};}
-\DoxyCodeLine{36     vector<string> getDistricts() \textcolor{keyword}{const};}
-\DoxyCodeLine{37     vector<Station*> getStations() \textcolor{keyword}{const};}
-\DoxyCodeLine{38     \textcolor{keywordtype}{void} changePathsCapacity(map<Path*, int> \&newCapacities);}
-\DoxyCodeLine{39     \textcolor{keywordtype}{void} printPath(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} destination);}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \textcolor{keywordtype}{void} reset();}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43 \textcolor{keyword}{private}:}
-\DoxyCodeLine{44     vector<Station*> stations;}
-\DoxyCodeLine{45     set<Path*> paths;}
-\DoxyCodeLine{46     map<string, vector<int>> stationsByMunicipality;}
-\DoxyCodeLine{47     map<string, vector<string>> municipalitiesByDistrict;}
-\DoxyCodeLine{48     vector<string> districts;}
-\DoxyCodeLine{49     \textcolor{keywordtype}{void} sortDistricts();}
-\DoxyCodeLine{50     \textcolor{keywordtype}{void} sortMunicipalities();}
-\DoxyCodeLine{51 \};}
-\DoxyCodeLine{52 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classGraph}{Graph}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGraph_a3f52721d1f0fd91a3de02e094c46d2fe}{setup}}();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGraph_a68f211a37b40067115fc6274d46153ed}{reset}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGraph_acfd6fbc5243626bfb7b7116b76fedab0}{bfs}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_afd2749a1cd58db2d3b6fa6eef639399c}{edmondsKarp}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_aa2e653c25d31156904b904ba2f919f6a}{dijkstra}}(\textcolor{keywordtype}{int} source,\textcolor{keywordtype}{int} destination);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_ad6ee50a21940feb6d1186c4c310aaa4a}{findMinFlowAlongPath}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGraph_ac03d4adbe433bb37eef7f57305b1d9c2}{updateFlowAlongPath}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink, \textcolor{keywordtype}{int} flow);}
+\DoxyCodeLine{37     vector<pair<int, int>> \mbox{\hyperlink{classGraph_a4714e1064710ca166696926a64d79ca3}{getPairs}}(vector<int> v);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_af6009b74b55cfcfba809c335a525f1bd}{calculateTotalFlow}}(\textcolor{keyword}{const} vector<int> \&v);}
+\DoxyCodeLine{39     vector<pair<string, int>> \mbox{\hyperlink{classGraph_ad0638ee0d603ef3168979e8ed578e19b}{flowsForAllMunicipalities}}();}
+\DoxyCodeLine{40     vector<pair<string, int>> \mbox{\hyperlink{classGraph_a45bb96ae0aee4794c27bf5a7978ab63f}{flowsForAllDistricts}}();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_aa15118383e3530bc8a3ca556c89e3c7f}{maxSimultaneousArrivals}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_a0cfbb4df8f1b2c9b449c7bf5c95fd5a3}{getMinCapacityAlongPath}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} sink);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGraph_ac925493231087fd150e49e2eaac29883}{getPathCost}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} destination, \textcolor{keywordtype}{int} flow);}
+\DoxyCodeLine{44     vector<pair<int, int>> \mbox{\hyperlink{classGraph_a43fa4e6ba4e6adce8c5e3495f6db45c4}{maxPairs}}();}
+\DoxyCodeLine{45     vector<pair<Station*, int>> \mbox{\hyperlink{classGraph_a1031e8fa29a91a1e3625e4cbd29b50dc}{compareResults}}(vector<int> v1, vector<int> v2);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGraph_a5e7a465edee2c785f08094cc4b88ad3c}{changePathsCapacity}}(map<Path*, int> \&newCapacities);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     map<string, vector<int>> \mbox{\hyperlink{classGraph_a0c59f0a35a48625ef04e510fc535a6fd}{getStationsByMunicipality}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{49     map<string, vector<string>> \mbox{\hyperlink{classGraph_a22395b66de206430f3fb5efb7dcef727}{getMunicipalitiesByDistrict}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{50     vector<string> \mbox{\hyperlink{classGraph_aca0a80cbb2b25567a92118f5f75bb72e}{getDistricts}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{51     vector<Station*> \mbox{\hyperlink{classGraph_a78c3724cce8db42d71602f13b69dfb68}{getStations}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGraph_a333bdd7dd71e7aab1ce15a194b31a136}{printPath}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} destination);}
 \DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO2\_GRAPH\_H}}
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     vector<Station*> stations;}
+\DoxyCodeLine{56     vector<Path*> paths;}
+\DoxyCodeLine{57     vector<Path*> superPaths;}
+\DoxyCodeLine{58     map<string, vector<int>> stationsByMunicipality;}
+\DoxyCodeLine{59     map<string, vector<string>> municipalitiesByDistrict;}
+\DoxyCodeLine{60     vector<string> districts;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} addStations();}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} addPaths();}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} setupSuperNode();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} sortDistricts();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} sortMunicipalities();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO2\_GRAPH\_H}}
 
 \end{DoxyCode}
